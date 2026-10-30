@@ -1,0 +1,236 @@
+[
+ {
+  "terme": "Acció",
+  "definicio": "Una petita part de la propietat d'una empresa. Si tens accions, ets soci: guanyes si l'empresa val més i pots cobrar dividends.",
+  "exemple": "Si una empresa té 1.000 accions i en tens 10, ets propietari de l'1%.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Dividend",
+  "definicio": "La part dels beneficis que una empresa reparteix entre els seus accionistes, normalment en diners.",
+  "exemple": "Una empresa que paga 0,50 € per acció et dona 50 € si en tens 100.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Índex borsari",
+  "definicio": "Un número que resumeix com van un grup d'empreses de la borsa. Serveix per saber de cop si el mercat puja o baixa.",
+  "exemple": "L'Ibex 35 agrupa les 35 empreses més negociades de la borsa espanyola.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "ETF",
+  "definicio": "Un fons que compra totes les empreses d'un índex i cotitza a borsa com una acció. Amb una sola compra, inverteixes en moltes empreses alhora.",
+  "exemple": "L'ETF EWP replica la borsa espanyola: és el que fa servir The Ledger per seguir-la.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Fons d'inversió",
+  "definicio": "Una bossa de diners de molts estalviadors que gestiona un professional, que l'inverteix en accions, bons o altres actius.",
+  "exemple": "Amb 100 € pots tenir una part d'un fons que té accions de centenars d'empreses.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Interès compost",
+  "definicio": "Guanyar interessos també sobre els interessos que ja havies guanyat. Amb el temps, l'efecte es multiplica.",
+  "exemple": "100 € al 5% anual són 105 € el primer any i 110,25 € el segon: el segon any guanyes interès també sobre els 5 € del primer.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Inflació",
+  "definicio": "La pujada general dels preus. Si la inflació és del 5%, amb els mateixos diners pots comprar un 5% menys de coses que fa un any.",
+  "exemple": "Una barra de pa d'1 € passa a costar 1,05 €.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "IPC",
+  "definicio": "L'Índex de Preus de Consum: la mesura oficial de la inflació a Espanya. L'INE el calcula cada mes amb una cistella de productes que compra una família típica.",
+  "exemple": "Quan es diu que l'IPC és del 4,9%, vol dir que la cistella és un 4,9% més cara que fa un any.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Inflació subjacent",
+  "definicio": "La inflació sense comptar l'energia ni els aliments frescos, que pugen i baixen molt. Mostra millor la tendència de fons dels preus.",
+  "exemple": "Si la llum es dispara un mes, la inflació general salta, però la subjacent gairebé no es mou.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Tipus d'interès",
+  "definicio": "El preu dels diners: el que pagues per demanar-ne en préstec o el que cobres per deixar-los.",
+  "exemple": "Un préstec de 10.000 € al 6% anual et costa uns 600 € d'interessos el primer any.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "BCE",
+  "definicio": "El Banc Central Europeu, que fixa el tipus d'interès oficial de la zona euro per mantenir la inflació a prop del 2%.",
+  "exemple": "Si la inflació és massa alta, el BCE apuja els tipus per frenar el consum i el crèdit.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Fed",
+  "definicio": "La Reserva Federal, el banc central dels Estats Units. Les seves decisions sobre els tipus mouen les borses de tot el món.",
+  "exemple": "Quan la Fed apuja els tipus, sovint el dòlar s'enforteix i la borsa cau.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Euríbor",
+  "definicio": "El tipus d'interès al qual els bancs europeus es presten diners entre ells. La majoria d'hipoteques variables d'Espanya hi van lligades.",
+  "exemple": "Si l'Euríbor puja un punt, la cuota d'una hipoteca variable de 150.000 € a 25 anys puja uns 80 € al mes.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Diferencial",
+  "definicio": "La part fixa que el banc suma a l'Euríbor en una hipoteca variable. No canvia mai durant la vida de la hipoteca.",
+  "exemple": "Amb Euríbor + 0,75% i un Euríbor del 3,29%, pagues un 4,04%.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Hipoteca variable",
+  "definicio": "Una hipoteca on l'interès canvia cada 6 o 12 mesos segons l'Euríbor. Si l'Euríbor puja, pagues més; si baixa, menys.",
+  "exemple": "En una hipoteca fixa, en canvi, pagues sempre el mateix, passi el que passi.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Bo",
+  "definicio": "Un préstec que fas a un govern o a una empresa. A canvi, et paguen un interès i, al final, et tornen els diners.",
+  "exemple": "Un bo de l'Estat a 10 anys al 3% et paga 30 € l'any per cada 1.000 € que hi poses.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Lletra del Tresor",
+  "definicio": "Un préstec a l'Estat espanyol a curt termini (3, 6, 9 o 12 mesos). És de les inversions més segures que hi ha.",
+  "exemple": "Compres una lletra per uns 970 € i al cap d'un any l'Estat te'n torna 1.000.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Dipòsit bancari",
+  "definicio": "Deixar diners al banc durant un temps fix a canvi d'un interès pactat. Fins a 100.000 € estan protegits per un fons de garantia.",
+  "exemple": "Un dipòsit de 5.000 € al 2,5% durant un any et dona 125 € bruts.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "TAE",
+  "definicio": "La Taxa Anual Equivalent: el cost o el rendiment real d'un producte en un any, amb comissions incloses. Serveix per comparar ofertes.",
+  "exemple": "Entre dos préstecs, el que té la TAE més baixa és el més barat.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Rendibilitat",
+  "definicio": "El que guanyes (o perds) amb una inversió, en percentatge del que hi vas posar.",
+  "exemple": "Si inverteixes 1.000 € i al cap d'un any en tens 1.080, la rendibilitat és del 8%.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Rendibilitat real",
+  "definicio": "La rendibilitat descomptant la inflació. Diu si de debò pots comprar més coses que abans.",
+  "exemple": "Guanyar un 3% amb una inflació del 4,9% vol dir perdre gairebé un 2% de poder de compra.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Volatilitat",
+  "definicio": "Com de fort i de sovint puja i baixa el preu d'una inversió. Com més volàtil, més risc a curt termini.",
+  "exemple": "Una acció tecnològica pot moure's un 5% en un dia; un bo de l'Estat, gairebé gens.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Diversificació",
+  "definicio": "Repartir els diners entre moltes inversions diferents perquè, si una va malament, no ho perdis tot.",
+  "exemple": "Millor tenir accions de 50 empreses de sectors diferents que totes d'una sola.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Capitalització borsària",
+  "definicio": "El que val una empresa a borsa: el preu de l'acció multiplicat pel nombre d'accions.",
+  "exemple": "100 milions d'accions a 50 € fan una capitalització de 5.000 milions.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "PER",
+  "definicio": "Quantes vegades el benefici anual val una empresa a borsa (preu de l'acció dividit pel benefici per acció). Ajuda a saber si està cara o barata.",
+  "exemple": "Un PER de 20 vol dir que pagues 20 € per cada euro de benefici anual.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Benefici per acció",
+  "definicio": "El benefici de l'empresa dividit pel nombre d'accions.",
+  "exemple": "Una empresa que guanya 1.000 milions i té 500 milions d'accions té un benefici per acció de 2 €.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Resultats trimestrals",
+  "definicio": "Els comptes que les empreses cotitzades publiquen cada tres mesos. Si queden per sota del que s'esperava, l'acció sol caure.",
+  "exemple": "Alphabet va caure més d'un 12% en un dia perquè les vendes van quedar per sota del previst.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Sortida a borsa",
+  "definicio": "Quan una empresa privada comença a vendre les seves accions a la borsa, perquè qualsevol en pugui comprar. També se'n diu OPV o IPO.",
+  "exemple": "Anthropic ha presentat els papers per sortir a borsa amb el codi ANT.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Ronda de finançament",
+  "definicio": "Quan una empresa que encara no cotitza aconsegueix diners d'inversors a canvi d'una part de la propietat.",
+  "exemple": "Si algú posa 30.000 milions a una empresa valorada en 1,25 bilions, es queda una mica més del 2%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Mercat alcista i baixista",
+  "definicio": "Alcista vol dir una temporada llarga de pujades a borsa; baixista, una caiguda d'un 20% o més des del màxim.",
+  "exemple": "En anglès se'n diu bull market (el toro embesteix cap amunt) i bear market (l'ós colpeja cap avall).",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Tipus de canvi",
+  "definicio": "Quantes unitats d'una moneda val una altra.",
+  "exemple": "Amb l'euro a 1,117 dòlars, per 100 € en reps 111,70 $.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "PIB",
+  "definicio": "El Producte Interior Brut: el valor de tot el que produeix un país en un any. Si creix, l'economia va bé.",
+  "exemple": "Que el PIB dels EUA creixi un 3,4% anualitzat vol dir que l'economia s'expandeix amb força.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Recessió",
+  "definicio": "Quan el PIB d'un país cau durant dos trimestres seguits. Sol venir amb més atur i menys consum.",
+  "exemple": "",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Liquiditat",
+  "definicio": "Com de ràpid pots convertir una inversió en diners sense perdre valor.",
+  "exemple": "El compte corrent és líquid del tot; un pis, molt poc: vendre'l triga mesos.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Mitjana mòbil",
+  "definicio": "La mitjana dels preus de tancament dels últims dies (20, 50…), que es recalcula cada dia. Ajuda a veure la tendència sense el soroll diari.",
+  "exemple": "Si el preu està per sobre de la mitjana de 50 sessions, la tendència recent és de pujada.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Espelma japonesa",
+  "definicio": "Una manera de dibuixar el preu de cada dia: el cos mostra l'obertura i el tancament, i les línies, el màxim i el mínim.",
+  "exemple": "Una espelma blava (al nostre cercador) vol dir que aquell dia va tancar per sobre d'on va obrir.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Volum",
+  "definicio": "Quantes accions s'han comprat i venut en una sessió. Un moviment amb molt de volum és més significatiu.",
+  "exemple": "",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Prima de risc",
+  "definicio": "Quant més paga un país que Alemanya per endeutar-se a 10 anys. Mesura la confiança dels inversors en aquell país.",
+  "exemple": "Si el bo espanyol paga un 3,2% i l'alemany un 2,5%, la prima de risc és de 70 punts bàsics.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Punt bàsic",
+  "definicio": "Una centèsima part d'un punt percentual. 100 punts bàsics són un 1%.",
+  "exemple": "Si un tipus passa del 2,85% al 3,03%, ha pujat 18 punts bàsics.",
+  "categoria": "Economia"
+ }
+]

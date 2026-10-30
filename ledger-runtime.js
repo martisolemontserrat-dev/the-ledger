@@ -14,7 +14,10 @@
     resum: 'data/resum.json',
     ia_noticies: 'data/ia_noticies.json',
     ia_models: 'data/ia_models.json',
-    ia_cursa: 'data/ia_cursa.json'
+    ia_cursa: 'data/ia_cursa.json',
+    leccions: 'data/leccions.json',
+    glossari: 'data/glossari.json',
+    butxaca: 'data/butxaca.json'
   };
   var QUERIES = {
     cerca: { fn: 'SYMBOL_SEARCH', args: function (p) { return { keywords: p.q, datatype: 'csv' }; } },

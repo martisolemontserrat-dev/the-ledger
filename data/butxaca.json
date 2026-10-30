@@ -1,0 +1,74 @@
+[
+ {
+  "id": "euribor",
+  "indicador": "Euríbor a 12 mesos",
+  "valor": "3,290%",
+  "data_dada": "2026-10-28",
+  "comparacio": "Fa un any era al 2,187% (mitjana d'octubre del 2025). La mitjana d'aquest octubre va pel 3,232%.",
+  "que_vol_dir": "És l'índex al qual va lligada la majoria d'hipoteques variables. Si la teva es revisa ara, la cuota puja: en una hipoteca de 167.000 € a 25 anys amb Euríbor + 0,75%, uns 94 € més al mes.",
+  "hi_guanya": "Qui estalvia: dipòsits i comptes remunerats tendeixen a pagar més.",
+  "hi_perd": "Qui té hipoteca variable i li toca revisió.",
+  "font": "Rankia",
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7529932-euribor-hoy-29-octubre-2026"
+ },
+ {
+  "id": "ipc",
+  "indicador": "Inflació a Espanya (IPC)",
+  "valor": "4,9%",
+  "data_dada": "2026-10-30",
+  "comparacio": "Dada avançada d'octubre, igual que al setembre. La subjacent, sense energia ni aliments frescos, és del 3,1%.",
+  "que_vol_dir": "El que fa un any costava 100 €, avui costa de mitjana 104,90 €. Els diners que tens parats perden aquest poder de compra cada any.",
+  "hi_guanya": "Qui té deutes a tipus fix: en termes reals, el que deu val menys.",
+  "hi_perd": "Qui té estalvis sense remunerar i qui té un sou que no s'actualitza.",
+  "font": "Raisin (dada avançada de l'INE)",
+  "url": "https://www.raisin.com/es-es/noticias/ipc-octubre-2026-adelanto/"
+ },
+ {
+  "id": "llum",
+  "indicador": "Preu de la llum al mercat majorista",
+  "valor": "244,69 €/MWh",
+  "data_dada": "2026-10-30",
+  "comparacio": "Un 5,9% més que ahir. L'hora més barata, de 13 a 14 h (173,41 €/MWh); la més cara, de 18 a 19 h (316,94 €/MWh).",
+  "que_vol_dir": "És el preu de l'energia abans de peatges i impostos. Si tens la tarifa regulada (PVPC), posar la rentadora o el forn a l'hora barata en lloc de la cara redueix gairebé a la meitat el cost de l'energia que gastes.",
+  "hi_guanya": "Qui pot moure el consum a les hores barates.",
+  "hi_perd": "Qui té la tarifa regulada i consumeix sobretot al vespre.",
+  "font": "Tarifaluzhora",
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-10-30"
+ },
+ {
+  "id": "carburants",
+  "indicador": "Benzina 95 i dièsel",
+  "valor": "1,731 / 1,899 €/l",
+  "data_dada": "2026-10-30",
+  "comparacio": "La benzina ha baixat un 10% a l'octubre (era a 1,931 €/l el 30 de setembre), sobretot per la rebaixa de 20 cèntims de l'impost d'hidrocarburs, que es manté al novembre.",
+  "que_vol_dir": "Omplir un dipòsit de 50 litres de benzina costa uns 87 €, uns 10 € menys que fa un mes.",
+  "hi_guanya": "Qui fa servir el cotxe cada dia.",
+  "hi_perd": "Les arques públiques, que ingressen menys per l'impost.",
+  "font": "Demócrata (dades del MITECO)",
+  "url": "https://www.democrata.es/en/economy/gasoline-price-today-october-30-2026-how-much-do-gasoline-95-and-diesel-cost/"
+ },
+ {
+  "id": "bce",
+  "indicador": "Tipus del BCE (dipòsit)",
+  "valor": "2,50%",
+  "data_dada": "2026-10-29",
+  "comparacio": "Mantingut en la reunió d'aquesta setmana. El mercat ja descompta una pujada al desembre.",
+  "que_vol_dir": "És el preu oficial dels diners a la zona euro. Quan el BCE el puja, s'encareixen els préstecs i les hipoteques, i els estalvis paguen més; serveix per frenar la inflació.",
+  "hi_guanya": "Qui estalvia, si el BCE acaba pujant.",
+  "hi_perd": "Qui necessita finançament: famílies amb préstecs i empreses.",
+  "font": "The Irish Times",
+  "url": "https://www.irishtimes.com/business/2026/10/29/ecb-holds-rates-steady-as-lagardes-departure-overshadows-decision/"
+ },
+ {
+  "id": "lletres",
+  "indicador": "Lletres del Tresor a 12 mesos",
+  "valor": "3,026%",
+  "data_dada": "2026-10-06",
+  "comparacio": "Interès marginal de la subhasta d'octubre, el més alt des del juliol del 2024 (la subhasta anterior va ser al 2,846%).",
+  "que_vol_dir": "Prestant 1.000 € a l'Estat durant un any en reps uns 30 € abans d'impostos. Amb una inflació del 4,9%, però, encara perds poder de compra: és una manera de perdre'n menys, no de guanyar-ne.",
+  "hi_guanya": "L'estalviador prudent que vol un rendiment segur a curt termini.",
+  "hi_perd": "L'Estat, que paga més per finançar-se.",
+  "font": "Merca2",
+  "url": "https://www.merca2.es/2026/10/06/subasta-tesoro-letras-rentabilidad-12-meses-2468527/"
+ }
+]

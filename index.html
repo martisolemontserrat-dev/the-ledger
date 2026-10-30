@@ -289,6 +289,61 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 @container (max-width: 760px) { .bf-race-col + .bf-race-col { border-left: 0; } .bf-race-col { padding-left: 0; padding-right: 0; padding-bottom: 20px; } }
 .bf-tag { font-size: var(--cds-font-size-caption); font-weight: 600; }
 
+/* Lesson of the day */
+.bf-lesson { display: grid; grid-template-columns: minmax(0, 14rem) minmax(0, 1fr); gap: 16px clamp(24px, 4vw, 56px); border-top: 2px solid var(--color-fg); border-bottom: 1px solid var(--color-fg); padding: 18px 0 22px; }
+.bf-lesson-label { font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--color-fg-muted); }
+.bf-lesson-concept { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); line-height: 1.05; letter-spacing: -0.015em; margin-top: 6px !important; }
+.bf-lesson-body { display: flex; flex-direction: column; gap: 10px; min-height: 9rem; max-width: 46em; }
+.bf-lesson-body h3 { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.15rem, 1rem + .5vw, 1.4rem); line-height: 1.2; }
+.bf-lesson-body p { font-family: var(--font-anthropic-serif); font-size: 1.02rem; line-height: 1.6; }
+.bf-lesson-ex { padding-left: 12px; border-left: 2px solid var(--color-border-line); }
+.bf-lesson-one { font-family: var(--font-anthropic-sans) !important; font-size: var(--cds-font-size-body) !important; font-weight: 600; }
+.bf-lesson-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 2px; }
+.bf-lesson-meta span { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin-right: 4px; }
+.bf-term { font: inherit; font-size: var(--cds-font-size-caption); font-weight: 500; color: var(--color-fg); background: none; border: 1px solid var(--color-border-line); padding: 3px 9px; cursor: pointer; border-radius: 0; }
+.bf-term:hover { border-color: var(--color-fg); }
+.bf-lesson-src { color: var(--color-fg-muted); font-family: var(--font-anthropic-sans) !important; font-size: var(--cds-font-size-caption) !important; }
+.bf-lesson-src a { color: inherit; text-underline-offset: 3px; }
+@container (max-width: 700px) { .bf-lesson { grid-template-columns: 1fr; } }
+
+/* Your pocket */
+.bf-pocket { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr)); gap: 28px clamp(20px, 3vw, 40px); min-height: 16rem; }
+.bf-pk { border-top: 2px solid var(--color-fg); padding-top: 12px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.bf-pk-name { font-size: var(--cds-font-size-body); font-weight: 600; }
+.bf-pk-val { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem); line-height: 1; letter-spacing: -0.015em; }
+.bf-pk-date { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-pk-cmp { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.5; }
+.bf-pk h4 { margin: 6px 0 0; font-size: var(--cds-font-size-caption); font-weight: 600; }
+.bf-pk-what { font-family: var(--font-anthropic-serif); font-size: 1rem; line-height: 1.55; }
+.bf-pk-who { display: grid; grid-template-columns: auto 1fr; gap: 4px 8px; font-size: var(--cds-font-size-caption); line-height: 1.45; border-top: 1px solid var(--color-border-line); padding-top: 8px; }
+.bf-pk-who b { font-weight: 600; }
+.bf-pk-src { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin-top: auto !important; }
+.bf-pk-src a { color: inherit; text-underline-offset: 3px; }
+
+/* Learn */
+.bf-gl-tools { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin-bottom: 16px; }
+.bf-gl-input { flex: 1 1 18rem; max-width: 30rem; font: inherit; color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-fg); border-radius: 0; padding: 9px 12px; }
+.bf-gl { columns: 22rem 3; column-gap: clamp(24px, 3vw, 40px); column-rule: 1px solid var(--color-border-line); min-height: 10rem; }
+.bf-gl-item { break-inside: avoid; padding: 10px 0 14px; border-top: 1px solid var(--color-border-line); display: flex; flex-direction: column; gap: 4px; }
+.bf-gl-item h3 { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 700; font-size: 1.1rem; }
+.bf-gl-item h3 small { font-family: var(--font-anthropic-sans); font-weight: 500; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-left: 6px; }
+.bf-gl-item p { line-height: 1.5; }
+.bf-gl-ex { color: var(--color-fg-muted); font-style: italic; font-family: var(--font-anthropic-serif); }
+.bf-gl-item.bf-hit { background: var(--color-panel); padding-left: 8px; padding-right: 8px; }
+.bf-archive { display: flex; flex-direction: column; }
+.bf-arc { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 4px 20px; padding: 12px 0; border-top: 1px solid var(--color-border-line); }
+.bf-arc-date { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); padding-top: 3px; }
+.bf-arc h3 { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 700; font-size: 1.05rem; }
+.bf-arc p { line-height: 1.5; }
+@container (max-width: 560px) { .bf-arc { grid-template-columns: 1fr; } }
+
+.bf-legal { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.5; border-top: 1px solid var(--color-fg); padding-top: 12px; max-width: 60em; }
+@container (max-width: 640px) {
+  .bf-nav { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+  .bf-nav::-webkit-scrollbar { display: none; }
+  .bf-tab { flex: 0 0 auto; }
+}
+
 /* Visitor's own Alpha Vantage key */
 .bf-apikey { border: 1px solid var(--color-fg); padding: 14px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 46rem; }
 .bf-apikey[hidden], .bf-apikey-set[hidden] { display: none; }
@@ -317,8 +372,10 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
     </div></div>
     <nav class="bf-nav" aria-label="Seccions">
       <button type="button" class="bf-tab" data-tab="portada" aria-pressed="true">Portada</button>
+      <button type="button" class="bf-tab" data-tab="butxaca" aria-pressed="false">La teva butxaca</button>
       <button type="button" class="bf-tab" data-tab="cercador" aria-pressed="false">Cercador d'accions</button>
       <button type="button" class="bf-tab" data-tab="ia" aria-pressed="false">Intel·ligència artificial</button>
+      <button type="button" class="bf-tab" data-tab="apren" aria-pressed="false">Aprèn</button>
     </nav>
   </header>
 
@@ -332,6 +389,14 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
         <p class="bf-per-note">Període: <span data-draw="perlabel">—</span>. Canvia'l al selector de sota.</p>
       </div>
     </div>
+
+  <section class="bf-lesson" id="leccio" aria-label="La lliçó del dia">
+    <div class="bf-lesson-k">
+      <p class="bf-lesson-label">La lliçó del dia</p>
+      <p class="bf-lesson-concept" data-draw="lconcepte" data-source="leccions" data-field="concepte" data-row="0">—</p>
+    </div>
+    <div class="bf-lesson-body dash-skeleton" data-draw="leccio" data-source="leccions"></div>
+  </section>
 
   <section id="borses" class="bf-sec">
     <div class="bf-head">
@@ -556,6 +621,53 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 
     <p class="bf-foot">Notícies i xifres recollides de la premsa tecnològica i econòmica i resumides cada matí, amb l'enllaç a cada font. Les xifres que no surten de documents oficials de les empreses s'indiquen com a estimacions de premsa.</p>
   </div>
+  <div class="bf-page" data-page="butxaca" hidden>
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>La teva butxaca</h2>
+          <p class="bf-note">Les dades de l'economia que arriben a casa: la hipoteca, la compra, la llum, el cotxe i els estalvis. Cadascuna amb què vol dir per a tu, qui hi guanya i qui hi perd.</p>
+        </div>
+      </div>
+      <div class="bf-pocket dash-skeleton" data-draw="butxaca" data-source="butxaca"></div>
+    </section>
+    <p class="bf-foot">Dades recollides de fonts oficials i de la premsa econòmica, amb l'enllaç a cada font. Algunes s'actualitzen cada dia (llum, carburants, Euríbor) i d'altres quan es publiquen (inflació, subhastes del Tresor, reunions del BCE).</p>
+  </div>
+
+  <div class="bf-page" data-page="apren" hidden>
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Glossari</h2>
+          <p class="bf-note">Les paraules del món financer explicades sense tecnicismes i amb un exemple. Busca'n una o filtra per tema.</p>
+        </div>
+      </div>
+      <div class="bf-gl-tools">
+        <input class="bf-gl-input" type="search" maxlength="40" placeholder="Busca una paraula: Euríbor, PER, inflació…" aria-label="Busca al glossari" autocomplete="off">
+        <div class="bf-seg" role="group" aria-label="Tema del glossari">
+          <button type="button" class="bf-glcat" data-cat="" aria-pressed="true">Tots</button>
+          <button type="button" class="bf-glcat" data-cat="Economia" aria-pressed="false">Economia</button>
+          <button type="button" class="bf-glcat" data-cat="Estalvi" aria-pressed="false">Estalvi</button>
+          <button type="button" class="bf-glcat" data-cat="Habitatge" aria-pressed="false">Habitatge</button>
+          <button type="button" class="bf-glcat" data-cat="Borsa" aria-pressed="false">Borsa</button>
+          <button type="button" class="bf-glcat" data-cat="Empreses" aria-pressed="false">Empreses</button>
+        </div>
+      </div>
+      <div class="bf-gl dash-skeleton" data-draw="glossari" data-source="glossari"></div>
+    </section>
+
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Lliçons anteriors</h2>
+          <p class="bf-note">Totes les lliçons del dia, de la més recent a la més antiga.</p>
+        </div>
+      </div>
+      <div class="bf-archive" data-draw="arxiu" data-source="leccions"></div>
+    </section>
+  </div>
+
+  <p class="bf-legal">The Ledger és un projecte divulgatiu: res del que hi surt és una recomanació per comprar o vendre cap producte financer. Abans d'invertir, informa't bé i, si cal, demana consell a un professional.</p>
 </div>
 
 <script>
@@ -1149,13 +1261,14 @@ dash.calc('mitjanes', {
   const pressAll = (sel, fn) => document.querySelectorAll(sel).forEach((b) => b.setAttribute('aria-pressed', String(fn(b))));
 
   const showTab = (tab) => {
-    B.tab = ['cercador', 'ia'].includes(tab) ? tab : 'portada';
+    B.tab = ['butxaca', 'cercador', 'ia', 'apren'].includes(tab) ? tab : 'portada';
     document.querySelectorAll('.bf-page').forEach((p) => { p.hidden = p.getAttribute('data-page') !== B.tab; });
     pressAll('.bf-tab', (b) => b.getAttribute('data-tab') === B.tab);
     dash.setLink(B.tab);
   };
   document.querySelectorAll('.bf-tab').forEach((b) => b.addEventListener('click', () => showTab(b.getAttribute('data-tab'))));
-  if (['cercador', 'ia'].includes(location.hash.slice(1))) showTab(location.hash.slice(1));
+  B.showTab = showTab;
+  if (['butxaca', 'cercador', 'ia', 'apren'].includes(location.hash.slice(1))) showTab(location.hash.slice(1));
 
   const pick = (simbol, info) => {
     if (!simbol) return;
@@ -1507,6 +1620,135 @@ dash.draw('iamodels', (tbody) => {
     const cells = [B.dayShort(d.data), d.model, d.empresa, d.que_es, d.acces];
     cells.forEach((v, i) => { const td = document.createElement('td'); td.textContent = String(v ?? ''); if (i === 1) td.style.fontWeight = '600'; if (i === 0) td.className = 'bf-muted'; tr.append(td); });
     tbody.append(tr);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+(() => {
+  const B = window.bf;
+  B.glq = ''; B.glcat = '';
+  const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  B.glNorm = norm;
+  document.querySelectorAll('.bf-gl-input').forEach((inp) => inp.addEventListener('input', () => { B.glq = inp.value; dash.draw('glossari'); }));
+  document.querySelectorAll('.bf-glcat').forEach((b) => b.addEventListener('click', () => {
+    B.glcat = b.getAttribute('data-cat') || '';
+    document.querySelectorAll('.bf-glcat').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    dash.draw('glossari');
+  }));
+  B.openTerm = (term) => {
+    B.glq = term; B.glcat = '';
+    document.querySelectorAll('.bf-gl-input').forEach((inp) => { inp.value = term; });
+    document.querySelectorAll('.bf-glcat').forEach((x) => x.setAttribute('aria-pressed', String(!x.getAttribute('data-cat'))));
+    if (B.showTab) B.showTab('apren');
+    dash.draw('glossari');
+    document.querySelectorAll('[data-page="apren"]').forEach((p) => p.scrollIntoView({block: 'start'}));
+  };
+})();
+
+dash.draw('lconcepte', (el) => {
+  const l = dash.data('leccions');
+  el.textContent = l.status === 'ok' && l.data.length ? String(l.data[0].concepte ?? '—') : '—';
+});
+
+dash.draw('leccio', (el) => {
+  const B = window.bf, l = dash.data('leccions');
+  if (B.state(el, [l.status])) return;
+  el.replaceChildren();
+  const d = l.data[0];
+  if (!d) return;
+  const h = document.createElement('h3'); h.textContent = String(d.titol ?? '');
+  const p = document.createElement('p'); p.textContent = String(d.explicacio ?? '');
+  el.append(h, p);
+  if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-lesson-ex'; e.textContent = 'Per exemple: ' + d.exemple; el.append(e); }
+  if (d.en_una_frase) { const o = document.createElement('p'); o.className = 'bf-lesson-one'; o.textContent = 'En una frase: ' + d.en_una_frase; el.append(o); }
+  const terms = String(d.termes || '').split(';').map((t) => t.trim()).filter(Boolean);
+  if (terms.length) {
+    const m = document.createElement('div'); m.className = 'bf-lesson-meta';
+    const s = document.createElement('span'); s.textContent = 'Al glossari:'; m.append(s);
+    terms.forEach((t) => { const b = document.createElement('button'); b.type = 'button'; b.className = 'bf-term'; b.textContent = t; b.addEventListener('click', () => B.openTerm(t)); m.append(b); });
+    el.append(m);
+  }
+  const src = document.createElement('p'); src.className = 'bf-lesson-src';
+  src.append((d.noticia ? 'A partir de la notícia «' + d.noticia + '». ' : ''));
+  if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
+    const a = document.createElement('a'); a.href = d.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = String(d.font || 'Font'); src.append(a);
+  }
+  el.append(src);
+});
+
+dash.draw('butxaca', (el) => {
+  const B = window.bf, k = dash.data('butxaca');
+  if (B.state(el, [k.status])) return;
+  el.replaceChildren();
+  k.data.forEach((d) => {
+    const c = document.createElement('article'); c.className = 'bf-pk';
+    const n = document.createElement('p'); n.className = 'bf-pk-name'; n.textContent = String(d.indicador ?? '');
+    const v = document.createElement('p'); v.className = 'bf-pk-val'; v.textContent = String(d.valor ?? '—');
+    const dt = document.createElement('p'); dt.className = 'bf-pk-date'; dt.textContent = d.data_dada ? 'Dada del ' + B.dayLong(d.data_dada) : '';
+    const cmp = document.createElement('p'); cmp.className = 'bf-pk-cmp'; cmp.textContent = String(d.comparacio ?? '');
+    const h = document.createElement('h4'); h.textContent = 'Què vol dir per a tu';
+    const w = document.createElement('p'); w.className = 'bf-pk-what'; w.textContent = String(d.que_vol_dir ?? '');
+    c.append(n, v, dt, cmp, h, w);
+    if (d.hi_guanya || d.hi_perd) {
+      const who = document.createElement('div'); who.className = 'bf-pk-who';
+      [['Hi guanya', d.hi_guanya], ['Hi perd', d.hi_perd]].forEach(([lab, txt]) => {
+        if (!txt) return;
+        const b = document.createElement('b'); b.textContent = lab;
+        const t = document.createElement('span'); t.textContent = String(txt);
+        who.append(b, t);
+      });
+      c.append(who);
+    }
+    const src = document.createElement('p'); src.className = 'bf-pk-src'; src.append('Font: ');
+    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
+      const a = document.createElement('a'); a.href = d.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = String(d.font || 'enllaç'); src.append(a);
+    } else { src.append(String(d.font || '')); }
+    c.append(src);
+    el.append(c);
+  });
+});
+
+dash.draw('glossari', (el) => {
+  const B = window.bf, g = dash.data('glossari');
+  if (B.state(el, [g.status])) return;
+  el.replaceChildren();
+  const q = B.glNorm(B.glq).trim();
+  const rows = g.data
+    .filter((d) => !B.glcat || d.categoria === B.glcat)
+    .filter((d) => !q || B.glNorm(d.terme).includes(q) || B.glNorm(d.definicio).includes(q))
+    .sort((a, b) => {
+      const ea = q && B.glNorm(a.terme) === q ? 0 : 1, eb = q && B.glNorm(b.terme) === q ? 0 : 1;
+      return ea - eb || String(a.terme).localeCompare(String(b.terme), 'ca');
+    });
+  if (!rows.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Aquesta paraula encara no és al glossari. Cada dia se n\'hi afegeixen de noves amb la lliçó.'; el.append(p); return; }
+  rows.forEach((d) => {
+    const it = document.createElement('article'); it.className = 'bf-gl-item' + (q && B.glNorm(d.terme) === q ? ' bf-hit' : '');
+    const h = document.createElement('h3'); h.textContent = String(d.terme ?? '');
+    if (d.categoria) { const s = document.createElement('small'); s.textContent = String(d.categoria); h.append(s); }
+    const p = document.createElement('p'); p.textContent = String(d.definicio ?? '');
+    it.append(h, p);
+    if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-gl-ex'; e.textContent = 'Per exemple: ' + d.exemple; it.append(e); }
+    el.append(it);
+  });
+});
+
+dash.draw('arxiu', (el) => {
+  const B = window.bf, l = dash.data('leccions');
+  el.replaceChildren();
+  if (l.status !== 'ok') return;
+  l.data.forEach((d) => {
+    const r = document.createElement('article'); r.className = 'bf-arc';
+    const dt = document.createElement('p'); dt.className = 'bf-arc-date'; dt.textContent = d.data ? B.dayLong(d.data) : '';
+    const body = document.createElement('div');
+    const h = document.createElement('h3'); h.textContent = (d.concepte ? d.concepte + ': ' : '') + String(d.titol ?? '');
+    const p = document.createElement('p'); p.textContent = String(d.en_una_frase || d.explicacio || '');
+    body.append(h, p);
+    r.append(dt, body);
+    el.append(r);
   });
 });
 
