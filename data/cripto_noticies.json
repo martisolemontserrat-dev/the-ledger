@@ -1,0 +1,62 @@
+[
+ {
+  "id": "c1",
+  "categoria": "Seguretat",
+  "titular": "Robatori rècord a Binance: s'enduen uns 6.300 milions en criptomonedes",
+  "resum": "Segons la investigació inicial, els atacants van entrar a través de l'ordinador compromès d'un enginyer i van buidar carteres de la plataforma més gran del món. Les empreses d'anàlisi ho atribueixen al grup nord-coreà que el 2025 ja va robar 1.500 milions a Bybit. Binance diu que cobrirà les pèrdues amb un fons propi i té les retirades aturades fins a 48 hores.",
+  "per_que_importa": "Mostra el gran risc de deixar les criptomonedes en una plataforma: no hi ha cap fons de garantia públic com el dels dipòsits bancaris, i si la plataforma no pogués pagar, els usuaris ho perdrien.",
+  "font": "Help Net Security",
+  "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "c2",
+  "categoria": "Seguretat",
+  "titular": "Congelats prop de 3.000 milions del botí de Binance",
+  "resum": "Emissors de monedes estables com Tether i Circle han bloquejat part dels fons robats. Els atacants encara controlen més de 420.000 ether i 18.270 bitcoins, uns 2.400 milions de dòlars.",
+  "per_que_importa": "Les monedes estables tenen una empresa al darrere que pot congelar diners: ajuda contra els robatoris, però vol dir que no són tan lliures de control com sovint es diu.",
+  "font": "Help Net Security",
+  "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "c3",
+  "categoria": "Mercat",
+  "titular": "El bitcoin cau per sota dels 77.000 dòlars i es liquiden 1.500 milions en apostes",
+  "resum": "El robatori va provocar una caiguda ràpida: el bitcoin va tocar els 76.460 dòlars i l'ether va baixar per sota dels 2.200. En 24 hores es van tancar a la força posicions apalancades per 1.530 milions, i el 84% d'aquest import eren apostes a l'alça.",
+  "per_que_importa": "Invertir amb diners prestats (apalancament) multiplica les pèrdues: amb prou palanca, una caiguda d'un 3% n'hi ha prou perquè la plataforma et tanqui la posició i perdis tot el que hi havies posat.",
+  "font": "CoinDesk",
+  "url": "https://www.coindesk.com/markets/2026/10/30/bitcoin-ether-and-xrp-selloff-wipes-out-usd1-5-billion-in-leveraged-crypto-bets",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "c4",
+  "categoria": "Seguretat",
+  "titular": "Polymarket també pateix un atac el mateix dia",
+  "resum": "La plataforma d'apostes sobre esdeveniments ha perdut entre 2,7 i 3,5 milions de dòlars per culpa d'un proveïdor extern compromès, i diu que compensarà tots els usuaris.",
+  "per_que_importa": "Els atacs a través de proveïdors externs són una de les portes d'entrada més habituals: com més intermediaris hi ha, més punts febles.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "c5",
+  "categoria": "Regulació",
+  "titular": "Corea del Sud estudia ajornar l'impost sobre les criptomonedes",
+  "resum": "El partit del govern es reuneix amb les cinc grans plataformes del país per parlar de retardar l'entrada en vigor de la nova fiscalitat.",
+  "per_que_importa": "Els governs encara decideixen com tractar la cripto. A Espanya, en canvi, els guanys ja tributen a la base de l'estalvi de l'IRPF, com els d'altres inversions.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "c6",
+  "categoria": "Empreses",
+  "titular": "La propietària de la Borsa de Nova York porta derivats de cripto a un mercat regulat",
+  "resum": "ICE s'ha aliat amb Trade.xyz i OKX per oferir als EUA futurs basats en la plataforma Hyperliquid; el seu token, HYPE, va arribar a pujar gairebé un 12% durant el dia.",
+  "per_que_importa": "La cripto es barreja cada cop més amb les finances tradicionals: això la fa més accessible, però també la connecta més amb la resta de mercats quan hi ha caigudes.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30"
+ }
+]

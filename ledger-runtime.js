@@ -19,7 +19,8 @@
     glossari: 'data/glossari.json',
     butxaca: 'data/butxaca.json',
     notes: 'data/notes.json',
-    productes: 'data/productes.json'
+    productes: 'data/productes.json',
+    cripto_noticies: 'data/cripto_noticies.json'
   };
   var QUERIES = {
     cerca: { fn: 'SYMBOL_SEARCH', args: function (p) { return { keywords: p.q, datatype: 'csv' }; } },

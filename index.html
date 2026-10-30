@@ -347,7 +347,7 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 /* Why it matters */
 .bf-item p.bf-why { font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; background: var(--color-panel); border-left: 2px solid var(--color-fg); }
 .bf-item p.bf-why b { font-weight: 600; }
-.bf-item.bf-top p.bf-why { grid-column: 2; }
+@container (min-width: 761px) { .bf-item.bf-top p.bf-why { grid-column: 2; } }
 
 /* Weekly column */
 .bf-col-body { display: flex; flex-direction: column; gap: 12px; max-width: 42em; }
@@ -389,6 +389,10 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .bf-pr.bf-flash { outline: 2px solid var(--color-fg); outline-offset: 6px; }
 .bf-pr-warn { margin-top: 20px !important; max-width: 52rem; }
 @container (max-width: 520px) { .bf-pr dl { grid-template-columns: 1fr; gap: 2px; } .bf-pr dd { margin-bottom: 6px; } }
+/* Crypto */
+.bf-crypto-note { font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; border-left: 2px solid var(--color-bad); background: var(--color-panel); margin: 0 0 8px; max-width: 52rem; }
+.bf-linkbtn { font: inherit; color: var(--color-fg); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; }
+.bf-linkbtn:focus-visible { outline: 2px solid var(--color-focus, currentColor); outline-offset: 2px; }
 
 /* Visitor's own Alpha Vantage key */
 .bf-apikey { border: 1px solid var(--color-fg); padding: 14px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 46rem; }
@@ -420,7 +424,8 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
       <button type="button" class="bf-tab" data-tab="portada" aria-pressed="true">Portada</button>
       <button type="button" class="bf-tab" data-tab="butxaca" aria-pressed="false">La teva butxaca</button>
       <button type="button" class="bf-tab" data-tab="cercador" aria-pressed="false">Cercador d'accions</button>
-      <button type="button" class="bf-tab" data-tab="ia" aria-pressed="false">Intel·ligència artificial</button>
+      <button type="button" class="bf-tab" data-tab="ia" aria-pressed="false">Innovació</button>
+      <button type="button" class="bf-tab" data-tab="cripto" aria-pressed="false">Cripto</button>
       <button type="button" class="bf-tab" data-tab="apren" aria-pressed="false">Aprèn</button>
     </nav>
   </header>
@@ -640,15 +645,15 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
     <section class="bf-sec">
       <div class="bf-head">
         <div>
-          <h2>Notícies d'IA</h2>
-          <p class="bf-note">Llançaments, competència entre laboratoris i diners: el que s'ha mogut al sector aquests dies.</p>
+          <h2>Notícies d'innovació</h2>
+          <p class="bf-note">Intel·ligència artificial, robots, start-ups i noves tecnologies: el que s'ha mogut aquests dies i per què importa.</p>
         </div>
         <div class="bf-seg" role="group" aria-label="Tema de les notícies">
           <button type="button" class="bf-iacat" data-cat="" aria-pressed="true">Totes</button>
-          <button type="button" class="bf-iacat" data-cat="Llançaments" aria-pressed="false">Llançaments</button>
-          <button type="button" class="bf-iacat" data-cat="Competència" aria-pressed="false">Competència</button>
-          <button type="button" class="bf-iacat" data-cat="Inversió i borsa" aria-pressed="false">Inversió i borsa</button>
-          <button type="button" class="bf-iacat" data-cat="Empreses" aria-pressed="false">Empreses</button>
+          <button type="button" class="bf-iacat" data-cat="IA" aria-pressed="false">IA</button>
+          <button type="button" class="bf-iacat" data-cat="Robòtica" aria-pressed="false">Robòtica</button>
+          <button type="button" class="bf-iacat" data-cat="Start-ups" aria-pressed="false">Start-ups</button>
+          <button type="button" class="bf-iacat" data-cat="Tecnologia" aria-pressed="false">Tecnologia</button>
         </div>
       </div>
       <div class="bf-news dash-skeleton" data-draw="ianoticies" data-source="ia_noticies"></div>
@@ -754,6 +759,20 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
       </div>
       <div class="bf-archive" data-draw="arxiu" data-source="leccions"></div>
     </section>
+  </div>
+
+  <div class="bf-page" data-page="cripto" hidden>
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Cripto</h2>
+          <p class="bf-note">Les notícies del món de les criptomonedes, explicades sense fum: què ha passat i per què t'importa.</p>
+        </div>
+      </div>
+      <p class="bf-crypto-note">Abans de comprar-ne, llegeix la fitxa de <button type="button" class="bf-linkbtn bf-to-crypto">les criptomonedes a la Guia de productes</button>: el risc, els impostos i què passa si una plataforma fa fallida.</p>
+      <div class="bf-news dash-skeleton" data-draw="criptonoticies" data-source="cripto_noticies"></div>
+    </section>
+    <p class="bf-foot">Notícies recollides de la premsa especialitzada i resumides cada matí, amb l'enllaç a cada font. The Ledger no recomana comprar ni vendre cap criptomoneda.</p>
   </div>
 
   <p class="bf-legal">The Ledger és un projecte divulgatiu: res del que hi surt és una recomanació per comprar o vendre cap producte financer. Abans d'invertir, informa't bé i, si cal, demana consell a un professional.</p>
@@ -1353,14 +1372,14 @@ dash.calc('mitjanes', {
   const pressAll = (sel, fn) => document.querySelectorAll(sel).forEach((b) => b.setAttribute('aria-pressed', String(fn(b))));
 
   const showTab = (tab) => {
-    B.tab = ['butxaca', 'cercador', 'ia', 'apren'].includes(tab) ? tab : 'portada';
+    B.tab = ['butxaca', 'cercador', 'ia', 'cripto', 'apren'].includes(tab) ? tab : 'portada';
     document.querySelectorAll('.bf-page').forEach((p) => { p.hidden = p.getAttribute('data-page') !== B.tab; });
     pressAll('.bf-tab', (b) => b.getAttribute('data-tab') === B.tab);
     dash.setLink(B.tab);
   };
   document.querySelectorAll('.bf-tab').forEach((b) => b.addEventListener('click', () => showTab(b.getAttribute('data-tab'))));
   B.showTab = showTab;
-  if (['butxaca', 'cercador', 'ia', 'apren'].includes(location.hash.slice(1))) showTab(location.hash.slice(1));
+  if (['butxaca', 'cercador', 'ia', 'cripto', 'apren'].includes(location.hash.slice(1))) showTab(location.hash.slice(1));
 
   const pick = (simbol, info) => {
     if (!simbol) return;
@@ -1685,11 +1704,11 @@ dash.draw('ianoticies', (el) => {
   const B = window.bf, n = dash.data('ia_noticies');
   if (B.state(el, [n.status])) return;
   el.replaceChildren();
-  const rows = n.data.filter((d) => !B.iacat || d.categoria === B.iacat);
-  if (!rows.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Avui no hi ha notícies d\'aquest tema.'; el.append(p); return; }
+  const rows = n.data.filter((d) => !B.iacat || (d.tema || 'IA') === B.iacat);
+  if (!rows.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Avui no hi ha notícies d\'aquest tema. Torna-hi demà.'; el.append(p); return; }
   rows.forEach((d, i) => {
     const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
-    const tag = document.createElement('p'); tag.className = 'bf-tag'; tag.textContent = [d.empresa, d.categoria].filter(Boolean).join(', ');
+    const tag = document.createElement('p'); tag.className = 'bf-tag'; tag.textContent = [d.tema || 'IA', d.empresa].filter(Boolean).join(', ');
     const h = document.createElement('h3'); h.textContent = String(d.titular ?? '');
     const p = document.createElement('p'); p.textContent = String(d.resum ?? '');
     const src = document.createElement('p'); src.className = 'bf-src';
@@ -1967,6 +1986,37 @@ dash.draw('prfitxes', (el) => {
     c.append(h, r, w, dl);
     if (d.compte_amb) { const x = document.createElement('p'); x.className = 'bf-pr-watch'; const b = document.createElement('b'); b.textContent = 'Compte amb. '; x.append(b, String(d.compte_amb)); c.append(x); }
     el.append(c);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+document.querySelectorAll('.bf-to-crypto').forEach((b) => b.addEventListener('click', () => {
+  if (window.bf.showTab) window.bf.showTab('apren');
+  setTimeout(() => window.bf.goProduct && window.bf.goProduct('cripto'), 250);
+}));
+
+dash.draw('criptonoticies', (el) => {
+  const B = window.bf, n = dash.data('cripto_noticies');
+  if (B.state(el, [n.status])) return;
+  el.replaceChildren();
+  n.data.forEach((d, i) => {
+    const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
+    const tag = document.createElement('p'); tag.className = 'bf-tag'; tag.textContent = String(d.categoria || '');
+    const h = document.createElement('h3'); h.textContent = String(d.titular ?? '');
+    const p = document.createElement('p'); p.textContent = String(d.resum ?? '');
+    if (i === 0) a.append(h, tag, p); else a.append(tag, h, p);
+    if (d.per_que_importa) { const w = document.createElement('p'); w.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; w.append(b, String(d.per_que_importa)); a.append(w); }
+    const src = document.createElement('p'); src.className = 'bf-src';
+    if (d.data) src.append(B.dayLong(d.data) + '. ');
+    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
+      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer'; l.textContent = String(d.font || 'Font'); src.append(l);
+    } else if (d.font) { src.append(String(d.font)); }
+    a.append(src);
+    el.append(a);
   });
 });
 

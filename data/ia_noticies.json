@@ -8,7 +8,20 @@
   "font": "TechCrunch",
   "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
   "data": "2026-10-26",
-  "per_que_importa": "Si surt a borsa, qualsevol persona en podrà comprar accions, i seria una de les estrenes més grans de la història: una prova de fins on arriba la confiança en el negoci de la IA."
+  "per_que_importa": "Si surt a borsa, qualsevol persona en podrà comprar accions, i seria una de les estrenes més grans de la història: una prova de fins on arriba la confiança en el negoci de la IA.",
+  "tema": "IA"
+ },
+ {
+  "id": "r1",
+  "tema": "Robòtica",
+  "categoria": "Llançaments",
+  "empresa": "AGIBOT",
+  "titular": "Un robot humanoide xinès aprèn a fer de dependent en cinc dies",
+  "resum": "AGIBOT ha presentat GO-3, un model d'IA per a robots. En una botiga de prova, el seu robot G2 va passar de completar el 28,6% de les tasques el primer dia al 85,7% el cinquè, sense que ningú li ensenyés cada pas. L'empresa vol publicar el model en obert a finals d'any.",
+  "per_que_importa": "Els robots ja no s'han de programar tasca per tasca: aprenen practicant. Això els pot portar aviat a botigues i magatzems, amb efectes sobre l'ocupació i la productivitat.",
+  "font": "Interesting Engineering",
+  "url": "https://interestingengineering.com/ai-robotics/humanoid-robot-achieves-success-with-agibot-go3",
+  "data": "2026-10-30"
  },
  {
   "id": "a2",
@@ -19,7 +32,20 @@
   "font": "TechCrunch",
   "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
   "data": "2026-10-22",
-  "per_que_importa": "Les empreses d'IA ja valen més que moltes de les grans cotitzades tot i guanyar poc o perdre diners: per això hi ha qui parla d'una revolució i qui avisa d'una bombolla."
+  "per_que_importa": "Les empreses d'IA ja valen més que moltes de les grans cotitzades tot i guanyar poc o perdre diners: per això hi ha qui parla d'una revolució i qui avisa d'una bombolla.",
+  "tema": "IA"
+ },
+ {
+  "id": "s1",
+  "tema": "Start-ups",
+  "categoria": "Inversió i borsa",
+  "empresa": "Ecosistema espanyol",
+  "titular": "Les start-ups espanyoles ja han captat més diners que en tot el 2025",
+  "resum": "Fins al setembre han aixecat 3.827 milions d'euros, un 22% més que en tot l'any passat, empeses per rondes gegants com les de Multiverse Computing (500 milions) i Open Cosmos (300). Barcelona (1.175 milions) i Madrid (1.153) gairebé empaten.",
+  "per_que_importa": "Més inversió vol dir més empreses noves que contracten i investiguen aquí. Però dues terceres parts dels diners han anat a només 16 operacions: sense les rondes gegants, la inversió ha baixat un 8%.",
+  "font": "Merca2 (Observatori de Startups de Bankinter)",
+  "url": "https://www.merca2.es/2026/10/26/inversion-startups-espana-2026-2482628/",
+  "data": "2026-10-26"
  },
  {
   "id": "a3",
@@ -30,7 +56,20 @@
   "font": "Kill The AI",
   "url": "https://killtheai.com/news/top-10-ai-news-today-october-29-2026",
   "data": "2026-10-28",
-  "per_que_importa": "Els models més potents ja no surten per a tothom de cop: primer els proven experts i el govern, per por que es facin servir per atacar sistemes informàtics."
+  "per_que_importa": "Els models més potents ja no surten per a tothom de cop: primer els proven experts i el govern, per por que es facin servir per atacar sistemes informàtics.",
+  "tema": "IA"
+ },
+ {
+  "id": "r2",
+  "tema": "Robòtica",
+  "categoria": "Empreses",
+  "empresa": "Figure, Apptronik i Schaeffler",
+  "titular": "Els robots humanoides entren a les fàbriques de cotxes",
+  "resum": "Figure ja n'ha fabricat més de 350 i els ha provat a la planta de BMW a Spartanburg; Mercedes-Benz fa servir els d'Apptronik per moure peces, i Schaeffler vol instal·lar-ne almenys 1.000 a les seves plantes en set anys.",
+  "per_que_importa": "La indústria de l'automòbil, molt present a Catalunya, és la primera a provar-los: és on es veurà si substitueixen o ajuden els treballadors en les feines més repetitives.",
+  "font": "Global Trade Magazine",
+  "url": "https://globaltrademag.com/humanoid-robots-enter-factories-and-warehouses",
+  "data": "2026-10-28"
  },
  {
   "id": "a4",
@@ -41,7 +80,8 @@
   "font": "BleepingComputer",
   "url": "https://bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing",
   "data": "2026-10-26",
-  "per_que_importa": "La IA es fa cada cop més barata, i això fa que més empreses l'incorporin i que les eines que fas servir cada dia la portin integrada."
+  "per_que_importa": "La IA es fa cada cop més barata, i això fa que més empreses l'incorporin i que les eines que fas servir cada dia la portin integrada.",
+  "tema": "IA"
  },
  {
   "id": "a5",
@@ -52,7 +92,8 @@
   "font": "TechCrunch",
   "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying",
   "data": "2026-10-28",
-  "per_que_importa": "Les empreses ja no volen gastar en IA a cegues: volen saber què els aporta. És el pas de la moda a la productivitat que es pot mesurar."
+  "per_que_importa": "Les empreses ja no volen gastar en IA a cegues: volen saber què els aporta. És el pas de la moda a la productivitat que es pot mesurar.",
+  "tema": "IA"
  },
  {
   "id": "a6",
@@ -63,7 +104,8 @@
   "font": "Kill The AI",
   "url": "https://killtheai.com/news/top-10-ai-news-today-october-29-2026",
   "data": "2026-10-29",
-  "per_que_importa": "Ni els gegants estan fora de perill: si la inversió en IA no dona prou fruits a temps, la borsa els castiga."
+  "per_que_importa": "Ni els gegants estan fora de perill: si la inversió en IA no dona prou fruits a temps, la borsa els castiga.",
+  "tema": "IA"
  },
  {
   "id": "a7",
@@ -74,7 +116,8 @@
   "font": "The Neuron",
   "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-october-30-2026",
   "data": "2026-10-30",
-  "per_que_importa": "Que Europa tingui models propis i oberts vol dir no dependre només d'empreses dels EUA o de la Xina per a una tecnologia clau."
+  "per_que_importa": "Que Europa tingui models propis i oberts vol dir no dependre només d'empreses dels EUA o de la Xina per a una tecnologia clau.",
+  "tema": "IA"
  },
  {
   "id": "a8",
@@ -85,17 +128,7 @@
   "font": "The Neuron",
   "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-october-30-2026",
   "data": "2026-10-30",
-  "per_que_importa": "Els governs comencen a tractar la IA com un sector estratègic, igual que l'energia: volen tenir-ne empreses pròpies i no dependre de fora."
- },
- {
-  "id": "a9",
-  "categoria": "Empreses",
-  "empresa": "OpenAI",
-  "titular": "OpenAI dobla el que poden fer amb Codex els clients dels plans Pro",
-  "resum": "També ha actualitzat les normes de comportament dels seus models i ha ampliat la vigilància interna dels agents que actuen sense permís.",
-  "font": "The Neuron",
-  "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-october-30-2026",
-  "data": "2026-10-30",
-  "per_que_importa": "La competència entre els grans laboratoris per programar beneficia els usuaris: més potència pel mateix preu."
+  "per_que_importa": "Els governs comencen a tractar la IA com un sector estratègic, igual que l'energia: volen tenir-ne empreses pròpies i no dependre de fora.",
+  "tema": "IA"
  }
 ]
