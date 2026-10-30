@@ -1808,7 +1808,7 @@ dash.draw('nota', (el) => {
   const B = window.bf, n = dash.data('notes');
   el.replaceChildren();
   if (n.status !== 'ok') return;
-  const d = n.data[0];
+  const d = n.data.filter((x) => x && x.text)[0];
   if (!d) {
     const p = document.createElement('p'); p.className = 'bf-col-empty';
     p.textContent = 'La primera nota arriba aviat.';
@@ -1826,8 +1826,9 @@ dash.draw('notesarxiu', (el) => {
   const B = window.bf, n = dash.data('notes');
   el.replaceChildren();
   if (n.status !== 'ok') return;
-  if (!n.data.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Encara no hi ha cap nota.'; el.append(p); return; }
-  n.data.forEach((d) => {
+  const notes = n.data.filter((x) => x && x.text);
+  if (!notes.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Encara no hi ha cap nota.'; el.append(p); return; }
+  notes.forEach((d) => {
     const r = document.createElement('article'); r.className = 'bf-arc';
     const dt = document.createElement('p'); dt.className = 'bf-arc-date'; dt.textContent = d.data ? B.dayLong(d.data) : '';
     const det = document.createElement('details');
