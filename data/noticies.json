@@ -8,7 +8,10 @@
   "font": "Yahoo Finance",
   "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-29-dow-sp-500-nasdaq-alphabet-microsoft-earnings-130305714.html",
   "data": "2026-10-29",
-  "per_que_importa": "Si tens un fons indexat o un pla de pensions amb borsa nord-americana, aquesta setmana probablement ha perdut valor: les grans tecnològiques pesen molt en aquests índexs."
+  "per_que_importa": "Si tens un fons indexat o un pla de pensions amb borsa nord-americana, aquesta setmana probablement ha perdut valor: les grans tecnològiques pesen molt en aquests índexs.",
+  "xifra": "−12,6%",
+  "xifra_text": "caiguda d'Alphabet dijous, la pitjor sessió de la seva història",
+  "grafic": "QQQ"
  },
  {
   "id": "n2",
@@ -19,7 +22,10 @@
   "font": "Stock Titan",
   "url": "https://www.stocktitan.net/articles/stock-market-today-live-october-29-2026",
   "data": "2026-10-29",
-  "per_que_importa": "Mostra el gran dubte del moment: les tecnològiques gasten fortunes en IA i el mercat no sap si els sortirà a compte. Si els dubtes creixen, tota la borsa ho nota."
+  "per_que_importa": "Mostra el gran dubte del moment: les tecnològiques gasten fortunes en IA i el mercat no sap si els sortirà a compte. Si els dubtes creixen, tota la borsa ho nota.",
+  "xifra": "−23%",
+  "xifra_text": "baixada d'Intel fora d'hores després de resultats",
+  "grafic": "QQQ"
  },
  {
   "id": "n3",
@@ -30,7 +36,10 @@
   "font": "Banc Central Europeu",
   "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
   "data": "2026-10-29",
-  "per_que_importa": "Si tens hipoteca variable, el BCE no te l'encareix avui, però el mercat ja espera una pujada al desembre i l'Euríbor ja s'hi ha avançat."
+  "per_que_importa": "Si tens hipoteca variable, el BCE no te l'encareix avui, però el mercat ja espera una pujada al desembre i l'Euríbor ja s'hi ha avançat.",
+  "xifra": "2,50%",
+  "xifra_text": "tipus de dipòsit del BCE, sense canvis",
+  "grafic": "FEZ"
  },
  {
   "id": "n4",
@@ -41,7 +50,10 @@
   "font": "Stock Titan",
   "url": "https://www.stocktitan.net/articles/stock-market-today-live-october-29-2026",
   "data": "2026-10-29",
-  "per_que_importa": "Una economia que creix molt amb la inflació alta fa més probable que la Fed apugi els tipus, i això tendeix a encarir els préstecs i a fer baixar la borsa a tot el món."
+  "per_que_importa": "Una economia que creix molt amb la inflació alta fa més probable que la Fed apugi els tipus, i això tendeix a encarir els préstecs i a fer baixar la borsa a tot el món.",
+  "xifra": "3,4%",
+  "xifra_text": "creixement anualitzat del PIB dels EUA al tercer trimestre",
+  "grafic": "SPY"
  },
  {
   "id": "n5",
@@ -52,7 +64,10 @@
   "font": "El blog del Euríbor",
   "url": "https://www.euribor.com.es/2026/10/29/bbva-gana-9-066-millones-pero-el-mercado-le-resta-un-54/",
   "data": "2026-10-29",
-  "per_que_importa": "Un banc pot guanyar més i alhora caure a borsa: el mercat mira sobretot el futur, i aquí preocupen els préstecs que potser no es tornaran."
+  "per_que_importa": "Un banc pot guanyar més i alhora caure a borsa: el mercat mira sobretot el futur, i aquí preocupen els préstecs que potser no es tornaran.",
+  "xifra": "9.066 M€",
+  "xifra_text": "benefici de BBVA fins a setembre (+13,6%)",
+  "grafic": "EWP"
  },
  {
   "id": "n6",
@@ -63,7 +78,10 @@
   "font": "Infobae",
   "url": "https://www.infobae.com/espana/2026/10/29/las-energeticas-disparan-su-beneficio-un-47-hasta-septiembre-por-el-alza-del-crudo-ganan-14542-millones-y-repsol-lidera-con-una-subida-del-325/",
   "data": "2026-10-29",
-  "per_que_importa": "El petroli car omple els comptes de les energètiques, però és el mateix que fa pujar la benzina, la llum i el gas a casa teva."
+  "per_que_importa": "El petroli car omple els comptes de les energètiques, però és el mateix que fa pujar la benzina, la llum i el gas a casa teva.",
+  "xifra": "+47%",
+  "xifra_text": "benefici conjunt d'Iberdrola, Repsol, Naturgy i Endesa",
+  "grafic": "EWP"
  },
  {
   "id": "n7",
@@ -74,7 +92,10 @@
   "font": "Business Standard (AP)",
   "url": "https://www.business-standard.com/markets/news/asian-shares-trade-mixed-as-concerns-about-ai-related-issues-grow-126103000110_1.html",
   "data": "2026-10-30",
-  "per_que_importa": "Quan les borses asiàtiques cauen durant la nit, sovint marquen el to amb què obre Europa al matí."
+  "per_que_importa": "Quan les borses asiàtiques cauen durant la nit, sovint marquen el to amb què obre Europa al matí.",
+  "xifra": "−5,4%",
+  "xifra_text": "caiguda del Kospi coreà",
+  "grafic": "EWJ"
  },
  {
   "id": "n8",
@@ -85,7 +106,9 @@
   "font": "APA",
   "url": "https://en.apa.az/bourse/oil-prices-exceed-116-on-global-markets-533047",
   "data": "2026-10-30",
-  "per_que_importa": "El cru més car acaba arribant al dipòsit del cotxe i a la factura del gas; ara, la rebaixa de l'impost sobre els carburants n'esmorteeix una part."
+  "per_que_importa": "El cru més car acaba arribant al dipòsit del cotxe i a la factura del gas; ara, la rebaixa de l'impost sobre els carburants n'esmorteeix una part.",
+  "xifra": "116 $",
+  "xifra_text": "preu del barril de Brent"
  },
  {
   "id": "n9",
@@ -96,7 +119,9 @@
   "font": "Stock Titan",
   "url": "https://www.stocktitan.net/articles/stock-market-today-live-october-29-2026",
   "data": "2026-10-29",
-  "per_que_importa": "Quan una empresa en compra una altra, sol pagar més del que val a borsa; per això les accions de la comprada s'enfilen de cop."
+  "per_que_importa": "Quan una empresa en compra una altra, sol pagar més del que val a borsa; per això les accions de la comprada s'enfilen de cop.",
+  "xifra": "+33%",
+  "xifra_text": "pujada d'ADT després de l'oferta de Thrive"
  },
  {
   "id": "n10",
@@ -107,6 +132,8 @@
   "font": "Kiplinger",
   "url": "https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar",
   "data": "2026-10-30",
-  "per_que_importa": "Les dades de salaris d'avui als EUA ajudaran a saber si la inflació hi baixarà i, per tant, si la Fed apujarà els tipus."
+  "per_que_importa": "Les dades de salaris d'avui als EUA ajudaran a saber si la inflació hi baixarà i, per tant, si la Fed apujarà els tipus.",
+  "xifra": "13:30 h",
+  "xifra_text": "dades de cost laboral dels EUA (hora de Madrid)"
  }
 ]

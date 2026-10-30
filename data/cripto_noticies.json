@@ -7,7 +7,9 @@
   "per_que_importa": "Mostra el gran risc de deixar les criptomonedes en una plataforma: no hi ha cap fons de garantia públic com el dels dipòsits bancaris, i si la plataforma no pogués pagar, els usuaris ho perdrien.",
   "font": "Help Net Security",
   "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
-  "data": "2026-10-30"
+  "data": "2026-10-30",
+  "xifra": "6.300 M$",
+  "xifra_text": "robats a Binance, el robatori de cripto més gran de la història"
  },
  {
   "id": "c2",
@@ -17,7 +19,9 @@
   "per_que_importa": "Les monedes estables tenen una empresa al darrere que pot congelar diners: ajuda contra els robatoris, però vol dir que no són tan lliures de control com sovint es diu.",
   "font": "Help Net Security",
   "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
-  "data": "2026-10-30"
+  "data": "2026-10-30",
+  "xifra": "3.000 M$",
+  "xifra_text": "del botí ja congelats"
  },
  {
   "id": "c3",
@@ -27,7 +31,9 @@
   "per_que_importa": "Invertir amb diners prestats (apalancament) multiplica les pèrdues: amb prou palanca, una caiguda d'un 3% n'hi ha prou perquè la plataforma et tanqui la posició i perdis tot el que hi havies posat.",
   "font": "CoinDesk",
   "url": "https://www.coindesk.com/markets/2026/10/30/bitcoin-ether-and-xrp-selloff-wipes-out-usd1-5-billion-in-leveraged-crypto-bets",
-  "data": "2026-10-30"
+  "data": "2026-10-30",
+  "xifra": "1.530 M$",
+  "xifra_text": "en apostes apalancades tancades a la força en 24 hores"
  },
  {
   "id": "c4",
@@ -37,7 +43,9 @@
   "per_que_importa": "Els atacs a través de proveïdors externs són una de les portes d'entrada més habituals: com més intermediaris hi ha, més punts febles.",
   "font": "KuCoin News",
   "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
-  "data": "2026-10-30"
+  "data": "2026-10-30",
+  "xifra": "2,7–3,5 M$",
+  "xifra_text": "perduts per Polymarket"
  },
  {
   "id": "c5",
@@ -47,7 +55,9 @@
   "per_que_importa": "Els governs encara decideixen com tractar la cripto. A Espanya, en canvi, els guanys ja tributen a la base de l'estalvi de l'IRPF, com els d'altres inversions.",
   "font": "KuCoin News",
   "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
-  "data": "2026-10-30"
+  "data": "2026-10-30",
+  "xifra": "5",
+  "xifra_text": "grans plataformes reunides amb el partit del govern"
  },
  {
   "id": "c6",
@@ -57,6 +67,8 @@
   "per_que_importa": "La cripto es barreja cada cop més amb les finances tradicionals: això la fa més accessible, però també la connecta més amb la resta de mercats quan hi ha caigudes.",
   "font": "KuCoin News",
   "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
-  "data": "2026-10-30"
+  "data": "2026-10-30",
+  "xifra": "+12%",
+  "xifra_text": "va arribar a pujar el token HYPE durant el dia"
  }
 ]

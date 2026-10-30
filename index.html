@@ -389,6 +389,28 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .bf-pr.bf-flash { outline: 2px solid var(--color-fg); outline-offset: 6px; }
 .bf-pr-warn { margin-top: 20px !important; max-width: 52rem; }
 @container (max-width: 520px) { .bf-pr dl { grid-template-columns: 1fr; gap: 2px; } .bf-pr dd { margin-bottom: 6px; } }
+/* Visual layer: the number, the little chart, the drawing, the quote */
+.bf-tag { display: flex; align-items: center; gap: 6px; }
+.bf-tag .bf-ico { width: 18px; height: 18px; flex: none; }
+.bf-ico { fill: none; stroke: currentColor; stroke-width: 2.25; stroke-linecap: round; stroke-linejoin: round; }
+.bf-fig { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding: 6px 0 2px; }
+.bf-fig b { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: 1.75rem; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: lining-nums; white-space: nowrap; }
+.bf-fig span { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.35; max-width: 18em; }
+.bf-art { display: flex; align-items: center; gap: clamp(14px, 2vw, 24px); margin-top: 12px; padding: clamp(14px, 2vw, 22px); background: var(--color-panel); border-top: 2px solid var(--color-fg); }
+.bf-art .bf-ico { width: clamp(56px, 7vw, 84px); height: clamp(56px, 7vw, 84px); flex: none; stroke-width: 1.6; }
+.bf-art .bf-fig { flex-direction: column; align-items: flex-start; gap: 4px; padding: 0; }
+.bf-art .bf-fig b { font-size: clamp(2rem, 1.5rem + 2vw, 3.1rem); }
+.bf-top-l, .bf-top-r { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.bf-item.bf-top .bf-top-l h3 { grid-row: auto; }
+.bf-item p.bf-fig, .bf-item p.bf-spark { font-family: var(--font-anthropic-sans); }
+.bf-spark { display: flex; align-items: center; gap: 10px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.bf-spark svg { flex: none; overflow: visible; }
+.bf-spark b { color: var(--color-fg); font-weight: 600; }
+.bf-quote { margin: 0; padding: clamp(18px, 3vw, 30px) 0; border-top: 1px solid var(--color-fg); border-bottom: 1px solid var(--color-fg); text-align: center; }
+.bf-quote p { margin: 0 auto; max-width: 30em; font-family: var(--font-anthropic-serif); font-style: italic; font-size: clamp(1.3rem, 1rem + 1.4vw, 2rem); line-height: 1.3; text-wrap: balance; }
+.bf-quote p::before { content: '«'; } .bf-quote p::after { content: '»'; }
+.bf-quote span { display: block; margin-top: 10px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .08em; text-transform: uppercase; }
+.bf-quote.dash-skeleton { min-height: 6rem; }
 /* Crypto */
 .bf-crypto-note { font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; border-left: 2px solid var(--color-bad); background: var(--color-panel); margin: 0 0 8px; max-width: 52rem; }
 .bf-linkbtn { font: inherit; color: var(--color-fg); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; }
@@ -488,6 +510,8 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
       <div class="bf-chart bf-lines dash-skeleton" data-draw="linies" data-source="evolucio"></div>
     </section>
   </div>
+
+  <blockquote class="bf-quote dash-skeleton" data-draw="destacat" data-source="resum"></blockquote>
 
   <section id="noticies" class="bf-sec">
     <div class="bf-head"><div><h2>El que cal saber avui</h2></div></div>
@@ -1186,27 +1210,143 @@ dash.draw('linies', (el) => {
 
 <script>
 (() => {
+(() => {
+  const B = window.bf;
+  // Line drawings, 64x64, one stroke weight. Constant markup written here, never from data.
+  const ICONS = {
+    banc: '<path d="M8 24 32 10l24 14Z"/><path d="M12 28h40M16 30v18M26 30v18M38 30v18M48 30v18M10 52h44M8 57h48"/>',
+    edifici: '<rect x="18" y="10" width="28" height="46"/><path d="M24 17h4M36 17h4M24 25h4M36 25h4M24 33h4M36 33h4M24 41h4M36 41h4M29 56v-7h6v7M8 56h48"/>',
+    grafic: '<path d="M10 10v44h46"/><path d="M17 54V40M28 54V32M39 54V36M50 54V24" stroke-width="5"/><path d="M14 30 26 20l11 6 15-14M45 12h7v7"/>',
+    petroli: '<ellipse cx="32" cy="14" rx="14" ry="4"/><path d="M18 14v36c0 2 6 4 14 4s14-2 14-4V14M18 26c0 2 6 4 14 4s14-2 14-4M18 38c0 2 6 4 14 4s14-2 14-4"/>',
+    fusio: '<circle cx="24" cy="32" r="15"/><circle cx="40" cy="32" r="15"/><path d="M32 20v24"/>',
+    calendari: '<rect x="10" y="14" width="44" height="40" rx="2"/><path d="M10 24h44M20 8v10M44 8v10M19 33h4M30 33h4M41 33h4M19 43h4M30 43h4"/><path d="M40 40l3 3 6-7"/>',
+    xip: '<rect x="18" y="18" width="28" height="28" rx="3"/><rect x="26" y="26" width="12" height="12"/><path d="M24 18v-8M32 18v-8M40 18v-8M24 46v8M32 46v8M40 46v8M18 24h-8M18 32h-8M18 40h-8M46 24h8M46 32h8M46 40h8"/>',
+    robot: '<rect x="16" y="18" width="32" height="24" rx="5"/><circle cx="26" cy="29" r="3"/><circle cx="38" cy="29" r="3"/><path d="M27 36h10M32 18v-7M16 26h-4v8h4M48 26h4v8h-4M26 42v6M38 42v6M18 54c0-4 4-6 14-6s14 2 14 6"/><circle cx="32" cy="9" r="2"/>',
+    coet: '<path d="M32 6c10 8 12 22 8 36H24c-4-14-2-28 8-36Z"/><circle cx="32" cy="23" r="4"/><path d="M24 33l-8 12 8-3M40 33l8 12-8-3M28 46l4 10 4-10"/>',
+    bombeta: '<path d="M24 40c-9-6-8-28 8-28s17 22 8 28v5H24Z"/><path d="M26 50h12M28 55h8M28 30l4 6 4-6"/>',
+    cadenat: '<rect x="16" y="28" width="32" height="26" rx="3"/><path d="M22 28v-8a10 10 0 0 1 19-4"/><circle cx="32" cy="39" r="3"/><path d="M32 42v5M46 8l-3 5M52 13l-5 2"/>',
+    moneda: '<circle cx="32" cy="32" r="21"/><circle cx="32" cy="32" r="15"/><path d="M28 23v18M28 23h6a4.5 4.5 0 0 1 0 9h-6M28 32h7a4.5 4.5 0 0 1 0 9h-7M31 20v3M31 41v3"/>',
+    balanca: '<circle cx="32" cy="10" r="2"/><path d="M32 12v40M22 54h20M14 18h36M14 18 8 34M14 18l6 16M50 18l-6 16M50 18l6 16"/><path d="M8 34a6 4 0 0 0 12 0ZM44 34a6 4 0 0 0 12 0Z"/>',
+    globus: '<circle cx="32" cy="32" r="22"/><ellipse cx="32" cy="32" rx="10" ry="22"/><path d="M10 32h44M14 21h36M14 43h36"/>'
+  };
+  const FOR = {
+    'Empreses': 'edifici', 'Bancs centrals': 'banc', 'Macro': 'grafic', 'Espanya': 'edifici', 'Fusions': 'fusio',
+    'Matèries primeres': 'petroli', 'Agenda': 'calendari', 'IA': 'xip', 'Robòtica': 'robot', 'Start-ups': 'coet',
+    'Tecnologia': 'bombeta', 'Seguretat': 'cadenat', 'Mercat': 'moneda', 'Regulació': 'balanca'
+  };
+  B.icon = (name) => {
+    const key = ICONS[name] ? name : 'globus';
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 64 64'); svg.setAttribute('class', 'bf-ico'); svg.setAttribute('aria-hidden', 'true');
+    svg.innerHTML = ICONS[key];
+    return svg;
+  };
+  B.iconFor = (d, theme) => (typeof d.icona === 'string' && ICONS[d.icona]) ? d.icona : (FOR[theme] || FOR[d.categoria] || 'globus');
+
+  const fig = (d) => {
+    if (!d.xifra) return null;
+    const f = document.createElement('p'); f.className = 'bf-fig';
+    const b = document.createElement('b'); b.textContent = String(d.xifra);
+    f.append(b);
+    if (d.xifra_text) { const t = document.createElement('span'); t.textContent = String(d.xifra_text); f.append(t); }
+    return f;
+  };
+
+  // A month of the market the story is about, from the ETFs the page already has.
+  B.spark = (codi, host) => {
+    if (typeof codi !== 'string' || !codi) return null;
+    const h = dash.data('historic'), m = dash.data('mercats');
+    if (h.status !== 'ok') return null;
+    const rows = h.data.filter((r) => r.codi === codi && r.tancament != null).sort((a, b) => (a.data < b.data ? -1 : 1)).slice(-22);
+    if (rows.length < 5) return null;
+    const meta = m.status === 'ok' ? m.data.find((r) => r.codi === codi) : null;
+    const first = +rows[0].tancament, last = +rows[rows.length - 1].tancament, chg = (last / first - 1) * 100;
+    const t = B.theme(host), W = 120, H = 30;
+    const x = d3.scaleLinear([0, rows.length - 1], [0, W]);
+    const y = d3.scaleLinear(d3.extent(rows, (r) => +r.tancament), [H - 3, 3]);
+    const wrap = document.createElement('p'); wrap.className = 'bf-spark';
+    const svg = d3.create('svg').attr('width', W).attr('height', H).attr('role', 'img')
+      .attr('aria-label', `${meta ? meta.referencia : codi}: ${B.pct(chg)} en un mes`);
+    svg.append('line').attr('x1', 0).attr('x2', W).attr('y1', y(first)).attr('y2', y(first))
+      .attr('stroke', 'var(--cds-chart-grid)').attr('stroke-dasharray', '2 3');
+    svg.append('path').attr('d', d3.line((r, i) => x(i), (r) => y(+r.tancament))(rows))
+      .attr('fill', 'none').attr('stroke', 'var(--color-fg)').attr('stroke-width', 1.5).attr('stroke-linejoin', 'round');
+    svg.append('circle').attr('cx', W).attr('cy', y(last)).attr('r', 3).attr('fill', chg >= 0 ? t.up : t.down);
+    const lab = document.createElement('span');
+    const b = document.createElement('b'); b.textContent = B.pct(chg); b.style.color = chg >= 0 ? t.up : t.down;
+    lab.append((meta ? meta.referencia : codi) + ', últim mes: ', b);
+    wrap.append(svg.node(), lab);
+    return wrap;
+  };
+
+  const source = (d) => {
+    const src = document.createElement('p'); src.className = 'bf-src';
+    if (d.data) src.append(B.dayLong(d.data) + '. ');
+    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
+      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer'; l.textContent = String(d.font || 'Font');
+      src.append(l);
+    } else if (d.font) { src.append(String(d.font)); }
+    return src;
+  };
+
+  // One way to lay out every news list: the lead story gets the drawing and the big number.
+  B.newsList = (el, rows, opt) => {
+    el.replaceChildren();
+    rows.forEach((d, i) => {
+      const theme = opt.theme(d), lead = i === 0;
+      const a = document.createElement('article'); a.className = 'bf-item' + (lead ? ' bf-top' : '');
+      const tag = document.createElement('p'); tag.className = 'bf-tag';
+      if (!lead) tag.append(B.icon(B.iconFor(d, theme)));
+      tag.append(opt.tag(d));
+      const h = document.createElement('h3'); h.textContent = String(d.titular ?? '');
+      const p = document.createElement('p'); p.textContent = String(d.resum ?? '');
+      let why = null;
+      if (d.per_que_importa) { why = document.createElement('p'); why.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; why.append(b, String(d.per_que_importa)); }
+      const sp = B.spark(d.grafic, el), f = fig(d);
+      if (lead) {
+        const l = document.createElement('div'); l.className = 'bf-top-l';
+        const art = document.createElement('div'); art.className = 'bf-art';
+        art.append(B.icon(B.iconFor(d, theme)));
+        if (f) art.append(f);
+        l.append(tag, h, art);
+        const r = document.createElement('div'); r.className = 'bf-top-r';
+        r.append(p); if (why) r.append(why); if (sp) r.append(sp); r.append(source(d));
+        a.append(l, r);
+      } else {
+        a.append(tag, h); if (f) a.append(f); a.append(p); if (why) a.append(why); if (sp) a.append(sp); a.append(source(d));
+      }
+      el.append(a);
+    });
+  };
+})();
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('destacat', (el) => {
+  const B = window.bf, r = dash.data('resum'), l = dash.data('leccions');
+  if (B.state(el, [r.status])) return;
+  const row = r.data[0] || {};
+  const text = row.destacat || (l.status === 'ok' && l.data[0] ? l.data[0].en_una_frase : '');
+  el.replaceChildren();
+  el.hidden = !text;
+  if (!text) return;
+  const p = document.createElement('p'); p.textContent = String(text).replace(/^[«"]|[»"]$/g, '');
+  const s = document.createElement('span'); s.textContent = row.destacat ? 'La idea del dia' : 'La lliçó del dia, en una frase';
+  el.append(p, s);
+});
+
+})();
+</script>
+
+<script>
+(() => {
 dash.draw('noticies', (el) => {
   const B = window.bf, n = dash.data('noticies');
   if (B.state(el, [n.status])) return;
-  el.replaceChildren();
-  n.data.forEach((d, i) => {
-    const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
-    const h = document.createElement('h3'); h.textContent = d.titular;
-    const p = document.createElement('p'); p.textContent = d.resum;
-    const src = document.createElement('p'); src.className = 'bf-src';
-    src.append([d.categoria, d.regio, d.data ? window.bf.dayLong(d.data) : ''].filter(Boolean).join(', ') + '. ');
-    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
-      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer';
-      l.textContent = d.font || 'Font';
-      src.append(l);
-    } else if (d.font) { src.append(String(d.font)); }
-    const why = d.per_que_importa ? (() => { const w = document.createElement('p'); w.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; w.append(b, String(d.per_que_importa)); return w; })() : null;
-    a.append(h, p);
-    if (why) a.append(why);
-    a.append(src);
-    el.append(a);
-  });
+  B.newsList(el, n.data, { theme: (d) => d.categoria, tag: (d) => [d.categoria, d.regio].filter(Boolean).join(', ') });
 });
 
 })();
@@ -1703,26 +1843,9 @@ dash.draw('cursa', (el) => {
 dash.draw('ianoticies', (el) => {
   const B = window.bf, n = dash.data('ia_noticies');
   if (B.state(el, [n.status])) return;
-  el.replaceChildren();
   const rows = n.data.filter((d) => !B.iacat || (d.tema || 'IA') === B.iacat);
-  if (!rows.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Avui no hi ha notícies d\'aquest tema. Torna-hi demà.'; el.append(p); return; }
-  rows.forEach((d, i) => {
-    const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
-    const tag = document.createElement('p'); tag.className = 'bf-tag'; tag.textContent = [d.tema || 'IA', d.empresa].filter(Boolean).join(', ');
-    const h = document.createElement('h3'); h.textContent = String(d.titular ?? '');
-    const p = document.createElement('p'); p.textContent = String(d.resum ?? '');
-    const src = document.createElement('p'); src.className = 'bf-src';
-    if (d.data) src.append(B.dayLong(d.data) + '. ');
-    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
-      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer'; l.textContent = String(d.font || 'Font');
-      src.append(l);
-    } else if (d.font) { src.append(String(d.font)); }
-    const why = d.per_que_importa ? (() => { const w = document.createElement('p'); w.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; w.append(b, String(d.per_que_importa)); return w; })() : null;
-    if (i === 0) { a.append(h, tag, p); } else { a.append(tag, h, p); }
-    if (why) a.append(why);
-    a.append(src);
-    el.append(a);
-  });
+  if (!rows.length) { el.replaceChildren(); const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Avui no hi ha notícies d\'aquest tema. Torna-hi demà.'; el.append(p); return; }
+  B.newsList(el, rows, { theme: (d) => d.tema || 'IA', tag: (d) => [d.tema || 'IA', d.empresa].filter(Boolean).join(', ') });
 });
 
 dash.draw('iamodels', (tbody) => {
@@ -2002,22 +2125,7 @@ document.querySelectorAll('.bf-to-crypto').forEach((b) => b.addEventListener('cl
 dash.draw('criptonoticies', (el) => {
   const B = window.bf, n = dash.data('cripto_noticies');
   if (B.state(el, [n.status])) return;
-  el.replaceChildren();
-  n.data.forEach((d, i) => {
-    const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
-    const tag = document.createElement('p'); tag.className = 'bf-tag'; tag.textContent = String(d.categoria || '');
-    const h = document.createElement('h3'); h.textContent = String(d.titular ?? '');
-    const p = document.createElement('p'); p.textContent = String(d.resum ?? '');
-    if (i === 0) a.append(h, tag, p); else a.append(tag, h, p);
-    if (d.per_que_importa) { const w = document.createElement('p'); w.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; w.append(b, String(d.per_que_importa)); a.append(w); }
-    const src = document.createElement('p'); src.className = 'bf-src';
-    if (d.data) src.append(B.dayLong(d.data) + '. ');
-    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
-      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer'; l.textContent = String(d.font || 'Font'); src.append(l);
-    } else if (d.font) { src.append(String(d.font)); }
-    a.append(src);
-    el.append(a);
-  });
+  B.newsList(el, n.data, { theme: (d) => d.categoria, tag: (d) => String(d.categoria || '') });
 });
 
 })();
