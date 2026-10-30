@@ -1,5 +1,5 @@
 /*
- * The Ledger: the small engine behind the page.
+ * The Daily Spread: the small engine behind the page.
  * Loads the daily data files in data/, runs the stock search against Alpha Vantage
  * with the visitor's own key, works out the derived numbers and redraws what is on screen.
  */
@@ -108,7 +108,7 @@
         c.cache = { status: 'ok', data: c.fn.apply(null, ins.map(function (s) { return s.data; })), version: ++version };
       } catch (e) {
         c.cache = { status: 'error', data: [], message: String(e && e.message || e), version: ++version };
-        if (window.console) console.error('[The Ledger] ' + id, e);
+        if (window.console) console.error('[The Daily Spread] ' + id, e);
       }
       c.key = k;
     }
@@ -122,7 +122,7 @@
     if (!fn) return;
     document.querySelectorAll('[data-draw="' + name + '"]').forEach(function (el) {
       if (!visible(el)) return;
-      try { fn(el); } catch (e) { if (window.console) console.error('[The Ledger] ' + name, e); }
+      try { fn(el); } catch (e) { if (window.console) console.error('[The Daily Spread] ' + name, e); }
     });
   }
   function runAll() {

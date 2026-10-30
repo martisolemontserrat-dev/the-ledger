@@ -1,4 +1,4 @@
-# The Ledger
+# The Daily Spread
 
 Els mercats del món, abans que obrin. Web estàtica: `index.html` + `ledger-runtime.js`, amb les dades del dia a `data/`.
 
