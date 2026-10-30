@@ -17,7 +17,8 @@
     ia_cursa: 'data/ia_cursa.json',
     leccions: 'data/leccions.json',
     glossari: 'data/glossari.json',
-    butxaca: 'data/butxaca.json'
+    butxaca: 'data/butxaca.json',
+    notes: 'data/notes.json'
   };
   var QUERIES = {
     cerca: { fn: 'SYMBOL_SEARCH', args: function (p) { return { keywords: p.q, datatype: 'csv' }; } },

@@ -344,6 +344,25 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
   .bf-tab { flex: 0 0 auto; }
 }
 
+/* Why it matters */
+.bf-item p.bf-why { font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; background: var(--color-panel); border-left: 2px solid var(--color-fg); }
+.bf-item p.bf-why b { font-weight: 600; }
+.bf-item.bf-top p.bf-why { grid-column: 2; }
+
+/* Weekly column */
+.bf-col-body { display: flex; flex-direction: column; gap: 12px; max-width: 42em; }
+.bf-col-title { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; letter-spacing: -0.01em; margin: 0; }
+.bf-col-by { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-col-by b { color: var(--color-fg); font-weight: 600; }
+.bf-col-body p.bf-col-p { font-family: var(--font-anthropic-serif); font-size: 1.05rem; line-height: 1.65; }
+.bf-col-body p.bf-col-first::first-letter { font-size: 3.1em; float: left; line-height: .85; padding: 4px 6px 0 0; font-weight: 700; }
+.bf-col-empty { font-family: var(--font-anthropic-serif); font-style: italic; color: var(--color-fg-muted); font-size: 1.05rem; }
+.bf-arc details summary { cursor: pointer; list-style: none; }
+.bf-arc details summary::-webkit-details-marker { display: none; }
+.bf-arc details summary h3::after { content: ' +'; color: var(--color-fg-muted); font-weight: 400; }
+.bf-arc details[open] summary h3::after { content: ' −'; }
+.bf-arc details p { font-family: var(--font-anthropic-serif); line-height: 1.6; margin-top: 8px !important; }
+
 /* Visitor's own Alpha Vantage key */
 .bf-apikey { border: 1px solid var(--color-fg); padding: 14px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 46rem; }
 .bf-apikey[hidden], .bf-apikey-set[hidden] { display: none; }
@@ -441,6 +460,16 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
   <section id="noticies" class="bf-sec">
     <div class="bf-head"><div><h2>El que cal saber avui</h2></div></div>
     <div class="bf-news dash-skeleton" data-draw="noticies" data-source="noticies"></div>
+  </section>
+
+  <section id="nota" class="bf-sec bf-column">
+    <div class="bf-head">
+      <div>
+        <h2>La setmana segons el Martí</h2>
+        <p class="bf-note">Cada setmana, el Martí, creador de The Ledger, comenta el que més l'ha fet pensar dels mercats.</p>
+      </div>
+    </div>
+    <div class="bf-col-body" data-draw="nota" data-source="notes"></div>
   </section>
 
   <section id="dades" class="bf-sec">
@@ -654,6 +683,16 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
         </div>
       </div>
       <div class="bf-gl dash-skeleton" data-draw="glossari" data-source="glossari"></div>
+    </section>
+
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Notes del Martí</h2>
+          <p class="bf-note">Totes les notes setmanals, de la més recent a la més antiga.</p>
+        </div>
+      </div>
+      <div class="bf-archive" data-draw="notesarxiu" data-source="notes"></div>
     </section>
 
     <section class="bf-sec">
@@ -1093,7 +1132,10 @@ dash.draw('noticies', (el) => {
       l.textContent = d.font || 'Font';
       src.append(l);
     } else if (d.font) { src.append(String(d.font)); }
-    a.append(h, p, src);
+    const why = d.per_que_importa ? (() => { const w = document.createElement('p'); w.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; w.append(b, String(d.per_que_importa)); return w; })() : null;
+    a.append(h, p);
+    if (why) a.append(why);
+    a.append(src);
     el.append(a);
   });
 });
@@ -1606,7 +1648,10 @@ dash.draw('ianoticies', (el) => {
       const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer'; l.textContent = String(d.font || 'Font');
       src.append(l);
     } else if (d.font) { src.append(String(d.font)); }
-    if (i === 0) { a.append(h, tag, p, src); } else { a.append(tag, h, p, src); }
+    const why = d.per_que_importa ? (() => { const w = document.createElement('p'); w.className = 'bf-why'; const b = document.createElement('b'); b.textContent = "Per què t'importa. "; w.append(b, String(d.per_que_importa)); return w; })() : null;
+    if (i === 0) { a.append(h, tag, p); } else { a.append(tag, h, p); }
+    if (why) a.append(why);
+    a.append(src);
     el.append(a);
   });
 });
@@ -1748,6 +1793,49 @@ dash.draw('arxiu', (el) => {
     const p = document.createElement('p'); p.textContent = String(d.en_una_frase || d.explicacio || '');
     body.append(h, p);
     r.append(dt, body);
+    el.append(r);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+const bfParas = (t) => String(t || '').split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
+
+dash.draw('nota', (el) => {
+  const B = window.bf, n = dash.data('notes');
+  el.replaceChildren();
+  if (n.status !== 'ok') return;
+  const d = n.data[0];
+  if (!d) {
+    const p = document.createElement('p'); p.className = 'bf-col-empty';
+    p.textContent = 'La primera nota arriba aviat.';
+    el.append(p); return;
+  }
+  const h = document.createElement('h3'); h.className = 'bf-col-title'; h.textContent = String(d.titol ?? '');
+  const by = document.createElement('p'); by.className = 'bf-col-by';
+  const b = document.createElement('b'); b.textContent = 'Per ' + String(d.autor || 'Martí');
+  by.append(b, d.data ? ', ' + B.dayLong(d.data) : '');
+  el.append(h, by);
+  bfParas(d.text).forEach((t, i) => { const p = document.createElement('p'); p.className = 'bf-col-p' + (i === 0 ? ' bf-col-first' : ''); p.textContent = t; el.append(p); });
+});
+
+dash.draw('notesarxiu', (el) => {
+  const B = window.bf, n = dash.data('notes');
+  el.replaceChildren();
+  if (n.status !== 'ok') return;
+  if (!n.data.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Encara no hi ha cap nota.'; el.append(p); return; }
+  n.data.forEach((d) => {
+    const r = document.createElement('article'); r.className = 'bf-arc';
+    const dt = document.createElement('p'); dt.className = 'bf-arc-date'; dt.textContent = d.data ? B.dayLong(d.data) : '';
+    const det = document.createElement('details');
+    const sum = document.createElement('summary');
+    const h = document.createElement('h3'); h.textContent = String(d.titol ?? '');
+    sum.append(h); det.append(sum);
+    bfParas(d.text).forEach((t) => { const p = document.createElement('p'); p.textContent = t; det.append(p); });
+    r.append(dt, det);
     el.append(r);
   });
 });
