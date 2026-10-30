@@ -422,6 +422,11 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .bf-quote p::before { content: '«'; } .bf-quote p::after { content: '»'; }
 .bf-quote span { display: block; margin-top: 10px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); letter-spacing: .08em; text-transform: uppercase; }
 .bf-quote.dash-skeleton { min-height: 6rem; }
+/* Language switcher */
+.bf-lang { display: inline-flex; gap: 2px; }
+.bf-lang button { font: inherit; font-size: var(--cds-font-size-caption); letter-spacing: .04em; color: var(--color-fg-muted); background: none; border: 0; border-bottom: 2px solid transparent; padding: 4px 6px; min-height: 32px; cursor: pointer; }
+.bf-lang button[aria-pressed="true"] { color: var(--color-fg); font-weight: 700; border-bottom-color: var(--color-fg); }
+.bf-lang button:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 1px; }
 /* Crypto */
 .bf-crypto-note { font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; border-left: 2px solid var(--color-bad); background: var(--color-panel); margin: 0 0 8px; max-width: 52rem; }
 .bf-linkbtn { font: inherit; color: var(--color-fg); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: left; }
@@ -449,6 +454,11 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
         <div class="bf-fx">
           <div><span>Euro en dòlars</span><b data-draw="eurusd" data-source="actius" data-where="actiu=EUR/USD" data-field="valor">—</b></div>
           <div><span>Bitcoin</span><b data-draw="btc" data-source="actius" data-where="actiu=Bitcoin" data-field="valor">—</b></div>
+        </div>
+        <div class="bf-lang" role="group" aria-label="Idioma">
+          <button type="button" data-lang="ca" aria-pressed="true" title="Català">CA</button>
+          <button type="button" data-lang="es" aria-pressed="false" title="Castellano">ES</button>
+          <button type="button" data-lang="en" aria-pressed="false" title="English">EN</button>
         </div>
       </div>
       <div class="bf-ticker" data-draw="ticker" data-source="rendiment" aria-label="Variació de la darrera sessió"></div>
@@ -810,6 +820,8 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
     <p class="bf-foot">Notícies recollides de la premsa especialitzada i resumides cada matí, amb l'enllaç a cada font. The Daily Spread no recomana comprar ni vendre cap criptomoneda.</p>
   </div>
 
+  <div hidden aria-hidden="true"><i data-source="noticies_es"></i><i data-source="noticies_en"></i><i data-source="resum_es"></i><i data-source="resum_en"></i><i data-source="ia_noticies_es"></i><i data-source="ia_noticies_en"></i><i data-source="cripto_noticies_es"></i><i data-source="cripto_noticies_en"></i><i data-source="leccions_es"></i><i data-source="leccions_en"></i><i data-source="glossari_es"></i><i data-source="glossari_en"></i><i data-source="butxaca_es"></i><i data-source="butxaca_en"></i><i data-source="productes_es"></i><i data-source="productes_en"></i><i data-source="ia_models_es"></i><i data-source="ia_models_en"></i><i data-source="ia_cursa_es"></i><i data-source="ia_cursa_en"></i><i data-source="notes_es"></i><i data-source="notes_en"></i></div>
+
   <p class="bf-legal">The Daily Spread és un projecte divulgatiu: res del que hi surt és una recomanació per comprar o vendre cap producte financer. Abans d'invertir, informa't bé i, si cal, demana consell a un professional.</p>
 </div>
 
@@ -880,6 +892,152 @@ window.bf = {
 
 })();
 </script>
+
+<script>
+(() => {
+// Languages: Catalan (the source), Spanish and English.
+// Interface text is translated in place from a Catalan-keyed dictionary; the daily
+// content comes from translated copies of each dataset (`<id>_es`, `<id>_en`).
+(() => {
+  const B = window.bf;
+  const DICT = {"Edició del": ["Edición del", "Edition of"], "Actualitzada el": ["Actualizada el", "Updated on"], "Els mercats del món, abans que obrin": ["Los mercados del mundo, antes de que abran", "The world's markets, before they open"], "Euro en dòlars": ["Euro en dólares", "Euro in dollars"], "Bitcoin": ["Bitcoin", "Bitcoin"], "Variació de la darrera sessió": ["Variación de la última sesión", "Change in the last session"], "Seccions": ["Secciones", "Sections"], "Idioma": ["Idioma", "Language"], "Portada": ["Portada", "Front page"], "La teva butxaca": ["Tu bolsillo", "Your wallet"], "Cercador d'accions": ["Buscador de acciones", "Stock search"], "Innovació": ["Innovación", "Innovation"], "Cripto": ["Cripto", "Crypto"], "Aprèn": ["Aprende", "Learn"], "Borses que pugen": ["Bolsas que suben", "Markets up"], "de les deu que seguim": ["de las diez que seguimos", "of the ten we follow"], "La que més puja": ["La que más sube", "Biggest gain"], "La que més cau": ["La que más cae", "Biggest fall"], "Període:": ["Periodo:", "Period:"], ". Canvia'l al selector de sota.": [". Cámbialo en el selector de abajo.", ". Change it with the selector below."], "de": ["de", "of"], "La lliçó del dia": ["La lección del día", "Today's lesson"], "La idea del dia": ["La idea del día", "The idea of the day"], "La lliçó del dia, en una frase": ["La lección del día, en una frase", "Today's lesson, in one sentence"], "Com han tancat les borses, d'est a oest": ["Cómo han cerrado las bolsas, de este a oeste", "How the markets closed, from east to west"], "Tancament del": ["Cierre del", "Close of"], ", en l'ordre en què el dia passa pels mercats. Toca'n una per seguir-la al gràfic d'evolució.": [", en el orden en que el día pasa por los mercados. Toca una para seguirla en el gráfico de evolución.", ", in the order the day travels through the markets. Tap one to follow it on the chart."], "Període de la variació": ["Periodo de la variación", "Period of the change"], "1 dia": ["1 día", "1 day"], "1 setmana": ["1 semana", "1 week"], "1 mes": ["1 mes", "1 month"], "3 mesos": ["3 meses", "3 months"], "Qui puja i qui baixa": ["Quién sube y quién baja", "Who's up and who's down"], "Les deu borses ordenades per la variació del període triat a dalt.": ["Las diez bolsas ordenadas por la variación del periodo elegido arriba.", "The ten markets ranked by their change over the period chosen above."], "Totes des del mateix punt": ["Todas desde el mismo punto", "All from the same starting point"], "Cada borsa val 100 el": ["Cada bolsa vale 100 el", "Each market is worth 100 on"], ": així es veu qui s'ha separat del grup.": [": así se ve quién se ha separado del grupo.", ": so you can see who has broken away from the pack."], "Destaca": ["Destaca", "Highlight"], "Borsa destacada": ["Bolsa destacada", "Highlighted market"], "Les altres nou borses": ["Las otras nueve bolsas", "The other nine markets"], "Sessió del": ["Sesión del", "Session of"], "Variació de cada borsa en": ["Variación de cada bolsa en", "Change of each market over"], "Evolució en base 100 de les deu borses, amb": ["Evolución en base 100 de las diez bolsas, con", "The ten markets rebased to 100, with"], "destacada": ["destacada", "highlighted"], "en": ["en", "over"], "en un mes": ["en un mes", "in a month"], ", últim mes:": [", último mes:", ", last month:"], "Àsia": ["Asia", "Asia"], "Europa": ["Europa", "Europe"], "Amèrica": ["América", "Americas"], "Espanya": ["España", "Spain"], "Zona euro": ["Zona euro", "Euro area"], "Alemanya": ["Alemania", "Germany"], "França": ["Francia", "France"], "Regne Unit": ["Reino Unido", "United Kingdom"], "EUA": ["EE. UU.", "US"], "EUA · tecnologia": ["EE. UU. · tecnología", "US · technology"], "Japó": ["Japón", "Japan"], "Hong Kong": ["Hong Kong", "Hong Kong"], "Xina": ["China", "China"], "Global": ["Global", "Global"], "El que cal saber avui": ["Lo que hay que saber hoy", "What you need to know today"], "Per què t'importa.": ["Por qué te importa.", "Why it matters to you."], "Font": ["Fuente", "Source"], "Font:": ["Fuente:", "Source:"], "Empreses": ["Empresas", "Companies"], "Bancs centrals": ["Bancos centrales", "Central banks"], "Macro": ["Macro", "Macro"], "Fusions": ["Fusiones", "Mergers"], "Matèries primeres": ["Materias primas", "Commodities"], "Agenda": ["Agenda", "Agenda"], "La setmana segons el Martí": ["La semana según Martí", "The week according to Martí"], "Cada setmana, el Martí, creador de The Daily Spread, comenta el que més l'ha fet pensar dels mercats.": ["Cada semana, Martí, creador de The Daily Spread, comenta lo que más le ha hecho pensar de los mercados.", "Every week, Martí, the creator of The Daily Spread, writes about what made him think most in the markets."], "Encara no hi ha cap nota.": ["Todavía no hay ninguna nota.", "There are no notes yet."], "La primera nota arriba aviat.": ["La primera nota llega pronto.", "The first one is coming soon."], "Per": ["Por", "By"], "Traduït de l'original en català.": ["Traducido del original en catalán.", "Translated from the Catalan original."], "Totes les dades": ["Todos los datos", "All the data"], "Preu de tancament de cada ETF en dòlars i la seva variació. Toca una columna per ordenar.": ["Precio de cierre de cada ETF en dólares y su variación. Toca una columna para ordenar.", "Closing price of each ETF in dollars and its change. Tap a column to sort."], "Borsa": ["Bolsa", "Market"], "Índex de referència": ["Índice de referencia", "Benchmark index"], "ETF": ["ETF", "ETF"], "Tancament": ["Cierre", "Close"], "Cada borsa es mesura amb l'ETF que la replica, que cotitza a Nova York en dòlars: la seva variació inclou també el moviment del tipus de canvi. Blau vol dir que puja i vermell que baixa. Dades de mercat d'Alpha Vantage; notícies de la premsa econòmica, resumides cada matí.": ["Cada bolsa se mide con el ETF que la replica, que cotiza en Nueva York en dólares: su variación incluye también el movimiento del tipo de cambio. Azul significa que sube y rojo que baja. Datos de mercado de Alpha Vantage; noticias de la prensa económica, resumidas cada mañana.", "Each market is measured with the ETF that tracks it, which trades in New York in dollars, so its change also includes the exchange-rate move. Blue means up and red means down. Market data from Alpha Vantage; news from the financial press, summarised every morning."], "Escriu el nom d'una empresa o el seu codi i tria-la de la llista. Funciona sobretot amb valors que cotitzen als EUA; de les empreses espanyoles hi ha, per exemple, el Santander (SAN), el BBVA (BBVA) i Telefónica (TEF).": ["Escribe el nombre de una empresa o su código y elígela de la lista. Funciona sobre todo con valores que cotizan en EE. UU.; de las empresas españolas hay, por ejemplo, el Santander (SAN), el BBVA (BBVA) y Telefónica (TEF).", "Type a company's name or ticker and pick it from the list. It works best with stocks listed in the US; Spanish companies include, for example, Santander (SAN), BBVA (BBVA) and Telefónica (TEF)."], "Empresa o codi": ["Empresa o código", "Company or ticker"], "Apple, Nvidia, Santander…": ["Apple, Nvidia, Santander…", "Apple, Nvidia, Santander…"], "Cerca": ["Buscar", "Search"], "Accions populars": ["Acciones populares", "Popular stocks"], "Resultats de la cerca. Toca'n un per veure'n el gràfic.": ["Resultados de la búsqueda. Toca uno para ver su gráfico.", "Search results. Tap one to see its chart."], "Codi": ["Código", "Ticker"], "Empresa": ["Empresa", "Company"], "Tipus": ["Tipo", "Type"], "Mercat": ["Mercado", "Market"], "Moneda": ["Moneda", "Currency"], "Període del gràfic": ["Periodo del gráfico", "Chart period"], "Tipus de gràfic": ["Tipo de gráfico", "Chart type"], "Mitjanes mòbils": ["Medias móviles", "Moving averages"], "Espelmes": ["Velas", "Candles"], "Línia": ["Línea", "Line"], "Mitjana 20": ["Media 20", "20-day average"], "Mitjana 50": ["Media 50", "50-day average"], "Obertura": ["Apertura", "Open"], "Màxim del dia": ["Máximo del día", "Day high"], "Mínim del dia": ["Mínimo del día", "Day low"], "Màxim del període": ["Máximo del periodo", "Period high"], "Mínim del període": ["Mínimo del periodo", "Period low"], "Volum": ["Volumen", "Volume"], "Mostra la fitxa": ["Muestra la ficha", "Show company profile"], "Amaga la fitxa": ["Oculta la ficha", "Hide company profile"], "Fitxa de l'empresa": ["Ficha de la empresa", "Company profile"], "Valoració, rendibilitat i dades bàsiques de l'empresa. Es carrega només quan l'obres, perquè gasta una consulta més.": ["Valoración, rentabilidad y datos básicos de la empresa. Se carga solo cuando la abres, porque gasta una consulta más.", "Valuation, returns and the basics of the company. It only loads when you open it, because it uses one more request."], "Dades d'Alpha Vantage, en la moneda en què cotitza cada valor. La clau gratuïta permet 25 consultes al dia, compartides amb l'actualització del matí: cada gràfic en gasta una, i cada cerca i cada fitxa, una més. La sèrie arriba fins al darrer tancament, no al preu en temps real.": ["Datos de Alpha Vantage, en la moneda en que cotiza cada valor. La clave gratuita permite 25 consultas al día, compartidas con la actualización de la mañana: cada gráfico gasta una, y cada búsqueda y cada ficha, una más. La serie llega hasta el último cierre, no al precio en tiempo real.", "Data from Alpha Vantage, in the currency each stock trades in. The free key allows 25 requests a day, shared with the morning update: each chart uses one, and each search and each profile one more. The series runs to the last close, not the live price."], "Dades d'Alpha Vantage, en la moneda en què cotitza cada valor. Cada visitant fa servir la seva pròpia clau gratuïta, que permet 25 consultes al dia: cada gràfic en gasta una, i cada cerca i cada fitxa, una més. La sèrie arriba fins al darrer tancament, no al preu en temps real.": ["Datos de Alpha Vantage, en la moneda en que cotiza cada valor. Cada visitante usa su propia clave gratuita, que permite 25 consultas al día: cada gráfico gasta una, y cada búsqueda y cada ficha, una más. La serie llega hasta el último cierre, no al precio en tiempo real.", "Data from Alpha Vantage, in the currency each stock trades in. Each visitor uses their own free key, which allows 25 requests a day: each chart uses one, and each search and each profile one more. The series runs to the last close, not the live price."], "Per buscar accions necessites una clau gratuïta d'Alpha Vantage.": ["Para buscar acciones necesitas una clave gratuita de Alpha Vantage.", "To search for stocks you need a free Alpha Vantage key."], "Es demana en un minut a": ["Se pide en un minuto en", "You can get one in a minute at"], "i es guarda només en aquest navegador: no s'envia enlloc més que a Alpha Vantage.": ["y se guarda solo en este navegador: no se envía a ningún otro sitio que no sea Alpha Vantage.", "and it is stored only in this browser: it is sent nowhere except Alpha Vantage."], "Enganxa aquí la teva clau": ["Pega aquí tu clave", "Paste your key here"], "Clau d'Alpha Vantage": ["Clave de Alpha Vantage", "Alpha Vantage key"], "Desa la clau": ["Guarda la clave", "Save key"], "Fas servir la teva clau d'Alpha Vantage.": ["Usas tu clave de Alpha Vantage.", "You are using your own Alpha Vantage key."], "Canvia-la": ["Cámbiala", "Change it"], "Posa la teva clau gratuïta d'Alpha Vantage a dalt per veure les dades.": ["Pon tu clave gratuita de Alpha Vantage arriba para ver los datos.", "Enter your free Alpha Vantage key above to see the data."], "No s'han pogut carregar les dades": ["No se han podido cargar los datos", "The data could not be loaded"], "No s'han pogut carregar les dades d'Alpha Vantage.": ["No se han podido cargar los datos de Alpha Vantage.", "The Alpha Vantage data could not be loaded."], "S'han acabat les 25 consultes gratuïtes d'avui a Alpha Vantage. Torna-ho a provar demà.": ["Se han acabado las 25 consultas gratuitas de hoy en Alpha Vantage. Vuelve a probar mañana.", "Today's 25 free Alpha Vantage requests have run out. Please try again tomorrow."], "Aquest valor o aquesta dada només està disponible amb un pla de pagament d'Alpha Vantage.": ["Este valor o este dato solo está disponible con un plan de pago de Alpha Vantage.", "This stock or this figure is only available with a paid Alpha Vantage plan."], "Alpha Vantage no té dades d'aquest codi. Prova de cercar l'empresa pel nom.": ["Alpha Vantage no tiene datos de este código. Prueba a buscar la empresa por el nombre.", "Alpha Vantage has no data for this ticker. Try searching for the company by name."], "Alpha Vantage no té dades d'aquest codi.": ["Alpha Vantage no tiene datos de este código.", "Alpha Vantage has no data for this ticker."], "Cal permetre que aquesta pàgina faci servir Alpha Vantage per veure les dades.": ["Hay que permitir que esta página use Alpha Vantage para ver los datos.", "Allow this page to use Alpha Vantage to see the data."], "No s'ha trobat cap valor. Prova amb el nom en anglès o amb el codi.": ["No se ha encontrado ningún valor. Prueba con el nombre en inglés o con el código.", "No stock found. Try the English name or the ticker."], "Alpha Vantage no té fitxa d'aquest valor (passa sovint amb fons cotitzats i valors de fora dels EUA).": ["Alpha Vantage no tiene ficha de este valor (pasa a menudo con fondos cotizados y valores de fuera de EE. UU.).", "Alpha Vantage has no profile for this stock (this often happens with ETFs and stocks outside the US)."], "Gràfic de cotització de": ["Gráfico de cotización de", "Price chart of"], "Descripció de": ["Descripción de", "Description of"], ", tal com la dona la font (en anglès):": [", tal como la da la fuente (en inglés):", ", as given by the source:"], "Capitalització": ["Capitalización", "Market cap"], "PER": ["PER", "P/E"], "PER previst": ["PER previsto", "Forward P/E"], "Benefici per acció": ["Beneficio por acción", "Earnings per share"], "Rendibilitat per dividend": ["Rentabilidad por dividendo", "Dividend yield"], "Marge net": ["Margen neto", "Net margin"], "Rendibilitat sobre fons propis": ["Rentabilidad sobre fondos propios", "Return on equity"], "Ingressos (12 mesos)": ["Ingresos (12 meses)", "Revenue (12 months)"], "Beta": ["Beta", "Beta"], "Màxim de 52 setmanes": ["Máximo de 52 semanas", "52-week high"], "Mínim de 52 setmanes": ["Mínimo de 52 semanas", "52-week low"], "Preu objectiu dels analistes": ["Precio objetivo de los analistas", "Analysts' price target"], "Sector": ["Sector", "Sector"], "Indústria": ["Industria", "Industry"], "País": ["País", "Country"], "La cursa de la intel·ligència artificial": ["La carrera de la inteligencia artificial", "The artificial intelligence race"], "On són les tres grans: quant valen, com van cap a la borsa, quant facturen i quin ha estat el seu darrer model.": ["Dónde están las tres grandes: cuánto valen, cómo van hacia la bolsa, cuánto facturan y cuál ha sido su último modelo.", "Where the big three stand: what they're worth, how their path to the stock market is going, how much they earn and their latest model."], "Valoració": ["Valoración", "Valuation"], "Ingressos": ["Ingresos", "Revenue"], "Darrer model": ["Último modelo", "Latest model"], "Creadora de": ["Creadora de", "Maker of"], "Notícies d'innovació": ["Noticias de innovación", "Innovation news"], "Intel·ligència artificial, robots, start-ups i noves tecnologies: el que s'ha mogut aquests dies i per què importa.": ["Inteligencia artificial, robots, start-ups y nuevas tecnologías: lo que se ha movido estos días y por qué importa.", "Artificial intelligence, robots, start-ups and new technology: what has happened lately and why it matters."], "Tema de les notícies": ["Tema de las noticias", "News topic"], "Totes": ["Todas", "All"], "Tots": ["Todos", "All"], "Tot": ["Todo", "All"], "IA": ["IA", "AI"], "Robòtica": ["Robótica", "Robotics"], "Start-ups": ["Start-ups", "Start-ups"], "Tecnologia": ["Tecnología", "Technology"], "Avui no hi ha notícies d'aquest tema. Torna-hi demà.": ["Hoy no hay noticias de este tema. Vuelve mañana.", "No news on this topic today. Come back tomorrow."], "Models nous d'aquest mes": ["Modelos nuevos de este mes", "New models this month"], "Els llançaments de les darreres setmanes, del més recent al més antic. «Pesos oberts» vol dir que qualsevol pot descarregar el model i fer-lo servir pel seu compte.": ["Los lanzamientos de las últimas semanas, del más reciente al más antiguo. «Pesos abiertos» significa que cualquiera puede descargar el modelo y usarlo por su cuenta.", "Releases from the last few weeks, newest first. “Open weights” means anyone can download the model and run it themselves."], "Data": ["Fecha", "Date"], "Model": ["Modelo", "Model"], "Què és": ["Qué es", "What it is"], "Accés": ["Acceso", "Access"], "Obert a tothom": ["Abierto a todos", "Open to everyone"], "Limitat": ["Limitado", "Limited"], "Prova pública": ["Prueba pública", "Public preview"], "Pesos oberts": ["Pesos abiertos", "Open weights"], "Pesos oberts (amb restriccions)": ["Pesos abiertos (con restricciones)", "Open weights (with restrictions)"], "Notícies i xifres recollides de la premsa tecnològica i econòmica i resumides cada matí, amb l'enllaç a cada font. Les xifres que no surten de documents oficials de les empreses s'indiquen com a estimacions de premsa.": ["Noticias y cifras recogidas de la prensa tecnológica y económica y resumidas cada mañana, con el enlace a cada fuente. Las cifras que no salen de documentos oficiales de las empresas se indican como estimaciones de prensa.", "News and figures gathered from the tech and business press and summarised every morning, with a link to each source. Figures not taken from the companies' official documents are marked as press estimates."], "Les notícies del món de les criptomonedes, explicades sense fum: què ha passat i per què t'importa.": ["Las noticias del mundo de las criptomonedas, explicadas sin humo: qué ha pasado y por qué te importa.", "News from the world of cryptocurrencies, explained without the hype: what happened and why it matters to you."], "Abans de comprar-ne, llegeix la fitxa de": ["Antes de comprar, lee la ficha de", "Before you buy any, read the entry on"], "les criptomonedes a la Guia de productes": ["las criptomonedas en la Guía de productos", "cryptocurrencies in the Product guide"], ": el risc, els impostos i què passa si una plataforma fa fallida.": [": el riesgo, los impuestos y qué pasa si una plataforma quiebra.", ": the risk, the taxes and what happens if a platform goes bust."], "Notícies recollides de la premsa especialitzada i resumides cada matí, amb l'enllaç a cada font. The Daily Spread no recomana comprar ni vendre cap criptomoneda.": ["Noticias recogidas de la prensa especializada y resumidas cada mañana, con el enlace a cada fuente. The Daily Spread no recomienda comprar ni vender ninguna criptomoneda.", "News gathered from the specialist press and summarised every morning, with a link to each source. The Daily Spread does not recommend buying or selling any cryptocurrency."], "Seguretat": ["Seguridad", "Security"], "Regulació": ["Regulación", "Regulation"], "Les dades de l'economia que arriben a casa: la hipoteca, la compra, la llum, el cotxe i els estalvis. Cadascuna amb què vol dir per a tu, qui hi guanya i qui hi perd.": ["Los datos de la economía que llegan a casa: la hipoteca, la compra, la luz, el coche y los ahorros. Cada uno con qué significa para ti, quién gana y quién pierde.", "The economic figures that reach your home: the mortgage, the groceries, electricity, the car and your savings. Each with what it means for you, who wins and who loses."], "Dades recollides de fonts oficials i de la premsa econòmica, amb l'enllaç a cada font. Algunes s'actualitzen cada dia (llum, carburants, Euríbor) i d'altres quan es publiquen (inflació, subhastes del Tresor, reunions del BCE).": ["Datos recogidos de fuentes oficiales y de la prensa económica, con el enlace a cada fuente. Algunos se actualizan cada día (luz, carburantes, Euríbor) y otros cuando se publican (inflación, subastas del Tesoro, reuniones del BCE).", "Figures gathered from official sources and the financial press, with a link to each source. Some are updated every day (electricity, fuel, Euribor) and others when they are published (inflation, Treasury auctions, ECB meetings)."], "Dada del": ["Dato del", "Figure from"], "Què vol dir per a tu": ["Qué significa para ti", "What it means for you"], "I per a l'economia": ["Y para la economía", "And for the economy"], "I per a l'economia.": ["Y para la economía.", "And for the economy."], "Hi guanya": ["Gana", "Who wins"], "Hi perd": ["Pierde", "Who loses"], "Guia de productes per estalviar i invertir": ["Guía de productos para ahorrar e invertir", "A guide to products for saving and investing"], "Què és cada producte, quant risc té, com recuperes els diners, quant costa i com paga impostos. No et diu què has de triar: t'ajuda a fer-te les preguntes correctes.": ["Qué es cada producto, cuánto riesgo tiene, cómo recuperas el dinero, cuánto cuesta y cómo tributa. No te dice qué tienes que elegir: te ayuda a hacerte las preguntas correctas.", "What each product is, how risky it is, how you get your money back, what it costs and how it is taxed. It doesn't tell you what to choose: it helps you ask the right questions."], "Producte": ["Producto", "Product"], "Risc (d'1 a 7)": ["Riesgo (de 1 a 7)", "Risk (1 to 7)"], "Quan recuperes els diners": ["Cuándo recuperas el dinero", "When you get your money back"], "Costos": ["Costes", "Costs"], "Impostos": ["Impuestos", "Taxes"], "Què en pots esperar": ["Qué puedes esperar", "What to expect"], "Recuperar els diners": ["Recuperar el dinero", "Getting your money back"], "Per a qui sol tenir sentit": ["Para quién suele tener sentido", "Who it usually makes sense for"], "Compte amb.": ["Cuidado con.", "Watch out for."], "Protecció": ["Protección", "Protection"], "Risc": ["Riesgo", "Risk"], "de 7:": ["de 7:", "out of 7:"], "Per comparar, avui:": ["Para comparar, hoy:", "For comparison, today:"], "Inflació": ["Inflación", "Inflation"], "Tipus del BCE": ["Tipos del BCE", "ECB rate"], "Lletres a 12 mesos": ["Letras a 12 meses", "12-month Treasury bills"], "Un producte que rendeix menys que la inflació protegeix els diners només en part: perds poder de compra, tot i que menys.": ["Un producto que rinde menos que la inflación protege el dinero solo en parte: pierdes poder adquisitivo, aunque menos.", "A product that earns less than inflation only partly protects your money: you still lose purchasing power, just less."], "Guia orientativa amb la fiscalitat general d'Espanya (territori comú) del 2026. Les condicions de cada producte i entitat canvien: abans de contractar res, llegeix el document de dades fonamentals i, si cal, demana consell a un professional autoritzat.": ["Guía orientativa con la fiscalidad general de España (territorio común) de 2026. Las condiciones de cada producto y entidad cambian: antes de contratar nada, lee el documento de datos fundamentales y, si hace falta, pide consejo a un profesional autorizado.", "An indicative guide based on Spain's general tax rules (common territory) for 2026. The terms of each product and provider change: before signing up for anything, read the key information document and, if needed, ask an authorised professional for advice."], "Glossari": ["Glosario", "Glossary"], "Les paraules del món financer explicades sense tecnicismes i amb un exemple. Busca'n una o filtra per tema.": ["Las palabras del mundo financiero explicadas sin tecnicismos y con un ejemplo. Busca una o filtra por tema.", "The words of finance explained without jargon and with an example. Search for one or filter by topic."], "Busca una paraula: Euríbor, PER, inflació…": ["Busca una palabra: Euríbor, PER, inflación…", "Search for a word: Euribor, P/E, inflation…"], "Busca al glossari": ["Busca en el glosario", "Search the glossary"], "Tema del glossari": ["Tema del glosario", "Glossary topic"], "Economia": ["Economía", "Economy"], "Estalvi": ["Ahorro", "Savings"], "Habitatge": ["Vivienda", "Housing"], "Aquesta paraula encara no és al glossari. Cada dia se n'hi afegeixen de noves amb la lliçó.": ["Esta palabra todavía no está en el glosario. Cada día se añaden nuevas con la lección.", "This word isn't in the glossary yet. New ones are added every day with the lesson."], "Per exemple:": ["Por ejemplo:", "For example:"], "En una frase:": ["En una frase:", "In one sentence:"], "Al glossari:": ["En el glosario:", "In the glossary:"], "A partir de la notícia «": ["A partir de la noticia «", "Based on the story “"], "».": ["».", "”."], "Notes del Martí": ["Notas de Martí", "Martí's notes"], "Totes les notes setmanals, de la més recent a la més antiga.": ["Todas las notas semanales, de la más reciente a la más antigua.", "All the weekly notes, newest first."], "Lliçons anteriors": ["Lecciones anteriores", "Previous lessons"], "Totes les lliçons del dia, de la més recent a la més antiga.": ["Todas las lecciones del día, de la más reciente a la más antigua.", "All the daily lessons, newest first."], "Martí": ["Martí", "Martí"], "The Daily Spread és un projecte divulgatiu: res del que hi surt és una recomanació per comprar o vendre cap producte financer. Abans d'invertir, informa't bé i, si cal, demana consell a un professional.": ["The Daily Spread es un proyecto divulgativo: nada de lo que aparece en él es una recomendación para comprar o vender ningún producto financiero. Antes de invertir, infórmate bien y, si hace falta, pide consejo a un profesional.", "The Daily Spread is an educational project: nothing in it is a recommendation to buy or sell any financial product. Before you invest, do your research and, if needed, ask a professional for advice."]};
+  const LANGS = ['ca', 'es', 'en'];
+  const TRANSLATED = ['noticies', 'resum', 'ia_noticies', 'cripto_noticies', 'leccions', 'glossari', 'butxaca', 'productes', 'ia_models', 'ia_cursa', 'notes'];
+  // The Catalan formats as first made, before they start following the language.
+  const caNum = {format: B.ca.format}, caTime = {utcFormat: B.caTime.utcFormat, format: B.caTime.format};
+  const loc = {
+    ca: { num: caNum, time: caTime, intl: 'ca' },
+    es: { num: d3.formatLocale({decimal: ',', thousands: '.', grouping: [3], currency: ['', ' $']}),
+      time: d3.timeFormatLocale({dateTime: '%A, %e de %B de %Y', date: '%d/%m/%Y', time: '%H:%M:%S', periods: ['', ''],
+        days: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'], shortDays: ['dom.', 'lun.', 'mar.', 'mié.', 'jue.', 'vie.', 'sáb.'],
+        months: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+        shortMonths: ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sept.', 'oct.', 'nov.', 'dic.']}), intl: 'es' },
+    en: { num: d3.formatLocale({decimal: '.', thousands: ',', grouping: [3], currency: ['$', '']}),
+      time: d3.timeFormatLocale({dateTime: '%A, %B %e, %Y', date: '%m/%d/%Y', time: '%H:%M:%S', periods: ['AM', 'PM'],
+        days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], shortDays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']}), intl: 'en' }
+  };
+
+  const pick = () => {
+    let l = '';
+    try { l = new URLSearchParams(location.search).get('lang') || ''; } catch (e) { /* no query */ }
+    if (!LANGS.includes(l)) { try { l = localStorage.getItem('theledger.lang') || ''; } catch (e) { /* private mode */ } }
+    if (!LANGS.includes(l)) {
+      const n = String((navigator.languages && navigator.languages[0]) || navigator.language || 'ca').toLowerCase();
+      l = n.startsWith('ca') ? 'ca' : /^(es|gl|eu)/.test(n) ? 'es' : 'en';
+    }
+    return l;
+  };
+  B.lang = pick();
+  const cur = () => loc[B.lang] || loc.ca;
+
+  // Number and date formats follow the language; formatters made earlier still follow it.
+  B.ca.format = (spec) => (v) => cur().num.format(spec)(v);
+  B.caTime.utcFormat = (spec) => (d) => cur().time.utcFormat(spec)(d);
+  B.caTime.format = (spec) => (d) => cur().time.format(spec)(d);
+  B.num = (v) => cur().num.format(',.2f')(v);
+  B.intl = () => cur().intl;
+  B.dayLong = (s) => {
+    const d = B.parseDay(s), m = cur().time.utcFormat('%B')(d), n = d.getUTCDate();
+    if (B.lang === 'en') return m + ' ' + n;
+    if (B.lang === 'es') return n + ' de ' + m;
+    return n + (/^[aeiouàèéíòóú]/i.test(m) ? " d'" : ' de ') + m;
+  };
+  const label0 = B.label;
+  B.label = () => B.t(label0());
+
+  // Dictionary lookup that keeps the spaces around the text.
+  const tl = (s, l) => {
+    if (l === 'ca' || s == null) return s;
+    const str = String(s), key = str.trim(), e = DICT[key];
+    if (!e) return str;
+    const at = str.indexOf(key);
+    return str.slice(0, at) + e[l === 'es' ? 0 : 1] + str.slice(at + key.length);
+  };
+  B.t = (s) => tl(s, B.lang);
+  // True when a node still shows this original or one of its translations (so it was not redrawn).
+  const ours = (v, src) => v === src || v === tl(src, 'es') || v === tl(src, 'en');
+  // The dataset to read for a translated source, falling back to Catalan when it is missing.
+  B.ds = (id) => {
+    if (B.lang === 'ca' || !TRANSLATED.includes(id)) return id;
+    const tid = id + '_' + B.lang, d = dash.data(tid);
+    if (d.status === 'error' || d.status === 'missing' || (d.status === 'ok' && !(d.data || []).length)) return id;
+    return tid;
+  };
+
+  // Translate interface text in place, remembering the Catalan original of each node.
+  const srcText = new WeakMap(), srcAttr = new WeakMap();
+  const ATTRS = ['placeholder', 'aria-label', 'title'];
+  const skip = (el) => !el || el.closest('script, style, [data-notr]');
+  const doText = (node) => {
+    const v = node.nodeValue;
+    if (!v || !v.trim()) return;
+    let src = srcText.get(node);
+    if (src === undefined || !ours(v, src)) { src = v; srcText.set(node, src); }
+    const out = B.t(src);
+    if (out !== v) node.nodeValue = out;
+  };
+  const doAttrs = (el) => {
+    let m = srcAttr.get(el);
+    ATTRS.forEach((a) => {
+      if (!el.hasAttribute(a)) return;
+      const v = el.getAttribute(a);
+      if (!m) { m = {}; srcAttr.set(el, m); }
+      if (m[a] === undefined || !ours(v, m[a])) m[a] = v;
+      const out = B.t(m[a]);
+      if (out !== v) el.setAttribute(a, out);
+    });
+  };
+  const walk = (root) => {
+    if (!root) return;
+    if (root.nodeType === 3) { if (!skip(root.parentElement)) doText(root); return; }
+    if (root.nodeType !== 1 || skip(root)) return;
+    doAttrs(root);
+    const tw = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.nodeType === 1 && n.matches('script, style, [data-notr]') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT)
+    });
+    let n;
+    while ((n = tw.nextNode())) { if (n.nodeType === 3) doText(n); else doAttrs(n); }
+  };
+  const root = document.querySelector('.bf');
+  const mo = new MutationObserver((records) => {
+    mo.disconnect();
+    records.forEach((r) => {
+      if (r.type === 'characterData') walk(r.target);
+      else if (r.type === 'attributes') doAttrs(r.target);
+      else r.addedNodes.forEach(walk);
+    });
+    observe();
+  });
+  const observe = () => { if (root) mo.observe(root, {subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ATTRS}); };
+
+  const redraw = () => {
+    const names = new Set();
+    document.querySelectorAll('[data-draw]').forEach((el) => names.add(el.getAttribute('data-draw')));
+    names.forEach((n) => { try { dash.draw(n); } catch (e) { /* a draw that fails keeps its last state */ } });
+  };
+  const sync = () => {
+    document.documentElement.lang = B.lang;
+    document.querySelectorAll('.bf-lang button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === B.lang)));
+  };
+  B.setLang = (l) => {
+    if (!LANGS.includes(l) || l === B.lang) return;
+    B.lang = l;
+    try { localStorage.setItem('theledger.lang', l); } catch (e) { /* private mode */ }
+    sync();
+    mo.disconnect(); walk(root); observe();
+    redraw();
+  };
+  document.querySelectorAll('.bf-lang button').forEach((b) => b.addEventListener('click', () => B.setLang(b.dataset.lang)));
+  sync();
+  walk(root);
+  observe();
+})();
+
+})();
+</script>
+
 
 <script>
 (() => {
@@ -957,7 +1115,7 @@ document.querySelectorAll('.bf-table th[data-sort]').forEach((th) => th.querySel
 <script>
 (() => {
 const fromResum = (field) => (el) => {
-  const r = dash.data('resum');
+  const r = dash.data(window.bf.ds('resum'));
   el.textContent = r.status === 'ok' && r.data.length && r.data[0][field] != null ? String(r.data[0][field]) : '—';
 };
 dash.draw('data', fromResum('data_briefing'));
@@ -974,7 +1132,7 @@ const amp = () => {
   const a = dash.data('amplitud');
   return a.status === 'ok' ? a.data.find((d) => d.periode === window.bf.periode) : null;
 };
-dash.draw('pugen', (el) => { const d = amp(); el.textContent = d && d.pugen != null ? `${d.pugen} de ${d.total}` : '—'; });
+dash.draw('pugen', (el) => { const d = amp(); el.textContent = d && d.pugen != null ? `${d.pugen} ${window.bf.t('de')} ${d.total}` : '—'; });
 dash.draw('millorpct', (el) => { const d = amp(); el.textContent = d && d.millor_pct != null ? window.bf.pct(d.millor_pct) : '—'; });
 dash.draw('pitjorpct', (el) => { const d = amp(); el.textContent = d && d.pitjor_pct != null ? window.bf.pct(d.pitjor_pct) : '—'; });
 dash.draw('millor', (el) => {
@@ -1001,7 +1159,7 @@ dash.draw('ticker', (el) => {
     it.append(n, v); el.append(it);
   });
   if (r.data.length) {
-    const w = document.createElement('div'); w.className = 'bf-tk bf-tk-when'; w.textContent = 'Sessió del ' + B.dayShort(r.data[0].data);
+    const w = document.createElement('div'); w.className = 'bf-tk bf-tk-when'; w.textContent = B.t('Sessió del ') + B.dayShort(r.data[0].data);
     el.append(w);
   }
 });
@@ -1049,7 +1207,7 @@ dash.draw('strip', (el) => {
       const bgc = B.fill(t, d[key], m), ink = B.inkOn(bgc);
       c.style.background = bgc; c.style.color = ink; c.style.setProperty('--i', i++);
       c.setAttribute('aria-pressed', String(d.codi === B.sel));
-      c.setAttribute('aria-label', `${d.mercat}, ${d.referencia}: ${B.pct(d[key])} en ${B.label()}`);
+      c.setAttribute('aria-label', `${B.t(d.mercat)}, ${d.referencia}: ${B.pct(d[key])}${B.t(' en ')}${B.label()}`);
       const nm = document.createElement('span'); nm.className = 'bf-cell-name'; nm.textContent = d.mercat;
       const ref = document.createElement('small'); ref.textContent = d.referencia; nm.append(ref);
       const val = document.createElement('span'); val.className = 'bf-cell-val';
@@ -1057,7 +1215,7 @@ dash.draw('strip', (el) => {
       c.append(nm, val);
       const show = () => {
         const rb = c.getBoundingClientRect(), eb = el.getBoundingClientRect();
-        tip.show(rb.left - eb.left + rb.width / 2, rb.bottom - eb.top + 40, d.mercat + ', ' + d.referencia + ' (ETF ' + d.codi + ')', [
+        tip.show(rb.left - eb.left + rb.width / 2, rb.bottom - eb.top + 40, B.t(d.mercat) + ', ' + d.referencia + ' (ETF ' + d.codi + ')', [
           {value: B.pct(d.var_dia), name: '1 dia'}, {value: B.pct(d.var_setmana), name: '1 setmana'},
           {value: B.pct(d.var_mes), name: '1 mes'}, {value: B.num(d.tancament) + ' $', name: 'tancament'}]);
       };
@@ -1100,7 +1258,7 @@ dash.draw('barres', (el) => {
   const W = Math.max(260, el.clientWidth), band = 32, top = 4, bottom = 6;
   const H = top + bottom + rows.length * band;
   const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
-    .attr('aria-label', 'Variació de cada borsa en ' + B.label());
+    .attr('aria-label', B.t('Variació de cada borsa en ') + B.label());
   const probe = svg.append('text').attr('class', 'bf-ink');
   const labW = d3.max(rows, (d) => probe.text(d.mercat).node().getComputedTextLength()) || 60;
   const valW = d3.max(rows, (d) => probe.text(B.pct(d[key])).node().getComputedTextLength()) || 40;
@@ -1164,7 +1322,7 @@ dash.draw('linies', (el) => {
 
   const W = Math.max(280, el.clientWidth), H = 300, top = 10, bottom = 26;
   const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
-    .attr('aria-label', 'Evolució en base 100 de les deu borses, amb ' + me.mercat + ' destacada');
+    .attr('aria-label', B.t('Evolució en base 100 de les deu borses, amb ') + B.t(me.mercat) + B.t(' destacada'));
   const all = e.data.map((d) => d.base100);
   const y = d3.scaleLinear([Math.min(100, d3.min(all)), Math.max(100, d3.max(all))], [H - bottom, top]).nice(5);
   const fmt0 = ca.format('.0f'), fmt1 = ca.format('.1f');
@@ -1277,7 +1435,7 @@ dash.draw('linies', (el) => {
     const y = d3.scaleLinear(d3.extent(rows, (r) => +r.tancament), [H - 3, 3]);
     const wrap = document.createElement('p'); wrap.className = 'bf-spark';
     const svg = d3.create('svg').attr('width', W).attr('height', H).attr('role', 'img')
-      .attr('aria-label', `${meta ? meta.referencia : codi}: ${B.pct(chg)} en un mes`);
+      .attr('aria-label', `${meta ? meta.referencia : codi}: ${B.pct(chg)}${B.t(' en un mes')}`);
     svg.append('line').attr('x1', 0).attr('x2', W).attr('y1', y(first)).attr('y2', y(first))
       .attr('stroke', 'var(--cds-chart-grid)').attr('stroke-dasharray', '2 3');
     svg.append('path').attr('d', d3.line((r, i) => x(i), (r) => y(+r.tancament))(rows))
@@ -1285,7 +1443,7 @@ dash.draw('linies', (el) => {
     svg.append('circle').attr('cx', W).attr('cy', y(last)).attr('r', 3).attr('fill', chg >= 0 ? t.up : t.down);
     const lab = document.createElement('span');
     const b = document.createElement('b'); b.textContent = B.pct(chg); b.style.color = chg >= 0 ? t.up : t.down;
-    lab.append((meta ? meta.referencia : codi) + ', últim mes: ', b);
+    lab.append((meta ? meta.referencia : codi) + B.t(', últim mes: '), b);
     wrap.append(svg.node(), lab);
     return wrap;
   };
@@ -1337,7 +1495,7 @@ dash.draw('linies', (el) => {
 <script>
 (() => {
 dash.draw('destacat', (el) => {
-  const B = window.bf, r = dash.data('resum'), l = dash.data('leccions');
+  const B = window.bf, r = dash.data(window.bf.ds('resum')), l = dash.data(window.bf.ds('leccions'));
   if (B.state(el, [r.status])) return;
   const row = r.data[0] || {};
   const text = row.destacat || (l.status === 'ok' && l.data[0] ? l.data[0].en_una_frase : '');
@@ -1355,9 +1513,9 @@ dash.draw('destacat', (el) => {
 <script>
 (() => {
 dash.draw('noticies', (el) => {
-  const B = window.bf, n = dash.data('noticies');
+  const B = window.bf, n = dash.data(window.bf.ds('noticies'));
   if (B.state(el, [n.status])) return;
-  B.newsList(el, n.data, { theme: (d) => d.categoria, tag: (d) => [d.categoria, d.regio].filter(Boolean).join(', ') });
+  B.newsList(el, n.data, { theme: (d) => d.categoria, tag: (d) => [B.t(d.categoria), B.t(d.regio)].filter(Boolean).join(', ') });
 });
 
 })();
@@ -1613,7 +1771,7 @@ dash.draw('qmax', bfUltim('high', (v) => window.bf.num(v)));
 dash.draw('qmin', bfUltim('low', (v) => window.bf.num(v)));
 dash.draw('qpmax', bfUltim('maxim_periode', (v) => window.bf.num(v)));
 dash.draw('qpmin', bfUltim('minim_periode', (v) => window.bf.num(v)));
-dash.draw('qvol', bfUltim('volume', (v) => Intl.NumberFormat('ca', {notation: 'compact', maximumFractionDigits: 1}).format(v)));
+dash.draw('qvol', bfUltim('volume', (v) => Intl.NumberFormat(window.bf.intl(), {notation: 'compact', maximumFractionDigits: 1}).format(v)));
 dash.draw('qcanvi', (el) => {
   const B = window.bf, u = dash.data('ultim');
   const row = u.status === 'ok' && u.data.length ? u.data[0] : null;
@@ -1665,7 +1823,7 @@ dash.draw('grafic', (el) => {
   const W = Math.max(300, el.clientWidth), top = 28, priceH = 300, gap = 10, volH = 70, bottom = 24;
   const H = top + priceH + gap + volH + bottom;
   const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
-    .attr('aria-label', 'Gràfic de cotització de ' + String(dash.params().simbol || ''));
+    .attr('aria-label', B.t('Gràfic de cotització de ') + String(dash.params().simbol || ''));
   const vals = rows.flatMap((r) => [r.high, r.low]);
   Object.keys(B.sma).forEach((k) => { if (B.sma[k]) rows.forEach((r) => { const m = maBy.get(r.timestamp); if (m && m[k] != null) vals.push(m[k]); }); });
   const lo = d3.min(vals), hi = d3.max(vals), pad = (hi - lo) * 0.06 || hi * 0.01 || 1;
@@ -1741,7 +1899,7 @@ dash.draw('grafic', (el) => {
     part('O', fmtP(r.open)); part('M', fmtP(r.high)); part('m', fmtP(r.low));
     part('T', fmtP(r.close), r.close >= r.open ? t.up : t.down);
     if (pct != null) part('', B.pct(pct), pct >= 0 ? t.up : t.down);
-    part('Vol', Intl.NumberFormat('ca', {notation: 'compact', maximumFractionDigits: 1}).format(r.volume));
+    part('Vol', Intl.NumberFormat(window.bf.intl(), {notation: 'compact', maximumFractionDigits: 1}).format(r.volume));
     const m = maBy.get(r.timestamp) || {};
     Object.keys(B.sma).forEach((k) => {
       if (!B.sma[k] || m[k] == null) return;
@@ -1791,7 +1949,7 @@ dash.draw('fitxa', (el) => {
   }
   const n = (v) => { const x = Number(v); return v == null || v === '' || v === 'None' || v === '-' || !isFinite(x) ? null : x; };
   const cur = String(r.Currency || '');
-  const compact = (v) => (n(v) == null ? '—' : Intl.NumberFormat('ca', {notation: 'compact', maximumFractionDigits: 2}).format(n(v)) + (cur ? ' ' + cur : ''));
+  const compact = (v) => (n(v) == null ? '—' : Intl.NumberFormat(window.bf.intl(), {notation: 'compact', maximumFractionDigits: 2}).format(n(v)) + (cur ? ' ' + cur : ''));
   const num = (v, d = 2) => (n(v) == null ? '—' : B.ca.format(`,.${d}f`)(n(v)));
   const pc = (v) => (n(v) == null ? '—' : B.ca.format('.2f')(n(v) * 100) + '%');
   const txt = (v) => (v == null || v === '' || v === 'None' ? '—' : String(v));
@@ -1808,7 +1966,7 @@ dash.draw('fitxa', (el) => {
   items.forEach(([k, v]) => { const d = document.createElement('div'); const s = document.createElement('span'); s.textContent = k; const b = document.createElement('b'); b.textContent = v; d.append(s, b); kv.append(d); });
   el.append(kv);
   if (r.Description && r.Description !== 'None') {
-    const note = document.createElement('p'); note.className = 'bf-q-desc-note'; note.textContent = 'Descripció de ' + txt(r.Name) + ', tal com la dona la font (en anglès):';
+    const note = document.createElement('p'); note.className = 'bf-q-desc-note'; note.textContent = B.t('Descripció de ') + txt(r.Name) + B.t(', tal com la dona la font (en anglès):');
     const d = document.createElement('p'); d.className = 'bf-q-desc'; d.textContent = String(r.Description);
     el.append(note, d);
   }
@@ -1830,14 +1988,14 @@ dash.draw('fitxa', (el) => {
 })();
 
 dash.draw('cursa', (el) => {
-  const B = window.bf, c = dash.data('ia_cursa');
+  const B = window.bf, c = dash.data(window.bf.ds('ia_cursa'));
   if (B.state(el, [c.status])) return;
   el.replaceChildren();
   const rows = [['valoracio', 'Valoració'], ['borsa', 'Borsa'], ['ingressos', 'Ingressos'], ['darrer_model', 'Darrer model']];
   c.data.forEach((d) => {
     const col = document.createElement('article'); col.className = 'bf-race-col';
     const n = document.createElement('p'); n.className = 'bf-race-name'; n.textContent = String(d.empresa ?? '');
-    const p = document.createElement('p'); p.className = 'bf-race-prod'; p.textContent = d.producte ? 'Creadora de ' + d.producte : '';
+    const p = document.createElement('p'); p.className = 'bf-race-prod'; p.textContent = d.producte ? B.t('Creadora de ') + d.producte : '';
     col.append(n, p);
     rows.forEach(([k, label]) => {
       if (d[k] == null || d[k] === '') return;
@@ -1846,21 +2004,21 @@ dash.draw('cursa', (el) => {
       const b = document.createElement('b'); b.textContent = String(d[k]);
       r.append(s1, b); col.append(r);
     });
-    if (d.font) { const f = document.createElement('p'); f.className = 'bf-race-src'; f.textContent = 'Font: ' + d.font; col.append(f); }
+    if (d.font) { const f = document.createElement('p'); f.className = 'bf-race-src'; f.textContent = B.t('Font: ') + d.font; col.append(f); }
     el.append(col);
   });
 });
 
 dash.draw('ianoticies', (el) => {
-  const B = window.bf, n = dash.data('ia_noticies');
+  const B = window.bf, n = dash.data(window.bf.ds('ia_noticies'));
   if (B.state(el, [n.status])) return;
   const rows = n.data.filter((d) => !B.iacat || (d.tema || 'IA') === B.iacat);
   if (!rows.length) { el.replaceChildren(); const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Avui no hi ha notícies d\'aquest tema. Torna-hi demà.'; el.append(p); return; }
-  B.newsList(el, rows, { theme: (d) => d.tema || 'IA', tag: (d) => [d.tema || 'IA', d.empresa].filter(Boolean).join(', ') });
+  B.newsList(el, rows, { theme: (d) => d.tema || 'IA', tag: (d) => [B.t(d.tema || 'IA'), d.empresa].filter(Boolean).join(', ') });
 });
 
 dash.draw('iamodels', (tbody) => {
-  const B = window.bf, m = dash.data('ia_models');
+  const B = window.bf, m = dash.data(window.bf.ds('ia_models'));
   tbody.replaceChildren();
   if (m.status !== 'ok') return;
   m.data.slice().sort((a, b) => (a.data < b.data ? 1 : a.data > b.data ? -1 : 0)).forEach((d) => {
@@ -1898,12 +2056,12 @@ dash.draw('iamodels', (tbody) => {
 })();
 
 dash.draw('lconcepte', (el) => {
-  const l = dash.data('leccions');
+  const l = dash.data(window.bf.ds('leccions'));
   el.textContent = l.status === 'ok' && l.data.length ? String(l.data[0].concepte ?? '—') : '—';
 });
 
 dash.draw('leccio', (el) => {
-  const B = window.bf, l = dash.data('leccions');
+  const B = window.bf, l = dash.data(window.bf.ds('leccions'));
   if (B.state(el, [l.status])) return;
   el.replaceChildren();
   const d = l.data[0];
@@ -1911,9 +2069,9 @@ dash.draw('leccio', (el) => {
   const h = document.createElement('h3'); h.textContent = String(d.titol ?? '');
   const p = document.createElement('p'); p.textContent = String(d.explicacio ?? '');
   el.append(h, p);
-  if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-lesson-ex'; e.textContent = 'Per exemple: ' + d.exemple; el.append(e); }
+  if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-lesson-ex'; e.textContent = B.t('Per exemple: ') + d.exemple; el.append(e); }
   if (d.economia) { const e = document.createElement('p'); e.className = 'bf-lesson-eco'; const b = document.createElement('b'); b.textContent = "I per a l'economia. "; e.append(b, String(d.economia)); el.append(e); }
-  if (d.en_una_frase) { const o = document.createElement('p'); o.className = 'bf-lesson-one'; o.textContent = 'En una frase: ' + d.en_una_frase; el.append(o); }
+  if (d.en_una_frase) { const o = document.createElement('p'); o.className = 'bf-lesson-one'; o.textContent = B.t('En una frase: ') + d.en_una_frase; el.append(o); }
   const terms = String(d.termes || '').split(';').map((t) => t.trim()).filter(Boolean);
   if (terms.length) {
     const m = document.createElement('div'); m.className = 'bf-lesson-meta';
@@ -1922,7 +2080,7 @@ dash.draw('leccio', (el) => {
     el.append(m);
   }
   const src = document.createElement('p'); src.className = 'bf-lesson-src';
-  src.append((d.noticia ? 'A partir de la notícia «' + d.noticia + '». ' : ''));
+  src.append((d.noticia ? B.t('A partir de la notícia «') + d.noticia + B.t('». ') : ''));
   if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
     const a = document.createElement('a'); a.href = d.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = String(d.font || 'Font'); src.append(a);
   }
@@ -1930,14 +2088,14 @@ dash.draw('leccio', (el) => {
 });
 
 dash.draw('butxaca', (el) => {
-  const B = window.bf, k = dash.data('butxaca');
+  const B = window.bf, k = dash.data(window.bf.ds('butxaca'));
   if (B.state(el, [k.status])) return;
   el.replaceChildren();
   k.data.forEach((d) => {
     const c = document.createElement('article'); c.className = 'bf-pk';
     const n = document.createElement('p'); n.className = 'bf-pk-name'; n.textContent = String(d.indicador ?? '');
     const v = document.createElement('p'); v.className = 'bf-pk-val'; v.textContent = String(d.valor ?? '—');
-    const dt = document.createElement('p'); dt.className = 'bf-pk-date'; dt.textContent = d.data_dada ? 'Dada del ' + B.dayLong(d.data_dada) : '';
+    const dt = document.createElement('p'); dt.className = 'bf-pk-date'; dt.textContent = d.data_dada ? B.t('Dada del ') + B.dayLong(d.data_dada) : '';
     const cmp = document.createElement('p'); cmp.className = 'bf-pk-cmp'; cmp.textContent = String(d.comparacio ?? '');
     const h = document.createElement('h4'); h.textContent = 'Què vol dir per a tu';
     const w = document.createElement('p'); w.className = 'bf-pk-what'; w.textContent = String(d.que_vol_dir ?? '');
@@ -1957,7 +2115,7 @@ dash.draw('butxaca', (el) => {
       });
       c.append(who);
     }
-    const src = document.createElement('p'); src.className = 'bf-pk-src'; src.append('Font: ');
+    const src = document.createElement('p'); src.className = 'bf-pk-src'; src.append(B.t('Font: '));
     if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
       const a = document.createElement('a'); a.href = d.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = String(d.font || 'enllaç'); src.append(a);
     } else { src.append(String(d.font || '')); }
@@ -1967,7 +2125,7 @@ dash.draw('butxaca', (el) => {
 });
 
 dash.draw('glossari', (el) => {
-  const B = window.bf, g = dash.data('glossari');
+  const B = window.bf, g = dash.data(window.bf.ds('glossari'));
   if (B.state(el, [g.status])) return;
   el.replaceChildren();
   const q = B.glNorm(B.glq).trim();
@@ -1985,13 +2143,13 @@ dash.draw('glossari', (el) => {
     if (d.categoria) { const s = document.createElement('small'); s.textContent = String(d.categoria); h.append(s); }
     const p = document.createElement('p'); p.textContent = String(d.definicio ?? '');
     it.append(h, p);
-    if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-gl-ex'; e.textContent = 'Per exemple: ' + d.exemple; it.append(e); }
+    if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-gl-ex'; e.textContent = B.t('Per exemple: ') + d.exemple; it.append(e); }
     el.append(it);
   });
 });
 
 dash.draw('arxiu', (el) => {
-  const B = window.bf, l = dash.data('leccions');
+  const B = window.bf, l = dash.data(window.bf.ds('leccions'));
   el.replaceChildren();
   if (l.status !== 'ok') return;
   l.data.forEach((d) => {
@@ -2014,7 +2172,7 @@ dash.draw('arxiu', (el) => {
 const bfParas = (t) => String(t || '').split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean);
 
 dash.draw('nota', (el) => {
-  const B = window.bf, n = dash.data('notes');
+  const B = window.bf, nid = B.ds('notes'), n = dash.data(nid);
   el.replaceChildren();
   if (n.status !== 'ok') return;
   const d = n.data.filter((x) => x && x.text)[0];
@@ -2025,14 +2183,15 @@ dash.draw('nota', (el) => {
   }
   const h = document.createElement('h3'); h.className = 'bf-col-title'; h.textContent = String(d.titol ?? '');
   const by = document.createElement('p'); by.className = 'bf-col-by';
-  const b = document.createElement('b'); b.textContent = 'Per ' + String(d.autor || 'Martí');
+  const b = document.createElement('b'); b.textContent = B.t('Per ') + String(d.autor || 'Martí');
   by.append(b, d.data ? ', ' + B.dayLong(d.data) : '');
   el.append(h, by);
   bfParas(d.text).forEach((t, i) => { const p = document.createElement('p'); p.className = 'bf-col-p' + (i === 0 ? ' bf-col-first' : ''); p.textContent = t; el.append(p); });
+  if (nid !== 'notes') { const tn = document.createElement('p'); tn.className = 'bf-note'; tn.textContent = "Traduït de l'original en català."; el.append(tn); }
 });
 
 dash.draw('notesarxiu', (el) => {
-  const B = window.bf, n = dash.data('notes');
+  const B = window.bf, n = dash.data(window.bf.ds('notes'));
   el.replaceChildren();
   if (n.status !== 'ok') return;
   const notes = n.data.filter((x) => x && x.text);
@@ -2061,7 +2220,7 @@ const bfRisk = (n, label) => {
   for (let i = 1; i <= 7; i++) { const dot = document.createElement('i'); if (i <= Number(n)) dot.className = 'on'; r.append(dot); }
   const t = document.createElement('span'); t.className = 'bf-risk-t'; t.textContent = String(label || n);
   wrap.append(r, t);
-  wrap.setAttribute('aria-label', 'Risc ' + n + ' de 7: ' + (label || ''));
+  wrap.setAttribute('aria-label', window.bf.t('Risc ') + n + window.bf.t(' de 7: ') + (label || ''));
   return wrap;
 };
 window.bf.goProduct = (id) => {
@@ -2071,22 +2230,22 @@ window.bf.goProduct = (id) => {
 };
 
 dash.draw('prref', (el) => {
-  const k = dash.data('butxaca');
+  const k = dash.data(window.bf.ds('butxaca'));
   el.replaceChildren();
   if (k.status !== 'ok') return;
   const by = Object.fromEntries(k.data.map((d) => [d.id, d]));
   const parts = [['ipc', 'Inflació'], ['lletres', 'Lletres a 12 mesos'], ['bce', 'Tipus del BCE']].filter(([id]) => by[id]);
   if (!parts.length) return;
-  el.append('Per comparar, avui: ');
+  el.append(window.bf.t('Per comparar, avui: '));
   parts.forEach(([id, label], i) => {
-    const b = document.createElement('b'); b.textContent = label + ' ' + String(by[id].valor);
+    const b = document.createElement('b'); b.textContent = window.bf.t(label) + ' ' + String(by[id].valor);
     el.append(b, i < parts.length - 1 ? ' · ' : '. ');
   });
   el.append("Un producte que rendeix menys que la inflació protegeix els diners només en part: perds poder de compra, tot i que menys.");
 });
 
 dash.draw('prtaula', (tbody) => {
-  const p = dash.data('productes');
+  const p = dash.data(window.bf.ds('productes'));
   tbody.replaceChildren();
   if (p.status !== 'ok') return;
   p.data.forEach((d) => {
@@ -2102,7 +2261,7 @@ dash.draw('prtaula', (tbody) => {
 });
 
 dash.draw('prfitxes', (el) => {
-  const B = window.bf, p = dash.data('productes');
+  const B = window.bf, p = dash.data(window.bf.ds('productes'));
   if (B.state(el, [p.status])) return;
   el.replaceChildren();
   p.data.forEach((d) => {
@@ -2134,9 +2293,9 @@ document.querySelectorAll('.bf-to-crypto').forEach((b) => b.addEventListener('cl
 }));
 
 dash.draw('criptonoticies', (el) => {
-  const B = window.bf, n = dash.data('cripto_noticies');
+  const B = window.bf, n = dash.data(window.bf.ds('cripto_noticies'));
   if (B.state(el, [n.status])) return;
-  B.newsList(el, n.data, { theme: (d) => d.categoria, tag: (d) => String(d.categoria || '') });
+  B.newsList(el, n.data, { theme: (d) => d.categoria, tag: (d) => B.t(String(d.categoria || '')) });
 });
 
 })();

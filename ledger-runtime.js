@@ -22,6 +22,9 @@
     productes: 'data/productes.json',
     cripto_noticies: 'data/cripto_noticies.json'
   };
+  // Translated copies of the daily content: data/<id>.es.json and data/<id>.en.json.
+  ['noticies', 'resum', 'ia_noticies', 'cripto_noticies', 'leccions', 'glossari', 'butxaca', 'productes', 'ia_models', 'ia_cursa', 'notes']
+    .forEach(function (id) { ['es', 'en'].forEach(function (l) { FILES[id + '_' + l] = 'data/' + id + '.' + l + '.json'; }); });
   var QUERIES = {
     cerca: { fn: 'SYMBOL_SEARCH', args: function (p) { return { keywords: p.q, datatype: 'csv' }; } },
     serie: { fn: 'TIME_SERIES_DAILY', args: function (p) { return { symbol: p.simbol, outputsize: 'compact', datatype: 'csv' }; } },
