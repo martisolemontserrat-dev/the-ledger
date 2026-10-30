@@ -1,0 +1,20 @@
+{
+  "name": "the-ledger",
+  "version": "1.0.0",
+  "description": "Els mercats del món, abans que obrin",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build required'"
+  },
+  "keywords": [
+    "finance",
+    "markets",
+    "ledger"
+  ],
+  "author": "martisolemontserrat-dev",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
