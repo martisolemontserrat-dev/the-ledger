@@ -363,6 +363,33 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 .bf-arc details[open] summary h3::after { content: ' −'; }
 .bf-arc details p { font-family: var(--font-anthropic-serif); line-height: 1.6; margin-top: 8px !important; }
 
+/* Economy lines */
+.bf-pk-eco { font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; background: var(--color-panel); border-left: 2px solid var(--color-fg); }
+.bf-lesson-body p.bf-lesson-eco { font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-body); line-height: 1.55; padding: 8px 10px; background: var(--color-panel); border-left: 2px solid var(--color-fg); }
+.bf-lesson-eco b { font-weight: 600; }
+
+/* Products guide */
+.bf-pr-ref { font-size: var(--cds-font-size-body); margin-bottom: 14px !important; padding: 10px 12px; border: 1px solid var(--color-fg); max-width: 52rem; line-height: 1.5; }
+.bf-pr-ref:empty { display: none; }
+.bf-pr-ref b { font-weight: 600; }
+.bf-pr-table td:first-child button { font: inherit; font-weight: 600; color: var(--color-fg); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: var(--color-border-line); text-underline-offset: 3px; }
+.bf-risk { display: inline-flex; gap: 3px; vertical-align: middle; margin-right: 8px; }
+.bf-risk i { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--color-fg); }
+.bf-risk i.on { background: var(--color-fg); }
+.bf-risk-t { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-pr-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 24px clamp(20px, 3vw, 40px); margin-top: 28px; min-height: 12rem; }
+.bf-pr { border-top: 2px solid var(--color-fg); padding-top: 12px; display: flex; flex-direction: column; gap: 8px; scroll-margin-top: 16px; }
+.bf-pr h3 { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 700; font-size: 1.3rem; }
+.bf-pr-what { font-family: var(--font-anthropic-serif); font-size: 1rem; line-height: 1.55; }
+.bf-pr dl { margin: 0; display: grid; grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr); gap: 6px 12px; font-size: var(--cds-font-size-caption); line-height: 1.5; }
+.bf-pr dt { color: var(--color-fg-muted); }
+.bf-pr dd { margin: 0; }
+.bf-pr-watch { font-size: var(--cds-font-size-caption); line-height: 1.5; padding: 8px 10px; background: var(--color-panel); border-left: 2px solid var(--color-bad); }
+.bf-pr-watch b { font-weight: 600; }
+.bf-pr.bf-flash { outline: 2px solid var(--color-fg); outline-offset: 6px; }
+.bf-pr-warn { margin-top: 20px !important; max-width: 52rem; }
+@container (max-width: 520px) { .bf-pr dl { grid-template-columns: 1fr; gap: 2px; } .bf-pr dd { margin-bottom: 6px; } }
+
 /* Visitor's own Alpha Vantage key */
 .bf-apikey { border: 1px solid var(--color-fg); padding: 14px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 46rem; }
 .bf-apikey[hidden], .bf-apikey-set[hidden] { display: none; }
@@ -664,6 +691,29 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
   </div>
 
   <div class="bf-page" data-page="apren" hidden>
+    <section class="bf-sec" id="productes">
+      <div class="bf-head">
+        <div>
+          <h2>Guia de productes per estalviar i invertir</h2>
+          <p class="bf-note">Què és cada producte, quant risc té, com recuperes els diners, quant costa i com paga impostos. No et diu què has de triar: t'ajuda a fer-te les preguntes correctes.</p>
+        </div>
+      </div>
+      <p class="bf-pr-ref" data-draw="prref" data-source="butxaca"></p>
+      <div class="bf-tablewrap">
+        <table class="bf-table bf-pr-table" data-source="productes" data-row-key="producte">
+          <thead><tr>
+            <th data-field="producte">Producte</th>
+            <th data-field="risc">Risc (d'1 a 7)</th>
+            <th data-field="liq_curt">Quan recuperes els diners</th>
+            <th data-field="costos_curt">Costos</th>
+          </tr></thead>
+          <tbody data-draw="prtaula"></tbody>
+        </table>
+      </div>
+      <div class="bf-pr-cards dash-skeleton" data-draw="prfitxes" data-source="productes"></div>
+      <p class="bf-note bf-pr-warn">Guia orientativa amb la fiscalitat general d'Espanya (territori comú) del 2026. Les condicions de cada producte i entitat canvien: abans de contractar res, llegeix el document de dades fonamentals i, si cal, demana consell a un professional autoritzat.</p>
+    </section>
+
     <section class="bf-sec">
       <div class="bf-head">
         <div>
@@ -1709,6 +1759,7 @@ dash.draw('leccio', (el) => {
   const p = document.createElement('p'); p.textContent = String(d.explicacio ?? '');
   el.append(h, p);
   if (d.exemple) { const e = document.createElement('p'); e.className = 'bf-lesson-ex'; e.textContent = 'Per exemple: ' + d.exemple; el.append(e); }
+  if (d.economia) { const e = document.createElement('p'); e.className = 'bf-lesson-eco'; const b = document.createElement('b'); b.textContent = "I per a l'economia. "; e.append(b, String(d.economia)); el.append(e); }
   if (d.en_una_frase) { const o = document.createElement('p'); o.className = 'bf-lesson-one'; o.textContent = 'En una frase: ' + d.en_una_frase; el.append(o); }
   const terms = String(d.termes || '').split(';').map((t) => t.trim()).filter(Boolean);
   if (terms.length) {
@@ -1738,6 +1789,11 @@ dash.draw('butxaca', (el) => {
     const h = document.createElement('h4'); h.textContent = 'Què vol dir per a tu';
     const w = document.createElement('p'); w.className = 'bf-pk-what'; w.textContent = String(d.que_vol_dir ?? '');
     c.append(n, v, dt, cmp, h, w);
+    if (d.per_a_leconomia) {
+      const h2 = document.createElement('h4'); h2.textContent = "I per a l'economia";
+      const e = document.createElement('p'); e.className = 'bf-pk-eco'; e.textContent = String(d.per_a_leconomia);
+      c.append(h2, e);
+    }
     if (d.hi_guanya || d.hi_perd) {
       const who = document.createElement('div'); who.className = 'bf-pk-who';
       [['Hi guanya', d.hi_guanya], ['Hi perd', d.hi_perd]].forEach(([lab, txt]) => {
@@ -1838,6 +1894,79 @@ dash.draw('notesarxiu', (el) => {
     bfParas(d.text).forEach((t) => { const p = document.createElement('p'); p.textContent = t; det.append(p); });
     r.append(dt, det);
     el.append(r);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+const bfRisk = (n, label) => {
+  const wrap = document.createElement('span');
+  const r = document.createElement('span'); r.className = 'bf-risk'; r.setAttribute('aria-hidden', 'true');
+  for (let i = 1; i <= 7; i++) { const dot = document.createElement('i'); if (i <= Number(n)) dot.className = 'on'; r.append(dot); }
+  const t = document.createElement('span'); t.className = 'bf-risk-t'; t.textContent = String(label || n);
+  wrap.append(r, t);
+  wrap.setAttribute('aria-label', 'Risc ' + n + ' de 7: ' + (label || ''));
+  return wrap;
+};
+window.bf.goProduct = (id) => {
+  document.querySelectorAll('.bf-pr').forEach((c) => c.classList.toggle('bf-flash', c.id === 'producte-' + id));
+  const c = document.getElementById('producte-' + id);
+  if (c) c.scrollIntoView({block: 'start', behavior: 'smooth'});
+};
+
+dash.draw('prref', (el) => {
+  const k = dash.data('butxaca');
+  el.replaceChildren();
+  if (k.status !== 'ok') return;
+  const by = Object.fromEntries(k.data.map((d) => [d.id, d]));
+  const parts = [['ipc', 'Inflació'], ['lletres', 'Lletres a 12 mesos'], ['bce', 'Tipus del BCE']].filter(([id]) => by[id]);
+  if (!parts.length) return;
+  el.append('Per comparar, avui: ');
+  parts.forEach(([id, label], i) => {
+    const b = document.createElement('b'); b.textContent = label + ' ' + String(by[id].valor);
+    el.append(b, i < parts.length - 1 ? ' · ' : '. ');
+  });
+  el.append("Un producte que rendeix menys que la inflació protegeix els diners només en part: perds poder de compra, tot i que menys.");
+});
+
+dash.draw('prtaula', (tbody) => {
+  const p = dash.data('productes');
+  tbody.replaceChildren();
+  if (p.status !== 'ok') return;
+  p.data.forEach((d) => {
+    const tr = document.createElement('tr'); tr.dataset.key = String(d.producte);
+    const td1 = document.createElement('td'); const b = document.createElement('button'); b.type = 'button'; b.textContent = String(d.producte);
+    b.addEventListener('click', () => window.bf.goProduct(d.id)); td1.append(b);
+    const td2 = document.createElement('td'); td2.append(bfRisk(d.risc, d.risc_text));
+    const td3 = document.createElement('td'); td3.textContent = String(d.liq_curt ?? '');
+    const td4 = document.createElement('td'); td4.textContent = String(d.costos_curt ?? '');
+    tr.append(td1, td2, td3, td4);
+    tbody.append(tr);
+  });
+});
+
+dash.draw('prfitxes', (el) => {
+  const B = window.bf, p = dash.data('productes');
+  if (B.state(el, [p.status])) return;
+  el.replaceChildren();
+  p.data.forEach((d) => {
+    const c = document.createElement('article'); c.className = 'bf-pr'; c.id = 'producte-' + d.id;
+    const h = document.createElement('h3'); h.textContent = String(d.producte ?? '');
+    const r = document.createElement('div'); r.append(bfRisk(d.risc, d.risc_text));
+    const w = document.createElement('p'); w.className = 'bf-pr-what'; w.textContent = String(d.que_es ?? '');
+    const dl = document.createElement('dl');
+    [['Què en pots esperar', d.rendiment], ['Recuperar els diners', d.liquiditat], ['Costos', d.costos], ['Impostos', d.fiscalitat], ['Protecció', d.garantia], ['Per a qui sol tenir sentit', d.per_a_qui]].forEach(([k, v]) => {
+      if (!v) return;
+      const dt = document.createElement('dt'); dt.textContent = k;
+      const dd = document.createElement('dd'); dd.textContent = String(v);
+      dl.append(dt, dd);
+    });
+    c.append(h, r, w, dl);
+    if (d.compte_amb) { const x = document.createElement('p'); x.className = 'bf-pr-watch'; const b = document.createElement('b'); b.textContent = 'Compte amb. '; x.append(b, String(d.compte_amb)); c.append(x); }
+    el.append(c);
   });
 });
 

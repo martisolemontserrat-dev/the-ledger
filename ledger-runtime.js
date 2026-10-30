@@ -18,7 +18,8 @@
     leccions: 'data/leccions.json',
     glossari: 'data/glossari.json',
     butxaca: 'data/butxaca.json',
-    notes: 'data/notes.json'
+    notes: 'data/notes.json',
+    productes: 'data/productes.json'
   };
   var QUERIES = {
     cerca: { fn: 'SYMBOL_SEARCH', args: function (p) { return { keywords: p.q, datatype: 'csv' }; } },

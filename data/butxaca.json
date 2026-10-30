@@ -9,7 +9,8 @@
   "hi_guanya": "Qui estalvia: dipòsits i comptes remunerats tendeixen a pagar més.",
   "hi_perd": "Qui té hipoteca variable i li toca revisió.",
   "font": "Rankia",
-  "url": "https://www.rankia.com/blog/mejores-hipotecas/7529932-euribor-hoy-29-octubre-2026"
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7529932-euribor-hoy-29-octubre-2026",
+  "per_a_leconomia": "Encareix el crèdit a famílies i empreses: es demanen menys hipoteques i menys préstecs per invertir, i això refreda la compra d'habitatge i la construcció."
  },
  {
   "id": "ipc",
@@ -21,7 +22,8 @@
   "hi_guanya": "Qui té deutes a tipus fix: en termes reals, el que deu val menys.",
   "hi_perd": "Qui té estalvis sense remunerar i qui té un sou que no s'actualitza.",
   "font": "Raisin (dada avançada de l'INE)",
-  "url": "https://www.raisin.com/es-es/noticias/ipc-octubre-2026-adelanto/"
+  "url": "https://www.raisin.com/es-es/noticias/ipc-octubre-2026-adelanto/",
+  "per_a_leconomia": "Amb inflació alta, els sous i els costos de les empreses tendeixen a pujar i el BCE es veu empès a apujar tipus, cosa que frena l'activitat. Les empreses que no poden traslladar els costos als preus perden marge."
  },
  {
   "id": "llum",
@@ -33,7 +35,8 @@
   "hi_guanya": "Qui pot moure el consum a les hores barates.",
   "hi_perd": "Qui té la tarifa regulada i consumeix sobretot al vespre.",
   "font": "Tarifaluzhora",
-  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-10-30"
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-10-30",
+  "per_a_leconomia": "L'electricitat cara és un cost directe per a la indústria (metal·lúrgia, química, alimentació): resta competitivitat a les fàbriques i acaba encarint molts productes."
  },
  {
   "id": "carburants",
@@ -45,7 +48,8 @@
   "hi_guanya": "Qui fa servir el cotxe cada dia.",
   "hi_perd": "Les arques públiques, que ingressen menys per l'impost.",
   "font": "Demócrata (dades del MITECO)",
-  "url": "https://www.democrata.es/en/economy/gasoline-price-today-october-30-2026-how-much-do-gasoline-95-and-diesel-cost/"
+  "url": "https://www.democrata.es/en/economy/gasoline-price-today-october-30-2026-how-much-do-gasoline-95-and-diesel-cost/",
+  "per_a_leconomia": "El transport de mercaderies funciona amb gasoil: quan baixa, s'abarateix la distribució del que viatja en camió. La rebaixa d'impostos, però, vol dir menys ingressos públics."
  },
  {
   "id": "bce",
@@ -57,7 +61,8 @@
   "hi_guanya": "Qui estalvia, si el BCE acaba pujant.",
   "hi_perd": "Qui necessita finançament: famílies amb préstecs i empreses.",
   "font": "The Irish Times",
-  "url": "https://www.irishtimes.com/business/2026/10/29/ecb-holds-rates-steady-as-lagardes-departure-overshadows-decision/"
+  "url": "https://www.irishtimes.com/business/2026/10/29/ecb-holds-rates-steady-as-lagardes-departure-overshadows-decision/",
+  "per_a_leconomia": "Els tipus són el fre i l'accelerador de l'economia: mantenir-los alts frena la inflació, però també la inversió de les empreses i la creació de feina."
  },
  {
   "id": "lletres",
@@ -69,6 +74,7 @@
   "hi_guanya": "L'estalviador prudent que vol un rendiment segur a curt termini.",
   "hi_perd": "L'Estat, que paga més per finançar-se.",
   "font": "Merca2",
-  "url": "https://www.merca2.es/2026/10/06/subasta-tesoro-letras-rentabilidad-12-meses-2468527/"
+  "url": "https://www.merca2.es/2026/10/06/subasta-tesoro-letras-rentabilidad-12-meses-2468527/",
+  "per_a_leconomia": "Si l'Estat paga més per endeutar-se, li queden menys diners per a altres despeses. I com que el deute públic és la referència de molts préstecs, també s'encareix el finançament de les empreses."
  }
 ]
