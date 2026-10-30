@@ -1,0 +1,29 @@
+[
+ {
+  "empresa": "Anthropic",
+  "producte": "Claude",
+  "valoracio": "965.000 M$ (ronda de maig); busca 1,5–2 bilions en sortir a borsa",
+  "borsa": "Papers presentats el 26 d'octubre, codi ANT",
+  "ingressos": "16.300 M$ el primer semestre (dada oficial); uns 65.000 M$ anualitzats al juliol, segons la premsa",
+  "darrer_model": "Claude Haiku 5.5 (7 d'octubre)",
+  "font": "TechCrunch, Parameter"
+ },
+ {
+  "empresa": "OpenAI",
+  "producte": "ChatGPT",
+  "valoracio": "1,25 bilions en una ronda que encara negocia (852.000 M$ al març)",
+  "borsa": "Papers confidencials al juny; s'espera el 2027",
+  "ingressos": "Més de 40.000 M$ anualitzats al juliol, segons la premsa",
+  "darrer_model": "GPT-6.1 Terra (26 d'octubre)",
+  "font": "TechCrunch, Parameter"
+ },
+ {
+  "empresa": "Google",
+  "producte": "Gemini",
+  "valoracio": "Dins d'Alphabet, que ja cotitza",
+  "borsa": "Alphabet (GOOGL) va caure més d'un 7% després de resultats",
+  "ingressos": "Google Cloud: 30.700 M$ el tercer trimestre",
+  "darrer_model": "Gemini 4 Carbon (28 d'octubre)",
+  "font": "Kill The AI"
+ }
+]

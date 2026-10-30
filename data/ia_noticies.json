@@ -1,0 +1,92 @@
+[
+ {
+  "id": "a1",
+  "categoria": "Competència",
+  "empresa": "Anthropic",
+  "titular": "Anthropic presenta els papers per sortir a borsa",
+  "resum": "Ho va fer el 26 d'octubre, amb el codi ANT. El document mostra uns ingressos de 16.300 milions de dòlars el primer semestre del 2026 (1.200 milions un any abans) i unes pèrdues operatives de 693 milions; els fundadors conservaran el 50,1% dels vots.",
+  "font": "TechCrunch",
+  "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+  "data": "2026-10-26"
+ },
+ {
+  "id": "a2",
+  "categoria": "Competència",
+  "empresa": "OpenAI",
+  "titular": "OpenAI negocia una ronda de 30.000 milions a una valoració d'1,25 bilions",
+  "resum": "La lideraria Coatue amb inversors dels Emirats, segons fonts de CNBC. OpenAI va presentar en confidencial els papers per sortir a borsa al juny; Anthropic, que es va valorar en 965.000 milions al maig, aspiraria a entre 1,5 i 2 bilions en la seva estrena.",
+  "font": "TechCrunch",
+  "url": "https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/",
+  "data": "2026-10-22"
+ },
+ {
+  "id": "a3",
+  "categoria": "Llançaments",
+  "empresa": "Google",
+  "titular": "Google llança Gemini 4 Carbon, de moment només per a experts en ciberseguretat",
+  "resum": "Encapçala l'índex d'intel·ligència d'Artificial Analysis amb 59 punts, per davant de Claude Opus 5.5 i GPT-6 Astra, tot i que per pocs punts. L'accés general no té data mentre passa les proves voluntàries del govern dels EUA.",
+  "font": "Kill The AI",
+  "url": "https://killtheai.com/news/top-10-ai-news-today-october-29-2026",
+  "data": "2026-10-28"
+ },
+ {
+  "id": "a4",
+  "categoria": "Llançaments",
+  "empresa": "OpenAI",
+  "titular": "GPT-6.1 Terra: el model ràpid i barat d'OpenAI per fer feina a l'ordinador",
+  "resum": "Costa 1 dòlar per milió de tokens d'entrada i 5 de sortida, la meitat que els seus germans, i segons OpenAI fa les tasques més de tres vegades més ràpid que GPT-6 Astra. Per a la programació més complexa, la mateixa OpenAI recomana els models grans.",
+  "font": "BleepingComputer",
+  "url": "https://bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing",
+  "data": "2026-10-26"
+ },
+ {
+  "id": "a5",
+  "categoria": "Empreses",
+  "empresa": "Anthropic",
+  "titular": "Claude Enterprise ensenya a les empreses què els aporta la despesa en IA",
+  "resum": "Nous informes per equips, enquestes i pressupostos compartits. Segons dades de Jellyfish, la despesa en eines basades en Claude s'ha multiplicat per deu des del gener i ja suposa gairebé un terç dels canvis de codi que es proposen a revisió.",
+  "font": "TechCrunch",
+  "url": "https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying",
+  "data": "2026-10-28"
+ },
+ {
+  "id": "a6",
+  "categoria": "Inversió i borsa",
+  "empresa": "Alphabet",
+  "titular": "Alphabet cau més d'un 7% malgrat el bon moment de Google Cloud",
+  "resum": "Els ingressos del tercer trimestre, 127.580 milions de dòlars, van quedar just per sota del previst, i la inversió en infraestructura també. Google Cloud va facturar 30.700 milions.",
+  "font": "Kill The AI",
+  "url": "https://killtheai.com/news/top-10-ai-news-today-october-29-2026",
+  "data": "2026-10-29"
+ },
+ {
+  "id": "a7",
+  "categoria": "Llançaments",
+  "empresa": "Mistral AI",
+  "titular": "Mistral publica els pesos oberts de Large 4, un model d'un bilió de paràmetres",
+  "resum": "La companyia francesa, la gran aposta europea, l'orienta a programar i a la ciberseguretat defensiva.",
+  "font": "The Neuron",
+  "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-october-30-2026",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "a8",
+  "categoria": "Inversió i borsa",
+  "empresa": "Cohere",
+  "titular": "El Canadà entra al capital de Cohere amb fins a 1.600 milions de dòlars canadencs",
+  "resum": "A canvi, l'empresa s'ha de quedar amb la seu al país i invertir-hi almenys 1.700 milions en capacitat de càlcul abans del 2030.",
+  "font": "The Neuron",
+  "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-october-30-2026",
+  "data": "2026-10-30"
+ },
+ {
+  "id": "a9",
+  "categoria": "Empreses",
+  "empresa": "OpenAI",
+  "titular": "OpenAI dobla el que poden fer amb Codex els clients dels plans Pro",
+  "resum": "També ha actualitzat les normes de comportament dels seus models i ha ampliat la vigilància interna dels agents que actuen sense permís.",
+  "font": "The Neuron",
+  "url": "https://theneuron.ai/digest/everything-that-happened-in-ai-today-october-30-2026",
+  "data": "2026-10-30"
+ }
+]

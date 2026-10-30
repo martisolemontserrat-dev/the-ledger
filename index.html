@@ -1,0 +1,1546 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Ledger</title>
+<meta name="description" content="Els mercats del món, abans que obrin: borses, notícies financeres i d'intel·ligència artificial, actualitzades cada matí.">
+<meta property="og:title" content="The Ledger">
+<meta property="og:description" content="Els mercats del món, abans que obrin.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23141414'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='42' font-weight='700' fill='%23fff' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --font-anthropic-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-anthropic-sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-bg: #ffffff; --color-fg: #141414; --color-fg-muted: #5f5e5a; --color-panel: #f4f4f1;
+  --color-border-line: #d9d8d2; --color-ok: #0b7a0b; --color-warn: #a86b00; --color-bad: #c42b2b;
+  --cds-chart-grid: #ebeae5; --cds-chart-axis: #bdbcb4; --cds-chart-muted: #c9c8c0; --cds-chart-reference: #8a8983;
+  --cds-surface-popover: #ffffff; --cds-border: #d9d8d2; --cds-text-secondary: #5f5e5a;
+  --cds-shadow-popover: 0 8px 24px rgba(20, 20, 20, .12);
+  --cds-radius: 4px;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-lg: 24px; --cds-gap-xl: 32px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 20px; --cds-pad-xl: 28px;
+  --cds-font-size-caption: .8125rem; --cds-font-size-body: .9375rem; --cds-font-size-heading: 1.125rem; --cds-font-size-title: 1.75rem;
+  --cds-font-weight-medium: 500;
+  --cds-dur-slow: 420ms; --cds-ease-out: cubic-bezier(.2, .8, .2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-bg: #121211; --color-fg: #eeede8; --color-fg-muted: #a3a29a; --color-panel: #1c1c1a;
+    --color-border-line: #34342f; --color-ok: #3fbf3f; --color-warn: #e0a028; --color-bad: #ef6b6b;
+    --cds-chart-grid: #262623; --cds-chart-axis: #4a4a45; --cds-chart-muted: #4f4f49; --cds-chart-reference: #85857c;
+    --cds-surface-popover: #1f1f1d; --cds-border: #3a3a35; --cds-text-secondary: #a3a29a;
+    --cds-shadow-popover: 0 8px 24px rgba(0, 0, 0, .5);
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-body); line-height: 1.45; -webkit-font-smoothing: antialiased; }
+#dash-root { --dash-gutter: clamp(16px, 3.2vw, 40px); padding: clamp(16px, 3vw, 36px) var(--dash-gutter) 56px; overflow-x: clip; }
+.dash-skeleton:empty { position: relative; }
+.dash-skeleton:empty::before { content: ''; position: absolute; inset: 0; background: var(--color-panel); border-radius: var(--cds-radius); }
+@media (prefers-reduced-motion: no-preference) {
+  .dash-skeleton:empty::before { animation: ledger-pulse 1.4s ease-in-out infinite; }
+  @keyframes ledger-pulse { 50% { opacity: .55; } }
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="ledger-runtime.js"></script>
+</head>
+<body>
+<div id="dash-root">
+<style>
+#dash-root { --dash-gutter: clamp(14px, 3.2vw, 40px); }
+.bf {
+  --up: #256abf; --down: #e34948; --mid: #f0efec; --ink-on-dark: #ffffff; --ink-on-light: #0b0b0b;
+  max-width: 1200px; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg);
+  display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); container-type: inline-size;
+}
+.bf p { margin: 0; }
+.bf h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; letter-spacing: -0.005em; }
+.bf-note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.5; }
+.bf-note b { font-weight: 500; color: var(--color-fg); }
+
+/* Masthead: broadsheet nameplate */
+.bf-mast { display: flex; flex-direction: column; gap: clamp(22px, 3vw, 34px); }
+.bf-np { border-top: 1px solid var(--color-fg); padding-top: 3px; }
+.bf-np-inner { border-top: 3px solid var(--color-fg); }
+.bf-np-top { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 16px; padding: clamp(14px, 2vw, 22px) 0 clamp(12px, 1.8vw, 18px); }
+.bf-word { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(2.6rem, 1.6rem + 4.2vw, 4.9rem); letter-spacing: -0.02em; line-height: .95; text-align: center; }
+.bf-np-l, .bf-np-r { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.45; }
+.bf-np-r { text-align: right; }
+.bf-np-l b, .bf-np-r b { color: var(--color-fg); font-weight: 500; }
+.bf-np-line { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; padding: 7px 0; border-top: 1px solid var(--color-fg); border-bottom: 1px solid var(--color-fg); font-size: var(--cds-font-size-caption); }
+.bf-np-line > p { font-family: var(--font-anthropic-serif); font-style: italic; font-size: var(--cds-font-size-body); }
+.bf-fx { display: flex; gap: 22px; }
+.bf-fx div { display: flex; gap: 6px; align-items: baseline; }
+.bf-fx span { color: var(--color-fg-muted); }
+.bf-fx b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.bf-ticker { display: flex; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--color-border-line); min-height: 38px; }
+.bf-ticker::-webkit-scrollbar { display: none; }
+.bf-tk { flex: 1 0 auto; display: flex; align-items: baseline; justify-content: center; gap: 7px; padding: 10px 14px; font-size: var(--cds-font-size-caption); white-space: nowrap; }
+.bf-tk + .bf-tk { border-left: 1px solid var(--color-border-line); }
+.bf-tk span { color: var(--color-fg); font-weight: 500; }
+.bf-tk b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.bf-tk-when { color: var(--color-fg-muted); font-style: italic; }
+
+.bf-lead { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px clamp(28px, 5vw, 72px); align-items: start; }
+.bf-story { font-family: var(--font-anthropic-serif); font-size: clamp(1.55rem, 1.05rem + 2vw, 2.6rem); line-height: 1.16; font-weight: 700; letter-spacing: -0.015em; max-width: 26em; text-wrap: balance; }
+.bf-stats { display: grid; grid-template-columns: repeat(3, auto); border-top: 2px solid var(--color-fg); border-bottom: 1px solid var(--color-fg); }
+.bf-stat { display: flex; flex-direction: column; gap: 5px; padding: 12px 16px 12px 0; min-width: 9rem; }
+.bf-stat + .bf-stat { border-left: 1px solid var(--color-border-line); padding-left: 16px; }
+.bf-stat > span { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.bf-stat > b { font-family: var(--font-anthropic-serif); font-size: clamp(1.45rem, 1.1rem + 1vw, 1.95rem); font-weight: 700; line-height: 1.05; }
+.bf-stat > em { font-style: normal; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.bf-stat > em b { color: var(--color-fg); font-weight: 500; }
+.bf-per-note { grid-column: 1 / -1; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-style: italic; padding: 8px 0; border-top: 1px solid var(--color-border-line); }
+.bf-per-note span { color: var(--color-fg); font-style: normal; font-weight: 500; }
+
+/* Broadsheet sections: a heavy rule, a serif head */
+.bf-sec { border-top: 2px solid var(--color-fg); padding-top: 12px; }
+.bf h2 { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.25rem, 1.05rem + .6vw, 1.55rem); letter-spacing: -0.01em; line-height: 1.15; }
+.bf-cell, .bf-cells > .bf-cell:first-child, .bf-cells > .bf-cell:last-child, .bf-seg, .bf-seg button, .bf-pick select { border-radius: 0 !important; }
+.bf .bf-seg { flex-direction: row; flex-wrap: wrap; align-self: flex-end; background: transparent; border: 1px solid var(--color-fg); padding: 0; gap: 0; }
+.bf .bf-seg button { padding: 6px 12px; }
+.bf .bf-seg button + button { border-left: 1px solid var(--color-fg); }
+.bf .bf-seg button:hover { color: var(--color-fg); }
+.bf .bf-seg button[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); box-shadow: none; }
+.bf-group-name { color: var(--color-fg); font-weight: 600; }
+.bf-group-name::after { background: var(--color-fg); }
+/* News: the first story leads */
+.bf-item.bf-top { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 8px clamp(24px, 4vw, 56px); padding: 6px 0 22px; border-top: 0; border-bottom: 1px solid var(--color-fg); }
+.bf-item.bf-top h3 { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.3rem, 1rem + 1vw, 1.75rem); line-height: 1.22; letter-spacing: -0.01em; grid-row: span 2; }
+.bf-item.bf-top p { align-self: start; }
+@container (max-width: 760px) { .bf-item.bf-top { grid-template-columns: 1fr; } .bf-item.bf-top h3 { grid-row: auto; } }
+
+/* Section heads and the one filter row */
+.bf-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--cds-gap-sm) var(--cds-gap-lg); margin-bottom: var(--cds-gap-md); }
+.bf-head > div { display: flex; flex-direction: column; gap: 4px; max-width: 46em; }
+.bf-seg { display: inline-flex; align-items: center; gap: 2px; padding: 2px; border-radius: calc(var(--cds-radius) + 2px); background: var(--color-panel); border: 1px solid var(--color-border-line); }
+.bf-seg button { font: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); background: transparent; border: 0; border-radius: var(--cds-radius); padding: 6px 12px; cursor: pointer; }
+.bf-seg button[aria-pressed="true"] { background: var(--color-bg); color: var(--color-fg); font-weight: 500; box-shadow: 0 0 0 1px var(--color-border-line); }
+.bf button:focus-visible, .bf select:focus-visible, .bf a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+
+/* The east-to-west strip */
+.bf-strip { display: grid; gap: 14px; min-height: 132px; }
+.bf-group { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.bf-group-name { display: flex; align-items: center; gap: 8px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-group-name::after { content: ""; flex: 1; height: 1px; background: var(--color-border-line); }
+.bf-cells { display: grid; gap: 2px; }
+.bf-cell { font: inherit; text-align: left; border: 0; margin: 0; cursor: pointer; min-height: 96px; padding: 10px 9px 9px; display: flex; flex-direction: column; justify-content: space-between; gap: 10px; border-radius: 0; min-width: 0; }
+.bf-cells > .bf-cell:first-child { border-top-left-radius: var(--cds-radius); border-bottom-left-radius: var(--cds-radius); }
+.bf-cells > .bf-cell:last-child { border-top-right-radius: var(--cds-radius); border-bottom-right-radius: var(--cds-radius); }
+.bf-cell-name { font-size: var(--cds-font-size-caption); font-weight: 500; line-height: 1.25; }
+.bf-cell-name small { display: block; font-weight: 400; opacity: .78; font-size: inherit; }
+.bf-cell-val { font-size: clamp(.95rem, .8rem + .35vw, 1.1rem); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bf-cell[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--color-bg), inset 0 0 0 4px var(--color-fg); }
+.bf-scale { display: flex; align-items: center; gap: 8px; margin-top: var(--cds-gap-sm); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-ramp { width: 132px; height: 8px; border-radius: 2px; }
+@container (max-width: 1000px) {
+  .bf-strip { grid-template-columns: 1fr !important; }
+  .bf-cells { grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr)) !important; }
+  .bf-cells > .bf-cell { border-radius: var(--cds-radius) !important; }
+  .bf-np-top { grid-template-columns: 1fr; text-align: center; }
+  .bf-np-l, .bf-np-r { text-align: center; }
+  .bf-np-top .bf-word { order: -1; }
+  .bf-lead { grid-template-columns: 1fr; }
+  .bf-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .bf-stat { min-width: 0; }
+}
+@container (max-width: 480px) {
+  .bf-stats { grid-template-columns: 1fr; }
+  .bf-stat + .bf-stat { border-left: 0; padding-left: 0; border-top: 1px solid var(--color-border-line); }
+}
+
+/* Charts */
+.bf-pair { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 40px); }
+@container (max-width: 860px) { .bf-pair { grid-template-columns: 1fr; } }
+.bf-panel { min-width: 0; }
+.bf-chart { position: relative; }
+.bf-bars { min-height: 340px; }
+.bf-lines { min-height: 352px; }
+.bf-chart svg { display: block; overflow: visible; }
+.bf-chart svg text { font-family: var(--font-anthropic-sans); font-size: 12px; fill: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.bf-chart svg .bf-ink { fill: var(--color-fg); }
+.bf-chart svg .bf-strong { fill: var(--color-fg); font-weight: 600; }
+.bf-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; margin-bottom: var(--cds-gap-sm); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.bf-key { width: 16px; height: 2px; border-radius: 1px; display: inline-block; }
+.bf-pick { display: inline-flex; align-items: center; gap: 8px; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.bf-pick select { font: inherit; color: var(--color-fg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 5px 8px; }
+.bf-tip { position: absolute; pointer-events: none; z-index: 3; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); min-width: 150px; }
+.bf-tip-head { color: var(--cds-text-secondary); margin-bottom: 4px; white-space: nowrap; }
+.bf-tip-row { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: center; white-space: nowrap; line-height: 1.6; }
+.bf-tip-row b { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; grid-column: 2; grid-row: 1; justify-self: start; }
+.bf-tip-row em { font-style: normal; color: var(--cds-text-secondary); grid-column: 2; grid-row: 1; justify-self: end; padding-left: 52px; }
+.bf-tip-row i { width: 12px; height: 2px; border-radius: 1px; }
+.bf-tip-row.bf-me em { color: var(--color-fg); font-weight: 500; }
+
+/* News: a reading list, not a card wall */
+.bf-news { columns: 19rem 3; column-gap: clamp(24px, 3vw, 40px); column-rule: 1px solid var(--color-border-line); min-height: 12rem; }
+.bf-item { break-inside: avoid; }
+.bf-item.bf-top { column-span: all; }
+.bf-item { padding: 14px 0 18px; border-top: 1px solid var(--color-border-line); display: flex; flex-direction: column; gap: 6px; }
+.bf-item h3 { margin: 0; font-size: var(--cds-font-size-body); font-weight: 600; line-height: 1.35; max-width: 38em; }
+.bf-item p { font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-body); line-height: 1.6; max-width: 40em; }
+.bf-item p.bf-src { font-family: var(--font-anthropic-sans); }
+.bf-item h3 { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: 1.12rem; }
+.bf-src { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-src a { color: inherit; text-decoration-color: var(--color-border-line); text-underline-offset: 3px; }
+.bf-src a:hover { color: var(--color-fg); }
+
+/* Table view */
+.bf-tablewrap { overflow-x: auto; }
+.bf-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-body); font-variant-numeric: tabular-nums; }
+.bf-table th { text-align: left; font-weight: 500; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); border-bottom: 1px solid var(--color-border-line); padding: 0; white-space: nowrap; }
+.bf-table th button { font: inherit; color: inherit; background: none; border: 0; padding: 8px 12px 8px 0; cursor: pointer; text-align: inherit; width: 100%; }
+.bf-table th[aria-sort="ascending"] button::after { content: " ↑"; }
+.bf-table th[aria-sort="descending"] button::after { content: " ↓"; }
+.bf-table td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.bf-table .bf-n { text-align: right; }
+.bf-table td.bf-n { padding-right: 16px; }
+.bf-table th.bf-n button { text-align: right; padding-right: 16px; }
+.bf-sign { display: inline-block; width: 1em; text-align: center; margin-right: 2px; font-size: .8em; }
+.bf-sign.u { color: var(--up); }
+.bf-sign.d { color: var(--down); }
+.bf-muted { color: var(--color-fg-muted); }
+
+.bf-foot { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.55; max-width: 60em; padding-top: var(--cds-gap-md); border-top: 1px solid var(--color-border-line); }
+
+.bf-fail { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-fail i { width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+[data-dash-source-state=empty] { color: transparent; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+@media (prefers-reduced-motion: no-preference) {
+  .bf-strip.bf-intro .bf-cell { animation: bf-sun var(--cds-dur-slow) var(--cds-ease-out) both; animation-delay: calc(var(--i) * 45ms); }
+  @keyframes bf-sun { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}
+
+/* Section nav under the nameplate */
+.bf-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; border-bottom: 1px solid var(--color-fg); }
+.bf-tab { font: inherit; font-family: var(--font-anthropic-serif); font-size: var(--cds-font-size-body); color: var(--color-fg-muted); background: none; border: 0; padding: 10px 18px 9px; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; }
+.bf-tab:hover { color: var(--color-fg); }
+.bf-tab[aria-pressed="true"] { color: var(--color-fg); font-weight: 700; border-bottom-color: var(--color-fg); }
+.bf-page { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+.bf-page[hidden] { display: none; }
+
+/* Stock search */
+.bf-q-bar { display: flex; gap: 0; max-width: 40rem; }
+.bf-q-input { flex: 1; min-width: 0; font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-fg); border-right: 0; padding: 10px 12px; border-radius: 0; }
+.bf-q-input:focus-visible { outline: 2px solid var(--color-fg); outline-offset: -3px; }
+.bf-q-go { font: inherit; font-weight: 600; background: var(--color-fg); color: var(--color-bg); border: 1px solid var(--color-fg); padding: 10px 20px; cursor: pointer; border-radius: 0; }
+.bf-q-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.bf-chip { font: inherit; font-size: var(--cds-font-size-caption); font-weight: 600; letter-spacing: .02em; color: var(--color-fg); background: none; border: 1px solid var(--color-border-line); padding: 5px 10px; cursor: pointer; border-radius: 0; }
+.bf-chip:hover { border-color: var(--color-fg); }
+.bf-chip[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+.bf-q-results { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.bf-q-results[hidden] { display: none; }
+.bf-q-table tbody tr { cursor: pointer; }
+.bf-q-table tbody tr:hover td, .bf-q-table tbody tr:focus-visible td { background: var(--color-panel); }
+.bf-q-table td:first-child { font-weight: 600; }
+.bf-q-msg { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-q-msg:empty { display: none; }
+.bf-q-quote { border-top: 2px solid var(--color-fg); padding-top: 14px; display: flex; flex-direction: column; gap: 14px; }
+.bf-q-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px 32px; }
+.bf-q-sym { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.9rem, 1.4rem + 2vw, 2.8rem); letter-spacing: -0.02em; line-height: 1; }
+.bf-q-name { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin-top: 6px !important; }
+.bf-q-px { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-end; gap: 4px 14px; text-align: right; }
+.bf-q-px .bf-note { flex-basis: 100%; }
+.bf-q-last { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.9rem, 1.4rem + 2vw, 2.8rem); letter-spacing: -0.02em; line-height: 1; }
+.bf-q-chg { font-weight: 600; font-size: var(--cds-font-size-heading); font-variant-numeric: tabular-nums; }
+.bf-q-tools { display: flex; flex-wrap: wrap; gap: 10px; }
+.bf-q-chart { min-height: 452px; }
+.bf-q-legend { position: absolute; left: 0; top: 0; display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; color: var(--color-fg-muted); pointer-events: none; background: color-mix(in srgb, var(--color-bg) 82%, transparent); padding: 2px 6px 2px 0; }
+.bf-q-legend b { color: var(--color-fg); font-weight: 600; }
+.bf-q-legend i { display: inline-block; width: 14px; height: 2px; vertical-align: middle; margin-right: 5px; }
+.bf-q-ohlc { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); border-top: 1px solid var(--color-fg); border-bottom: 1px solid var(--color-border-line); }
+.bf-q-ohlc div { display: flex; flex-direction: column; gap: 4px; padding: 10px 14px 10px 0; }
+.bf-q-ohlc span { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-q-ohlc b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.bf-q-toggle { font: inherit; font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--color-fg); background: none; border: 1px solid var(--color-fg); padding: 7px 14px; cursor: pointer; border-radius: 0; }
+.bf-q-fitxa { display: flex; flex-direction: column; gap: 18px; min-height: 8rem; }
+.bf-q-fitxa[hidden] { display: none; }
+.bf-q-kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr)); column-gap: 28px; }
+.bf-q-kv div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--color-border-line); font-size: var(--cds-font-size-body); }
+.bf-q-kv span { color: var(--color-fg-muted); }
+.bf-q-kv b { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.bf-q-desc { font-family: var(--font-anthropic-serif); line-height: 1.6; max-width: 46em; }
+.bf-q-desc-note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+
+@container (max-width: 520px) { .bf-tab { padding: 9px 10px 8px; font-size: var(--cds-font-size-caption); } }
+/* AI section */
+.bf-race { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); column-gap: 0; min-height: 14rem; }
+.bf-race-col { padding: 4px clamp(14px, 2vw, 24px) 8px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.bf-race-col + .bf-race-col { border-left: 1px solid var(--color-border-line); }
+.bf-race-col:first-child { padding-left: 0; }
+.bf-race-name { font-family: var(--font-anthropic-serif); font-weight: 700; font-size: clamp(1.4rem, 1.15rem + .9vw, 1.85rem); letter-spacing: -0.015em; line-height: 1.05; }
+.bf-race-prod { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin-bottom: 8px !important; }
+.bf-race-row { display: flex; flex-direction: column; gap: 2px; padding: 9px 0; border-top: 1px solid var(--color-border-line); }
+.bf-race-row span { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.bf-race-row b { font-weight: 500; line-height: 1.4; }
+.bf-race-src { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-style: italic; padding-top: 8px; border-top: 1px solid var(--color-border-line); }
+@container (max-width: 760px) { .bf-race-col + .bf-race-col { border-left: 0; } .bf-race-col { padding-left: 0; padding-right: 0; padding-bottom: 20px; } }
+.bf-tag { font-size: var(--cds-font-size-caption); font-weight: 600; }
+
+/* Visitor's own Alpha Vantage key */
+.bf-apikey { border: 1px solid var(--color-fg); padding: 14px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 46rem; }
+.bf-apikey[hidden], .bf-apikey-set[hidden] { display: none; }
+.bf-apikey p { line-height: 1.5; }
+.bf-apikey a { color: inherit; }
+.bf-apikey-set { margin-bottom: 12px !important; }
+.bf-linkbtn { font: inherit; color: var(--color-fg); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+</style>
+
+<div class="bf">
+  <header class="bf-mast">
+    <div class="bf-np"><div class="bf-np-inner">
+      <div class="bf-np-top">
+        <p class="bf-np-l">Edició del<br><b data-draw="data" data-source="resum" data-field="data_briefing" data-row="0">—</b></p>
+        <p class="bf-word">The Ledger</p>
+        <p class="bf-np-r">Actualitzada el<br><b data-draw="hora" data-source="resum" data-field="actualitzat" data-row="0">—</b></p>
+      </div>
+      <div class="bf-np-line">
+        <p>Els mercats del món, abans que obrin</p>
+        <div class="bf-fx">
+          <div><span>Euro en dòlars</span><b data-draw="eurusd" data-source="actius" data-where="actiu=EUR/USD" data-field="valor">—</b></div>
+          <div><span>Bitcoin</span><b data-draw="btc" data-source="actius" data-where="actiu=Bitcoin" data-field="valor">—</b></div>
+        </div>
+      </div>
+      <div class="bf-ticker" data-draw="ticker" data-source="rendiment" aria-label="Variació de la darrera sessió"></div>
+    </div></div>
+    <nav class="bf-nav" aria-label="Seccions">
+      <button type="button" class="bf-tab" data-tab="portada" aria-pressed="true">Portada</button>
+      <button type="button" class="bf-tab" data-tab="cercador" aria-pressed="false">Cercador d'accions</button>
+      <button type="button" class="bf-tab" data-tab="ia" aria-pressed="false">Intel·ligència artificial</button>
+    </nav>
+  </header>
+
+  <div class="bf-page" data-page="portada">
+  <div class="bf-lead">
+      <p class="bf-story" data-read><span data-draw="resum" data-source="resum" data-field="resum" data-row="0">—</span></p>
+      <div class="bf-stats">
+        <div class="bf-stat"><span>Borses que pugen</span><b data-draw="pugen" data-source="amplitud">—</b><em>de les deu que seguim</em></div>
+        <div class="bf-stat"><span>La que més puja</span><b data-draw="millorpct" data-source="amplitud">—</b><em data-draw="millor" data-source="amplitud">—</em></div>
+        <div class="bf-stat"><span>La que més cau</span><b data-draw="pitjorpct" data-source="amplitud">—</b><em data-draw="pitjor" data-source="amplitud">—</em></div>
+        <p class="bf-per-note">Període: <span data-draw="perlabel">—</span>. Canvia'l al selector de sota.</p>
+      </div>
+    </div>
+
+  <section id="borses" class="bf-sec">
+    <div class="bf-head">
+      <div>
+        <h2>Com han tancat les borses, d'est a oest</h2>
+        <p class="bf-note">Tancament del <b data-draw="datatanc" data-source="rendiment" data-field="data" data-row="0">—</b>, en l'ordre en què el dia passa pels mercats. Toca'n una per seguir-la al gràfic d'evolució.</p>
+      </div>
+      <div class="bf-seg" role="group" aria-label="Període de la variació">
+        <button type="button" class="bf-per" data-periode="dia" aria-pressed="true">1 dia</button>
+        <button type="button" class="bf-per" data-periode="setmana" aria-pressed="false">1 setmana</button>
+        <button type="button" class="bf-per" data-periode="mes" aria-pressed="false">1 mes</button>
+      </div>
+    </div>
+    <div class="bf-strip dash-skeleton" data-draw="strip" data-source="rendiment" data-fetchpriority="high"></div>
+    <div class="bf-scale" data-draw="escala" data-source="rendiment"></div>
+  </section>
+
+  <div class="bf-pair">
+    <section class="bf-panel bf-sec" id="ranquing">
+      <div class="bf-head">
+        <div>
+          <h2>Qui puja i qui baixa</h2>
+          <p class="bf-note">Les deu borses ordenades per la variació del període triat a dalt.</p>
+        </div>
+      </div>
+      <div class="bf-chart bf-bars dash-skeleton" data-draw="barres" data-source="rendiment"></div>
+    </section>
+    <section class="bf-panel bf-sec" id="evolucio">
+      <div class="bf-head">
+        <div>
+          <h2>Totes des del mateix punt</h2>
+          <p class="bf-note">Cada borsa val 100 el <b data-draw="inici" data-source="evolucio" data-field="data" data-row="0">—</b>: així es veu qui s'ha separat del grup.</p>
+        </div>
+        <label class="bf-pick">Destaca
+          <select data-draw="tria" data-source="mercats" aria-label="Borsa destacada"></select>
+        </label>
+      </div>
+      <div class="bf-chart bf-lines dash-skeleton" data-draw="linies" data-source="evolucio"></div>
+    </section>
+  </div>
+
+  <section id="noticies" class="bf-sec">
+    <div class="bf-head"><div><h2>El que cal saber avui</h2></div></div>
+    <div class="bf-news dash-skeleton" data-draw="noticies" data-source="noticies"></div>
+  </section>
+
+  <section id="dades" class="bf-sec">
+    <div class="bf-head">
+      <div>
+        <h2>Totes les dades</h2>
+        <p class="bf-note">Preu de tancament de cada ETF en dòlars i la seva variació. Toca una columna per ordenar.</p>
+      </div>
+    </div>
+    <div class="bf-tablewrap">
+      <table class="bf-table" data-source="rendiment" data-row-key="codi">
+        <thead><tr>
+          <th data-field="mercat" data-sort="mercat" aria-sort="none"><button type="button">Borsa</button></th>
+          <th data-field="referencia" data-sort="referencia" aria-sort="none"><button type="button">Índex de referència</button></th>
+          <th data-field="codi" data-sort="codi" aria-sort="none"><button type="button">ETF</button></th>
+          <th data-field="tancament" data-sort="tancament" aria-sort="none" class="bf-n"><button type="button">Tancament</button></th>
+          <th data-field="var_dia" data-sort="var_dia" aria-sort="descending" class="bf-n"><button type="button">1 dia</button></th>
+          <th data-field="var_setmana" data-sort="var_setmana" aria-sort="none" class="bf-n"><button type="button">1 setmana</button></th>
+          <th data-field="var_mes" data-sort="var_mes" aria-sort="none" class="bf-n"><button type="button">1 mes</button></th>
+        </tr></thead>
+        <tbody data-draw="taula"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="bf-foot">Cada borsa es mesura amb l'ETF que la replica, que cotitza a Nova York en dòlars: la seva variació inclou també el moviment del tipus de canvi. Blau vol dir que puja i vermell que baixa. Dades de mercat d'Alpha Vantage; notícies de la premsa econòmica, resumides cada matí.</p>
+  </div>
+
+  <div class="bf-page bf-q" data-page="cercador" hidden>
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Cercador d'accions</h2>
+          <p class="bf-note">Escriu el nom d'una empresa o el seu codi i tria-la de la llista. Funciona sobretot amb valors que cotitzen als EUA; de les empreses espanyoles hi ha, per exemple, el Santander (SAN), el BBVA (BBVA) i Telefónica (TEF).</p>
+        </div>
+      </div>
+      <div class="bf-apikey" hidden>
+        <p><b>Per buscar accions necessites una clau gratuïta d'Alpha Vantage.</b> Es demana en un minut a <a href="https://www.alphavantage.co/support/#api-key" target="_blank" rel="noopener noreferrer">alphavantage.co</a> i es guarda només en aquest navegador: no s'envia enlloc més que a Alpha Vantage.</p>
+        <div class="bf-q-bar">
+          <input class="bf-apikey-input" type="text" maxlength="40" placeholder="Enganxa aquí la teva clau" aria-label="Clau d'Alpha Vantage" autocomplete="off" spellcheck="false">
+          <button type="button" class="bf-q-go bf-apikey-save">Desa la clau</button>
+        </div>
+      </div>
+      <p class="bf-note bf-apikey-set" hidden>Fas servir la teva clau d'Alpha Vantage. <button type="button" class="bf-linkbtn bf-apikey-change">Canvia-la</button></p>
+      <div class="bf-q-bar">
+        <input class="bf-q-input" type="search" maxlength="40" placeholder="Apple, Nvidia, Santander…" aria-label="Empresa o codi" autocomplete="off" spellcheck="false">
+        <button type="button" class="bf-q-go">Cerca</button>
+      </div>
+      <div class="bf-q-chips" aria-label="Accions populars">
+        <button type="button" class="bf-chip" data-simbol="AAPL" data-nom="Apple">AAPL</button>
+        <button type="button" class="bf-chip" data-simbol="MSFT" data-nom="Microsoft">MSFT</button>
+        <button type="button" class="bf-chip" data-simbol="NVDA" data-nom="Nvidia">NVDA</button>
+        <button type="button" class="bf-chip" data-simbol="AMZN" data-nom="Amazon">AMZN</button>
+        <button type="button" class="bf-chip" data-simbol="GOOGL" data-nom="Alphabet">GOOGL</button>
+        <button type="button" class="bf-chip" data-simbol="META" data-nom="Meta Platforms">META</button>
+        <button type="button" class="bf-chip" data-simbol="TSLA" data-nom="Tesla">TSLA</button>
+        <button type="button" class="bf-chip" data-simbol="JPM" data-nom="JPMorgan Chase">JPM</button>
+        <button type="button" class="bf-chip" data-simbol="SAN" data-nom="Banco Santander">SAN</button>
+        <button type="button" class="bf-chip" data-simbol="BBVA" data-nom="BBVA">BBVA</button>
+      </div>
+      <div class="bf-q-results" hidden>
+        <p class="bf-note">Resultats de la cerca. Toca'n un per veure'n el gràfic.</p>
+        <div class="bf-tablewrap">
+          <table class="bf-table bf-q-table" data-source="cerca" data-row-key="symbol">
+            <thead><tr>
+              <th data-field="symbol">Codi</th>
+              <th data-field="name">Empresa</th>
+              <th data-field="type">Tipus</th>
+              <th data-field="region">Mercat</th>
+              <th data-field="currency">Moneda</th>
+            </tr></thead>
+            <tbody data-draw="resultats"></tbody>
+          </table>
+        </div>
+        <p class="bf-q-msg" data-draw="resultatsmsg" data-source="cerca"></p>
+      </div>
+    </section>
+
+    <section class="bf-q-quote">
+      <div class="bf-q-head">
+        <div class="bf-q-id">
+          <p class="bf-q-sym" data-draw="qsym">—</p>
+          <p class="bf-q-name" data-draw="qnom">—</p>
+        </div>
+        <div class="bf-q-px">
+          <b class="bf-q-last" data-draw="qpreu" data-source="ultim" data-field="close" data-row="0">—</b>
+          <span class="bf-q-chg" data-draw="qcanvi" data-source="ultim" data-field="canvi_pct" data-row="0">—</span>
+          <p class="bf-note">Tancament del <span data-draw="qdata" data-source="ultim" data-field="timestamp" data-row="0">—</span></p>
+        </div>
+      </div>
+      <div class="bf-q-tools">
+        <div class="bf-seg" role="group" aria-label="Període del gràfic">
+          <button type="button" class="bf-rang" data-rang="21" aria-pressed="false">1 mes</button>
+          <button type="button" class="bf-rang" data-rang="63" aria-pressed="true">3 mesos</button>
+          <button type="button" class="bf-rang" data-rang="0" aria-pressed="false">Tot</button>
+        </div>
+        <div class="bf-seg" role="group" aria-label="Tipus de gràfic">
+          <button type="button" class="bf-tipus" data-tipus="espelmes" aria-pressed="true">Espelmes</button>
+          <button type="button" class="bf-tipus" data-tipus="linia" aria-pressed="false">Línia</button>
+        </div>
+        <div class="bf-seg" role="group" aria-label="Mitjanes mòbils">
+          <button type="button" class="bf-sma" data-sma="sma20" aria-pressed="true">Mitjana 20</button>
+          <button type="button" class="bf-sma" data-sma="sma50" aria-pressed="true">Mitjana 50</button>
+        </div>
+      </div>
+      <div class="bf-chart bf-q-chart dash-skeleton" data-draw="grafic" data-source="serie mitjanes"></div>
+      <div class="bf-q-ohlc">
+        <div><span>Obertura</span><b data-draw="qobre" data-source="ultim" data-field="open" data-row="0">—</b></div>
+        <div><span>Màxim del dia</span><b data-draw="qmax" data-source="ultim" data-field="high" data-row="0">—</b></div>
+        <div><span>Mínim del dia</span><b data-draw="qmin" data-source="ultim" data-field="low" data-row="0">—</b></div>
+        <div><span>Volum</span><b data-draw="qvol" data-source="ultim" data-field="volume" data-row="0">—</b></div>
+        <div><span>Màxim del període</span><b data-draw="qpmax" data-source="ultim" data-field="maxim_periode" data-row="0">—</b></div>
+        <div><span>Mínim del període</span><b data-draw="qpmin" data-source="ultim" data-field="minim_periode" data-row="0">—</b></div>
+      </div>
+    </section>
+
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Fitxa de l'empresa</h2>
+          <p class="bf-note">Valoració, rendibilitat i dades bàsiques de l'empresa. Es carrega només quan l'obres, perquè gasta una consulta més.</p>
+        </div>
+        <button type="button" class="bf-q-toggle" aria-expanded="false"><span class="bf-open">Mostra la fitxa</span><span class="bf-close" hidden>Amaga la fitxa</span></button>
+      </div>
+      <div class="bf-q-fitxa" data-draw="fitxa" data-source="perfil" hidden></div>
+    </section>
+
+    <p class="bf-foot">Dades d'Alpha Vantage, en la moneda en què cotitza cada valor. Cada visitant fa servir la seva pròpia clau gratuïta, que permet 25 consultes al dia: cada gràfic en gasta una, i cada cerca i cada fitxa, una més. La sèrie arriba fins al darrer tancament, no al preu en temps real.</p>
+  </div>
+  <div class="bf-page bf-ai" data-page="ia" hidden>
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>La cursa de la intel·ligència artificial</h2>
+          <p class="bf-note">On són les tres grans: quant valen, com van cap a la borsa, quant facturen i quin ha estat el seu darrer model.</p>
+        </div>
+      </div>
+      <div class="bf-race dash-skeleton" data-draw="cursa" data-source="ia_cursa"></div>
+    </section>
+
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Notícies d'IA</h2>
+          <p class="bf-note">Llançaments, competència entre laboratoris i diners: el que s'ha mogut al sector aquests dies.</p>
+        </div>
+        <div class="bf-seg" role="group" aria-label="Tema de les notícies">
+          <button type="button" class="bf-iacat" data-cat="" aria-pressed="true">Totes</button>
+          <button type="button" class="bf-iacat" data-cat="Llançaments" aria-pressed="false">Llançaments</button>
+          <button type="button" class="bf-iacat" data-cat="Competència" aria-pressed="false">Competència</button>
+          <button type="button" class="bf-iacat" data-cat="Inversió i borsa" aria-pressed="false">Inversió i borsa</button>
+          <button type="button" class="bf-iacat" data-cat="Empreses" aria-pressed="false">Empreses</button>
+        </div>
+      </div>
+      <div class="bf-news dash-skeleton" data-draw="ianoticies" data-source="ia_noticies"></div>
+    </section>
+
+    <section class="bf-sec">
+      <div class="bf-head">
+        <div>
+          <h2>Models nous d'aquest mes</h2>
+          <p class="bf-note">Els llançaments de les darreres setmanes, del més recent al més antic. «Pesos oberts» vol dir que qualsevol pot descarregar el model i fer-lo servir pel seu compte.</p>
+        </div>
+      </div>
+      <div class="bf-tablewrap">
+        <table class="bf-table" data-source="ia_models" data-row-key="model">
+          <thead><tr>
+            <th data-field="data">Data</th>
+            <th data-field="model">Model</th>
+            <th data-field="empresa">Empresa</th>
+            <th data-field="que_es">Què és</th>
+            <th data-field="acces">Accés</th>
+          </tr></thead>
+          <tbody data-draw="iamodels"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="bf-foot">Notícies i xifres recollides de la premsa tecnològica i econòmica i resumides cada matí, amb l'enllaç a cada font. Les xifres que no surten de documents oficials de les empreses s'indiquen com a estimacions de premsa.</p>
+  </div>
+</div>
+
+<script>
+(() => {
+const ca = d3.formatLocale({decimal: ',', thousands: '.', grouping: [3], currency: ['', ' $']});
+const caTime = d3.timeFormatLocale({dateTime: '%A, %e de %B de %Y', date: '%d/%m/%Y', time: '%H:%M:%S', periods: ['', ''],
+  days: ['diumenge','dilluns','dimarts','dimecres','dijous','divendres','dissabte'], shortDays: ['dg.','dl.','dt.','dc.','dj.','dv.','ds.'],
+  months: ['gener','febrer','març','abril','maig','juny','juliol','agost','setembre','octubre','novembre','desembre'],
+  shortMonths: ['gen.','febr.','març','abr.','maig','juny','jul.','ag.','set.','oct.','nov.','des.']});
+const parseDay = (s) => new Date(String(s).slice(0, 10) + 'T00:00:00Z');
+window.bf = {
+  ca, caTime, parseDay,
+  periode: 'dia', sel: 'EWP', sortKey: 'var_dia', sortDir: -1, animated: false,
+  // East to west: the order the trading day travels.
+  order: ['EWJ', 'EWH', 'MCHI', 'EWG', 'FEZ', 'EWQ', 'EWP', 'EWU', 'QQQ', 'SPY'],
+  regions: ['Àsia', 'Europa', 'Amèrica'],
+  num: ca.format(',.2f'),
+  pct: (v) => (v == null || isNaN(v) ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + ca.format('.2f')(Math.abs(v)) + '%'),
+  dayShort: (s) => caTime.utcFormat('%-d %b')(parseDay(s)),
+  dayLong: (s) => { const d = parseDay(s), m = caTime.utcFormat('%B')(d); return d.getUTCDate() + (/^[aeiouàèéíòóú]/i.test(m) ? " d'" : ' de ') + m; },
+  key: () => ({dia: 'var_dia', setmana: 'var_setmana', mes: 'var_mes'})[window.bf.periode],
+  label: () => ({dia: '1 dia', setmana: '1 setmana', mes: '1 mes'})[window.bf.periode],
+  // Light or dark steps of the diverging pair, read off the theme surface.
+  theme: (el) => {
+    const bg = d3.color(getComputedStyle(el).getPropertyValue('--color-bg').trim() || '#ffffff');
+    const dark = bg ? d3.hsl(bg).l < 0.5 : false;
+    return dark ? {up: '#3987e5', down: '#e66767', mid: '#383835', dark} : {up: '#256abf', down: '#e34948', mid: '#f0efec', dark};
+  },
+  fill: (t, v, m) => {
+    if (v == null || isNaN(v)) return t.mid;
+    const k = Math.min(1, Math.abs(v) / (m || 1));
+    return d3.interpolateLab(t.mid, v >= 0 ? t.up : t.down)(0.12 + 0.88 * k);
+  },
+  inkOn: (hex) => (d3.lab(hex).l < 58 ? '#ffffff' : '#0b0b0b'),
+  state: (el, statuses) => {
+    if (statuses.every((s) => s === 'ok')) { el.classList.remove('dash-skeleton'); return false; }
+    el.replaceChildren();
+    if (statuses.some((s) => s === 'error' || s === 'missing')) {
+      el.classList.remove('dash-skeleton');
+      const f = document.createElement('div'); f.className = 'bf-fail';
+      f.append(document.createElement('i'), "No s'han pogut carregar les dades");
+      el.append(f);
+    } else { el.classList.add('dash-skeleton'); }
+    return true;
+  },
+  tip: (el) => {
+    const t = document.createElement('div'); t.className = 'bf-tip'; t.hidden = true; el.append(t);
+    return {
+      show: (x, y, head, rows) => {
+        const h = document.createElement('div'); h.className = 'bf-tip-head'; h.textContent = head;
+        t.replaceChildren(h, ...rows.map((r) => {
+          const row = document.createElement('div'); row.className = 'bf-tip-row' + (r.me ? ' bf-me' : '');
+          const k = document.createElement('i'); if (r.color) k.style.background = r.color; else k.style.visibility = 'hidden';
+          const v = document.createElement('b'); v.textContent = r.value;
+          const n = document.createElement('em'); n.textContent = r.name;
+          row.append(k, v, n); return row;
+        }));
+        t.hidden = false;
+        const w = t.offsetWidth, hh = t.offsetHeight, W = el.clientWidth;
+        let left = x + 16; if (left + w > W) left = x - w - 16; if (left < 0) left = Math.max(0, Math.min(W - w, x - w / 2));
+        t.style.left = left + 'px'; t.style.top = Math.max(0, y - hh / 2) + 'px';
+      },
+      hide: () => { t.hidden = true; },
+    };
+  },
+};
+
+})();
+</script>
+
+<script>
+(() => {
+dash.calc('rendiment', {
+  title: 'Rendiment de cada borsa',
+  description: "Darrer tancament de cada ETF i la seva variació respecte a 1, 5 i 21 sessions abans.",
+  inputs: ['historic', 'mercats'],
+  fn: (historic, mercats) => mercats.map((m) => {
+    const s = historic.filter((r) => r.codi === m.codi)
+      .map((r) => ({data: String(r.data).slice(0, 10), v: Number(r.tancament)}))
+      .sort((a, b) => (a.data < b.data ? -1 : a.data > b.data ? 1 : 0));
+    const n = s.length;
+    if (!n) return null;
+    const last = s[n - 1];
+    const pct = (k) => (n > k ? Math.round((last.v / s[n - 1 - k].v - 1) * 10000) / 100 : null);
+    return {codi: m.codi, mercat: m.mercat, referencia: m.referencia, regio: m.regio, data: last.data,
+      tancament: last.v, var_dia: pct(1), var_setmana: pct(5), var_mes: pct(21)};
+  }).filter(Boolean),
+});
+
+dash.calc('evolucio', {
+  title: 'Evolució en base 100',
+  description: 'Cada tancament dividit pel primer tancament de la sèrie i multiplicat per 100, per comparar borses amb preus diferents.',
+  inputs: ['historic', 'mercats'],
+  fn: (historic, mercats) => {
+    const info = Object.fromEntries(mercats.map((m) => [m.codi, m]));
+    const rows = historic.filter((r) => info[r.codi])
+      .map((r) => ({data: String(r.data).slice(0, 10), codi: r.codi, v: Number(r.tancament)}))
+      .sort((a, b) => (a.data < b.data ? -1 : a.data > b.data ? 1 : 0));
+    const first = {};
+    rows.forEach((r) => { if (!(r.codi in first)) first[r.codi] = r.v; });
+    return rows.map((r) => ({data: r.data, codi: r.codi, mercat: info[r.codi].mercat, regio: info[r.codi].regio,
+      base100: Math.round((r.v / first[r.codi]) * 10000) / 100}));
+  },
+});
+
+dash.calc('amplitud', {
+  title: 'Amplitud del mercat',
+  description: "Per a cada període, quantes de les deu borses pugen i quines són la que més puja i la que més cau.",
+  inputs: ['rendiment'],
+  fn: (rendiment) => ['dia', 'setmana', 'mes'].map((periode) => {
+    const f = 'var_' + periode;
+    const rows = rendiment.filter((r) => r[f] != null).slice().sort((a, b) => b[f] - a[f]);
+    if (!rows.length) return {periode, pugen: null, total: 0};
+    return {periode, pugen: rows.filter((r) => r[f] > 0).length, total: rows.length,
+      millor: rows[0].mercat, millor_ref: rows[0].referencia, millor_pct: rows[0][f],
+      pitjor: rows[rows.length - 1].mercat, pitjor_ref: rows[rows.length - 1].referencia, pitjor_pct: rows[rows.length - 1][f]};
+  }),
+});
+
+})();
+</script>
+
+<script>
+(() => {
+const press = (sel, attr, value) => {
+  document.querySelectorAll(sel).forEach((b) => b.setAttribute('aria-pressed', String(b.getAttribute(attr) === value)));
+};
+document.querySelectorAll('.bf-per').forEach((b) => b.addEventListener('click', () => {
+  window.bf.periode = b.getAttribute('data-periode');
+  press('.bf-per', 'data-periode', window.bf.periode);
+  ['strip', 'escala', 'barres', 'pugen', 'millor', 'millorpct', 'pitjor', 'pitjorpct', 'perlabel'].forEach((n) => dash.draw(n));
+}));
+document.querySelectorAll('.bf-table th[data-sort]').forEach((th) => th.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => {
+  const k = th.getAttribute('data-sort'), B = window.bf;
+  B.sortDir = B.sortKey === k ? -B.sortDir : (k === 'mercat' || k === 'referencia' || k === 'codi' ? 1 : -1);
+  B.sortKey = k;
+  document.querySelectorAll('.bf-table th[data-sort]').forEach((o) => o.setAttribute('aria-sort', o === th ? (B.sortDir > 0 ? 'ascending' : 'descending') : 'none'));
+  dash.draw('taula');
+})));
+
+})();
+</script>
+
+<script>
+(() => {
+const fromResum = (field) => (el) => {
+  const r = dash.data('resum');
+  el.textContent = r.status === 'ok' && r.data.length && r.data[0][field] != null ? String(r.data[0][field]) : '—';
+};
+dash.draw('data', fromResum('data_briefing'));
+dash.draw('hora', fromResum('actualitzat'));
+dash.draw('resum', fromResum('resum'));
+const fromActiu = (name, fmt) => (el) => {
+  const a = dash.data('actius');
+  const row = a.status === 'ok' ? a.data.find((d) => d.actiu === name) : null;
+  el.textContent = row ? fmt(Number(row.valor)) : '—';
+};
+dash.draw('eurusd', fromActiu('EUR/USD', (v) => window.bf.ca.format(',.4f')(v) + ' $'));
+dash.draw('btc', fromActiu('Bitcoin', (v) => window.bf.ca.format(',.0f')(v) + ' $'));
+const amp = () => {
+  const a = dash.data('amplitud');
+  return a.status === 'ok' ? a.data.find((d) => d.periode === window.bf.periode) : null;
+};
+dash.draw('pugen', (el) => { const d = amp(); el.textContent = d && d.pugen != null ? `${d.pugen} de ${d.total}` : '—'; });
+dash.draw('millorpct', (el) => { const d = amp(); el.textContent = d && d.millor_pct != null ? window.bf.pct(d.millor_pct) : '—'; });
+dash.draw('pitjorpct', (el) => { const d = amp(); el.textContent = d && d.pitjor_pct != null ? window.bf.pct(d.pitjor_pct) : '—'; });
+dash.draw('millor', (el) => {
+  const d = amp(); el.replaceChildren();
+  if (!d || !d.millor) { el.textContent = '—'; return; }
+  const b = document.createElement('b'); b.textContent = d.millor; el.append(b, ', ' + d.millor_ref);
+});
+dash.draw('pitjor', (el) => {
+  const d = amp(); el.replaceChildren();
+  if (!d || !d.pitjor) { el.textContent = '—'; return; }
+  const b = document.createElement('b'); b.textContent = d.pitjor; el.append(b, ', ' + d.pitjor_ref);
+});
+dash.draw('perlabel', (el) => { el.textContent = window.bf.label(); });
+dash.draw('ticker', (el) => {
+  const B = window.bf, r = dash.data('rendiment');
+  el.replaceChildren();
+  if (r.status !== 'ok') return;
+  const byCode = new Map(r.data.map((d) => [d.codi, d]));
+  B.order.map((c) => byCode.get(c)).filter(Boolean).forEach((d) => {
+    const it = document.createElement('div'); it.className = 'bf-tk';
+    const n = document.createElement('span'); n.textContent = d.referencia;
+    const v = document.createElement('b'); const t = B.theme(el); v.style.color = d.var_dia > 0 ? t.up : d.var_dia < 0 ? t.down : '';
+    v.textContent = (d.var_dia > 0 ? '▲ ' : d.var_dia < 0 ? '▼ ' : '') + B.pct(d.var_dia);
+    it.append(n, v); el.append(it);
+  });
+  if (r.data.length) {
+    const w = document.createElement('div'); w.className = 'bf-tk bf-tk-when'; w.textContent = 'Sessió del ' + B.dayShort(r.data[0].data);
+    el.append(w);
+  }
+});
+dash.draw('datatanc', (el) => {
+  const r = dash.data('rendiment');
+  el.textContent = r.status === 'ok' && r.data.length ? window.bf.dayLong(r.data[0].data) : '—';
+});
+dash.draw('inici', (el) => {
+  const e = dash.data('evolucio');
+  el.textContent = e.status === 'ok' && e.data.length ? window.bf.dayLong(e.data[0].data) : '—';
+});
+dash.draw('tria', (sel) => {
+  const B = window.bf, m = dash.data('mercats');
+  const rows = m.status === 'ok' ? B.order.map((c) => m.data.find((d) => d.codi === c)).filter(Boolean) : [];
+  sel.replaceChildren(...rows.map((d) => new Option(d.mercat + ' (' + d.referencia + ')', d.codi)));
+  sel.value = B.sel;
+  sel.onchange = () => { B.sel = sel.value; dash.draw('linies'); dash.draw('strip'); };
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('strip', (el) => {
+  const B = window.bf, r = dash.data('rendiment');
+  if (B.state(el, [r.status])) return;
+  el.replaceChildren();
+  const key = B.key(), t = B.theme(el);
+  const m = d3.max(r.data, (d) => Math.abs(d[key] ?? 0)) || 1;
+  const byCode = new Map(r.data.map((d) => [d.codi, d]));
+  const ordered = B.order.map((c) => byCode.get(c)).filter(Boolean).concat(r.data.filter((d) => !B.order.includes(d.codi)));
+  const groups = B.regions.map((g) => ({g, rows: ordered.filter((d) => d.regio === g)})).filter((x) => x.rows.length);
+  el.style.gridTemplateColumns = groups.map((x) => x.rows.length + 'fr').join(' ');
+  if (!B.animated) { el.classList.add('bf-intro'); B.animated = true; } else { el.classList.remove('bf-intro'); }
+  const tip = B.tip(el);
+  let i = 0;
+  groups.forEach(({g, rows}) => {
+    const box = document.createElement('div'); box.className = 'bf-group';
+    const name = document.createElement('div'); name.className = 'bf-group-name'; name.textContent = g;
+    const cells = document.createElement('div'); cells.className = 'bf-cells';
+    cells.style.gridTemplateColumns = `repeat(${rows.length}, minmax(0, 1fr))`;
+    rows.forEach((d) => {
+      const c = document.createElement('button'); c.type = 'button'; c.className = 'bf-cell';
+      const bgc = B.fill(t, d[key], m), ink = B.inkOn(bgc);
+      c.style.background = bgc; c.style.color = ink; c.style.setProperty('--i', i++);
+      c.setAttribute('aria-pressed', String(d.codi === B.sel));
+      c.setAttribute('aria-label', `${d.mercat}, ${d.referencia}: ${B.pct(d[key])} en ${B.label()}`);
+      const nm = document.createElement('span'); nm.className = 'bf-cell-name'; nm.textContent = d.mercat;
+      const ref = document.createElement('small'); ref.textContent = d.referencia; nm.append(ref);
+      const val = document.createElement('span'); val.className = 'bf-cell-val';
+      val.textContent = (d[key] > 0 ? '▲ ' : d[key] < 0 ? '▼ ' : '') + B.pct(d[key]);
+      c.append(nm, val);
+      const show = () => {
+        const rb = c.getBoundingClientRect(), eb = el.getBoundingClientRect();
+        tip.show(rb.left - eb.left + rb.width / 2, rb.bottom - eb.top + 40, d.mercat + ', ' + d.referencia + ' (ETF ' + d.codi + ')', [
+          {value: B.pct(d.var_dia), name: '1 dia'}, {value: B.pct(d.var_setmana), name: '1 setmana'},
+          {value: B.pct(d.var_mes), name: '1 mes'}, {value: B.num(d.tancament) + ' $', name: 'tancament'}]);
+      };
+      c.addEventListener('pointerenter', show); c.addEventListener('focus', show);
+      c.addEventListener('pointerleave', tip.hide); c.addEventListener('blur', tip.hide);
+      c.addEventListener('click', () => { B.sel = d.codi; dash.draw('strip'); dash.draw('linies'); dash.draw('tria'); });
+      cells.append(c);
+    });
+    box.append(name, cells);
+    el.append(box);
+  });
+});
+
+dash.draw('escala', (el) => {
+  const B = window.bf, r = dash.data('rendiment');
+  el.replaceChildren();
+  if (r.status !== 'ok' || !r.data.length) return;
+  const key = B.key(), t = B.theme(el);
+  const m = d3.max(r.data, (d) => Math.abs(d[key] ?? 0)) || 1;
+  const stops = d3.range(0, 1.0001, 0.1).map((p) => {
+    const v = -m + 2 * m * p; return `${B.fill(t, v, m)} ${p * 100}%`;
+  });
+  const lo = document.createElement('span'); lo.textContent = B.pct(-m);
+  const ramp = document.createElement('span'); ramp.className = 'bf-ramp'; ramp.style.background = `linear-gradient(90deg, ${stops.join(', ')})`;
+  const hi = document.createElement('span'); hi.textContent = B.pct(m);
+  el.append(lo, ramp, hi);
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('barres', (el) => {
+  const B = window.bf, r = dash.data('rendiment');
+  if (B.state(el, [r.status])) return;
+  el.replaceChildren();
+  const key = B.key(), t = B.theme(el);
+  const rows = r.data.filter((d) => d[key] != null).slice().sort((a, b) => b[key] - a[key]);
+  const W = Math.max(260, el.clientWidth), band = 32, top = 4, bottom = 6;
+  const H = top + bottom + rows.length * band;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Variació de cada borsa en ' + B.label());
+  const probe = svg.append('text').attr('class', 'bf-ink');
+  const labW = d3.max(rows, (d) => probe.text(d.mercat).node().getComputedTextLength()) || 60;
+  const valW = d3.max(rows, (d) => probe.text(B.pct(d[key])).node().getComputedTextLength()) || 40;
+  probe.remove();
+  const left = labW + 14;
+  const m = d3.max(rows, (d) => Math.abs(d[key])) || 1;
+  const hasNeg = rows.some((d) => d[key] < 0), hasPos = rows.some((d) => d[key] > 0);
+  const x0 = hasNeg ? left + valW + 8 : left, x1 = hasPos ? W - valW - 8 : W;
+  const x = d3.scaleLinear([hasNeg ? -m : 0, hasPos ? m : 0], [x0, x1]);
+  const y = d3.scaleBand(rows.map((d) => d.codi), [top, H - bottom]);
+  const bh = Math.min(20, y.bandwidth() - 8);
+  const barPath = (a, b, yy, h) => {
+    const r0 = Math.min(4, Math.abs(b - a), h / 2);
+    if (b >= a) return `M${a},${yy}H${b - r0}Q${b},${yy} ${b},${yy + r0}V${yy + h - r0}Q${b},${yy + h} ${b - r0},${yy + h}H${a}Z`;
+    return `M${a},${yy}H${b + r0}Q${b},${yy} ${b},${yy + r0}V${yy + h - r0}Q${b},${yy + h} ${b + r0},${yy + h}H${a}Z`;
+  };
+  svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', top).attr('y2', H - bottom).attr('stroke', 'var(--cds-chart-axis)');
+  const g = svg.append('g').selectAll('g').data(rows).join('g');
+  g.append('text').attr('class', (d) => (d.codi === B.sel ? 'bf-strong' : 'bf-ink')).attr('x', 0)
+    .attr('y', (d) => y(d.codi) + y.bandwidth() / 2).attr('dy', '0.35em').text((d) => d.mercat);
+  g.append('path').attr('class', 'bf-bar')
+    .attr('d', (d) => barPath(x(0), x(d[key]) === x(0) ? x(0) + 1 : x(d[key]), y(d.codi) + (y.bandwidth() - bh) / 2, bh))
+    .attr('fill', (d) => (d[key] >= 0 ? t.up : t.down));
+  g.append('text').attr('class', 'bf-ink').attr('y', (d) => y(d.codi) + y.bandwidth() / 2).attr('dy', '0.35em')
+    .attr('x', (d) => (d[key] >= 0 ? x(d[key]) + 6 : x(d[key]) - 6))
+    .attr('text-anchor', (d) => (d[key] >= 0 ? 'start' : 'end')).text((d) => B.pct(d[key]));
+  const tip = B.tip(el);
+  g.append('rect').attr('x', 0).attr('width', W).attr('y', (d) => y(d.codi)).attr('height', y.bandwidth()).attr('fill', 'transparent')
+    .on('pointermove', function (ev, d) {
+      d3.select(this.parentNode).select('.bf-bar').attr('opacity', 0.8);
+      const [px, py] = d3.pointer(ev, el);
+      tip.show(px, py, d.mercat + ', ' + d.referencia, [
+        {value: B.pct(d.var_dia), name: '1 dia'}, {value: B.pct(d.var_setmana), name: '1 setmana'},
+        {value: B.pct(d.var_mes), name: '1 mes'}, {value: B.num(d.tancament) + ' $', name: 'tancament'}]);
+    })
+    .on('pointerleave', function () { d3.select(this.parentNode).select('.bf-bar').attr('opacity', 1); tip.hide(); });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('linies', (el) => {
+  const B = window.bf, e = dash.data('evolucio');
+  if (B.state(el, [e.status])) return;
+  el.replaceChildren();
+  const {ca, caTime, parseDay} = B;
+  const groups = Array.from(d3.group(e.data, (d) => d.codi), ([codi, pts]) => ({codi, mercat: pts[0].mercat, pts}));
+  if (!groups.length) return;
+  if (!groups.some((g) => g.codi === B.sel)) B.sel = groups[0].codi;
+  const me = groups.find((g) => g.codi === B.sel);
+  const rest = groups.filter((g) => g !== me);
+  const dates = Array.from(new Set(e.data.map((d) => d.data))).sort();
+  const dd = dates.map(parseDay);
+
+  const legend = document.createElement('div'); legend.className = 'bf-legend';
+  const k1 = document.createElement('span'); const s1 = document.createElement('i'); s1.className = 'bf-key'; s1.style.background = 'var(--color-fg)'; k1.append(s1, me.mercat);
+  const k2 = document.createElement('span'); const s2 = document.createElement('i'); s2.className = 'bf-key'; s2.style.background = 'var(--cds-chart-muted)'; k2.append(s2, 'Les altres nou borses');
+  legend.append(k1, k2); el.append(legend);
+
+  const W = Math.max(280, el.clientWidth), H = 300, top = 10, bottom = 26;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Evolució en base 100 de les deu borses, amb ' + me.mercat + ' destacada');
+  const all = e.data.map((d) => d.base100);
+  const y = d3.scaleLinear([Math.min(100, d3.min(all)), Math.max(100, d3.max(all))], [H - bottom, top]).nice(5);
+  const fmt0 = ca.format('.0f'), fmt1 = ca.format('.1f');
+  const probe = svg.append('text');
+  const tickW = d3.max(y.ticks(5), (v) => probe.text(fmt0(v)).node().getComputedTextLength());
+  probe.attr('class', 'bf-strong');
+  const lastMe = me.pts[me.pts.length - 1];
+  const endText = me.mercat + ' ' + fmt1(lastMe.base100);
+  const endW = probe.text(endText).node().getComputedTextLength();
+  probe.remove();
+  const left = tickW + 10, right = endW + 16;
+  const x = d3.scaleUtc([dd[0], dd[dd.length - 1]], [left, W - right]);
+  y.ticks(5).forEach((v) => {
+    svg.append('line').attr('x1', left).attr('x2', W - right).attr('y1', y(v)).attr('y2', y(v))
+      .attr('stroke', v === 100 ? 'var(--cds-chart-reference)' : 'var(--cds-chart-grid)');
+    svg.append('text').attr('x', left - 8).attr('y', y(v)).attr('dy', '0.35em').attr('text-anchor', 'end').text(fmt0(v));
+  });
+  const nT = Math.max(2, Math.min(6, Math.floor((W - left - right) / 78)));
+  svg.append('g').attr('transform', `translate(0,${H - bottom})`)
+    .call(d3.axisBottom(x).ticks(nT).tickFormat((d) => caTime.utcFormat('%-d %b')(d)).tickSizeOuter(0))
+    .attr('font-size', null).attr('font-family', null)
+    .call((a) => a.select('.domain').attr('stroke', 'var(--cds-chart-axis)'))
+    .call((a) => a.selectAll('.tick line').attr('stroke', 'var(--cds-chart-axis)'));
+  const line = d3.line((p) => x(parseDay(p.data)), (p) => y(p.base100));
+  rest.forEach((g) => svg.append('path').attr('d', line(g.pts)).attr('fill', 'none').attr('stroke', 'var(--cds-chart-muted)')
+    .attr('stroke-width', 1.25).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round'));
+  svg.append('path').attr('d', line(me.pts)).attr('fill', 'none').attr('stroke', 'var(--color-fg)').attr('stroke-width', 2)
+    .attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round');
+  const ex = x(parseDay(lastMe.data)), ey = y(lastMe.base100);
+  svg.append('circle').attr('cx', ex).attr('cy', ey).attr('r', 4).attr('fill', 'var(--color-fg)').attr('stroke', 'var(--color-bg)').attr('stroke-width', 2);
+  svg.append('text').attr('class', 'bf-strong').attr('x', ex + 9).attr('y', Math.max(top + 6, Math.min(H - bottom - 6, ey))).attr('dy', '0.35em').text(endText);
+
+  const tip = B.tip(el);
+  const rule = svg.append('line').attr('y1', top).attr('y2', H - bottom).attr('stroke', 'var(--cds-chart-axis)').attr('visibility', 'hidden');
+  const dot = svg.append('circle').attr('r', 4).attr('fill', 'var(--color-fg)').attr('stroke', 'var(--color-bg)').attr('stroke-width', 2).attr('visibility', 'hidden');
+  svg.append('rect').attr('x', left).attr('y', top).attr('width', Math.max(0, W - left - right)).attr('height', H - top - bottom).attr('fill', 'transparent')
+    .on('pointermove', (ev) => {
+      const [px] = d3.pointer(ev);
+      const i = Math.max(0, Math.min(dates.length - 1, d3.bisectCenter(dd, x.invert(px))));
+      const day = dates[i], cx = x(dd[i]);
+      rule.attr('x1', cx).attr('x2', cx).attr('visibility', 'visible');
+      const mp = me.pts.find((p) => p.data === day);
+      if (mp) dot.attr('cx', cx).attr('cy', y(mp.base100)).attr('visibility', 'visible'); else dot.attr('visibility', 'hidden');
+      const vals = groups.map((g) => ({g, p: g.pts.find((p) => p.data === day)})).filter((v) => v.p).sort((a, b) => b.p.base100 - a.p.base100);
+      const [qx, qy] = d3.pointer(ev, el);
+      tip.show(qx, qy, B.dayLong(day), vals.map((v) => ({
+        me: v.g === me, color: v.g === me ? 'var(--color-fg)' : 'var(--cds-chart-muted)', value: fmt1(v.p.base100), name: v.g.mercat})));
+    })
+    .on('pointerleave', () => { tip.hide(); rule.attr('visibility', 'hidden'); dot.attr('visibility', 'hidden'); });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('noticies', (el) => {
+  const B = window.bf, n = dash.data('noticies');
+  if (B.state(el, [n.status])) return;
+  el.replaceChildren();
+  n.data.forEach((d, i) => {
+    const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
+    const h = document.createElement('h3'); h.textContent = d.titular;
+    const p = document.createElement('p'); p.textContent = d.resum;
+    const src = document.createElement('p'); src.className = 'bf-src';
+    src.append([d.categoria, d.regio, d.data ? window.bf.dayLong(d.data) : ''].filter(Boolean).join(', ') + '. ');
+    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
+      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer';
+      l.textContent = d.font || 'Font';
+      src.append(l);
+    } else if (d.font) { src.append(String(d.font)); }
+    a.append(h, p, src);
+    el.append(a);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('taula', (el) => {
+  const B = window.bf, r = dash.data('rendiment');
+  el.replaceChildren();
+  if (r.status !== 'ok') return;
+  const k = B.sortKey, dir = B.sortDir;
+  const rows = r.data.slice().sort((a, b) => {
+    const va = a[k], vb = b[k];
+    if (typeof va === 'number' || typeof vb === 'number') return dir * ((va ?? -Infinity) - (vb ?? -Infinity));
+    return dir * String(va).localeCompare(String(vb), 'ca');
+  });
+  rows.forEach((d) => {
+    const tr = document.createElement('tr');
+    const td = (text, cls) => { const c = document.createElement('td'); if (cls) c.className = cls; c.append(text); tr.append(c); return c; };
+    td(String(d.mercat));
+    td(String(d.referencia), 'bf-muted');
+    td(String(d.codi), 'bf-muted');
+    td(B.num(d.tancament) + ' $', 'bf-n');
+    ['var_dia', 'var_setmana', 'var_mes'].forEach((f) => {
+      const c = td('', 'bf-n');
+      const s = document.createElement('span'); s.className = 'bf-sign ' + (d[f] > 0 ? 'u' : d[f] < 0 ? 'd' : '');
+      s.textContent = d[f] > 0 ? '▲' : d[f] < 0 ? '▼' : '';
+      c.append(s, B.pct(d[f]));
+    });
+    el.append(tr);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+// Alpha Vantage answers: a CSV or JSON text, sometimes wrapped as {result}; failures come inside the answer.
+window.bfAV = {
+  unwrap: (answer) => {
+    let a = answer;
+    if (typeof a === 'string') {
+      const t = a.trim();
+      if (t.startsWith('{') || t.startsWith('[')) { try { a = JSON.parse(t); } catch (e) { return a; } } else { return a; }
+    }
+    if (a && typeof a === 'object' && !Array.isArray(a)) {
+      if (a.error) throw new Error(String(a.error.message || a.error.detail || a.error.type || 'Alpha Vantage error'));
+      for (const k of ['Error Message', 'Information', 'Note']) if (a[k]) throw new Error(String(a[k]));
+      if (typeof a.result === 'string') return window.bfAV.unwrap(a.result);
+    }
+    return a;
+  },
+  transient: (answer) => {
+    const a = answer && typeof answer === 'object' ? answer : null;
+    const msg = a && a.error ? String(a.error.message || '') : '';
+    return /1 request per second|more sparingly|realtime US market data/i.test(msg);
+  },
+  csv: (text) => {
+    const rows = [];
+    let row = [], cell = '', q = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (q) {
+        if (ch === '"' && text[i + 1] === '"') { cell += '"'; i++; } else if (ch === '"') { q = false; } else { cell += ch; }
+      } else if (ch === '"') { q = true; } else if (ch === ',') { row.push(cell); cell = ''; }
+      else if (ch === '\n' || ch === '\r') { if (ch === '\r' && text[i + 1] === '\n') i++; row.push(cell); cell = ''; if (row.some((c) => c !== '')) rows.push(row); row = []; }
+      else { cell += ch; }
+    }
+    row.push(cell); if (row.some((c) => c !== '')) rows.push(row);
+    if (!rows.length) return {columns: [], rows: []};
+    const columns = rows[0].map((c) => c.trim());
+    return {columns, rows: rows.slice(1).map((r) => Object.fromEntries(columns.map((c, j) => [c, r[j] ?? ''])))};
+  },
+};
+
+})();
+</script>
+
+<script>
+(() => {
+dash.loader('serie', {
+  description: "La resposta CSV d'Alpha Vantage (TIME_SERIES_DAILY) com a files, de la sessió més antiga a la més recent, amb els preus i el volum com a números.",
+  fn: async ({answer, call, args}) => {
+    let a = answer;
+    if (window.bfAV.transient(a)) a = await call('TIME_SERIES_DAILY', args);
+    const t = window.bfAV.unwrap(a);
+    if (typeof t !== 'string') throw new Error('Alpha Vantage did not return a price series for ' + String(args.symbol));
+    const {rows} = window.bfAV.csv(t);
+    const data = rows.map((r) => ({timestamp: String(r.timestamp).slice(0, 10), open: Number(r.open), high: Number(r.high),
+      low: Number(r.low), close: Number(r.close), volume: Number(r.volume)}))
+      .filter((r) => r.timestamp && isFinite(r.close))
+      .sort((x, y) => (x.timestamp < y.timestamp ? -1 : x.timestamp > y.timestamp ? 1 : 0));
+    return {columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume'], rows: data};
+  },
+});
+
+dash.loader('cerca', {
+  description: "La resposta d'Alpha Vantage (SYMBOL_SEARCH) com a files: codi, nom, tipus, mercat, horari, moneda i coincidència.",
+  fn: async ({answer, call, args}) => {
+    let a = answer;
+    if (window.bfAV.transient(a)) a = await call('SYMBOL_SEARCH', args);
+    const t = window.bfAV.unwrap(a);
+    if (typeof t === 'string') {
+      const {columns, rows} = window.bfAV.csv(t);
+      return {columns, rows: rows.map((r) => ({...r, matchScore: Number(r.matchScore)}))};
+    }
+    const list = t && Array.isArray(t.bestMatches) ? t.bestMatches : [];
+    const strip = (o) => Object.fromEntries(Object.entries(o).map(([k, v]) => [k.replace(/^\d+\.\s*/, ''), v]));
+    const rows = list.map(strip).map((r) => ({...r, matchScore: Number(r.matchScore)}));
+    return {columns: ['symbol', 'name', 'type', 'region', 'marketOpen', 'marketClose', 'timezone', 'currency', 'matchScore'], rows};
+  },
+});
+
+dash.loader('perfil', {
+  description: "La fitxa d'Alpha Vantage (COMPANY_OVERVIEW) com una sola fila amb els camps tal com arriben; buida si la font no té fitxa d'aquest valor.",
+  fn: async ({answer, call, args}) => {
+    let a = answer;
+    if (window.bfAV.transient(a)) a = await call('COMPANY_OVERVIEW', args);
+    const t = window.bfAV.unwrap(a);
+    if (!t || typeof t !== 'object' || Array.isArray(t) || !t.Symbol) return {columns: [], rows: []};
+    return {columns: Object.keys(t), rows: [t]};
+  },
+});
+
+dash.calc('ultim', {
+  title: 'Darrera sessió del valor',
+  description: "El darrer tancament del valor cercat, la seva variació respecte a la sessió anterior i el màxim i mínim de tota la sèrie.",
+  inputs: ['serie'],
+  fn: (serie) => {
+    const n = serie.length;
+    if (!n) return [];
+    const last = serie[n - 1], prev = n > 1 ? serie[n - 2] : null;
+    return [{...last,
+      canvi: prev ? Math.round((last.close - prev.close) * 10000) / 10000 : null,
+      canvi_pct: prev ? Math.round((last.close / prev.close - 1) * 10000) / 100 : null,
+      maxim_periode: Math.max(...serie.map((r) => r.high)),
+      minim_periode: Math.min(...serie.map((r) => r.low)),
+      sessions: n}];
+  },
+});
+
+dash.calc('mitjanes', {
+  title: 'Mitjanes mòbils de 20 i 50 sessions',
+  description: 'Per a cada sessió, la mitjana dels tancaments de les 20 i les 50 sessions fins a aquella (buida mentre no n\'hi ha prou).',
+  inputs: ['serie'],
+  fn: (serie) => serie.map((r, i) => {
+    const avg = (k) => (i + 1 >= k ? Math.round((serie.slice(i + 1 - k, i + 1).reduce((s, x) => s + x.close, 0) / k) * 10000) / 10000 : null);
+    return {timestamp: r.timestamp, sma20: avg(20), sma50: avg(50)};
+  }),
+});
+
+})();
+</script>
+
+<script>
+(() => {
+(() => {
+  const B = window.bf;
+  Object.assign(B, {rang: 63, tipus: 'espelmes', sma: {sma20: true, sma50: true}, noms: {}, fitxa: false});
+  document.querySelectorAll('.bf-chip').forEach((c) => { B.noms[c.getAttribute('data-simbol')] = {name: c.getAttribute('data-nom')}; });
+  const pressAll = (sel, fn) => document.querySelectorAll(sel).forEach((b) => b.setAttribute('aria-pressed', String(fn(b))));
+
+  const showTab = (tab) => {
+    B.tab = ['cercador', 'ia'].includes(tab) ? tab : 'portada';
+    document.querySelectorAll('.bf-page').forEach((p) => { p.hidden = p.getAttribute('data-page') !== B.tab; });
+    pressAll('.bf-tab', (b) => b.getAttribute('data-tab') === B.tab);
+    dash.setLink(B.tab);
+  };
+  document.querySelectorAll('.bf-tab').forEach((b) => b.addEventListener('click', () => showTab(b.getAttribute('data-tab'))));
+  if (['cercador', 'ia'].includes(location.hash.slice(1))) showTab(location.hash.slice(1));
+
+  const pick = (simbol, info) => {
+    if (!simbol) return;
+    if (info) B.noms[simbol] = info;
+    pressAll('.bf-chip', (c) => c.getAttribute('data-simbol') === simbol);
+    dash.setParams({simbol});
+    ['qsym', 'qnom'].forEach((n) => dash.draw(n));
+  };
+  B.pick = pick;
+  document.querySelectorAll('.bf-chip').forEach((c) => c.addEventListener('click', () => pick(c.getAttribute('data-simbol'))));
+
+  const search = () => {
+    document.querySelectorAll('.bf-q-input').forEach((inp) => {
+      const q = inp.value.replace(/['"`\\]/g, '').trim().slice(0, 40);
+      if (!q) return;
+      document.querySelectorAll('.bf-q-results').forEach((r) => { r.hidden = false; });
+      dash.setParams({q});
+    });
+  };
+  document.querySelectorAll('.bf-q-go').forEach((b) => b.addEventListener('click', search));
+  document.querySelectorAll('.bf-q-input').forEach((inp) => inp.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') { ev.preventDefault(); search(); } }));
+
+  document.querySelectorAll('.bf-rang').forEach((b) => b.addEventListener('click', () => {
+    B.rang = Number(b.getAttribute('data-rang')); pressAll('.bf-rang', (x) => x === b); dash.draw('grafic');
+  }));
+  document.querySelectorAll('.bf-tipus').forEach((b) => b.addEventListener('click', () => {
+    B.tipus = b.getAttribute('data-tipus'); pressAll('.bf-tipus', (x) => x === b); dash.draw('grafic');
+  }));
+  document.querySelectorAll('.bf-sma').forEach((b) => b.addEventListener('click', () => {
+    const k = b.getAttribute('data-sma'); B.sma[k] = !B.sma[k]; b.setAttribute('aria-pressed', String(B.sma[k])); dash.draw('grafic');
+  }));
+  document.querySelectorAll('.bf-q-toggle').forEach((b) => b.addEventListener('click', () => {
+    B.fitxa = !B.fitxa;
+    b.setAttribute('aria-expanded', String(B.fitxa));
+    b.querySelectorAll('.bf-open').forEach((s) => { s.hidden = B.fitxa; });
+    b.querySelectorAll('.bf-close').forEach((s) => { s.hidden = !B.fitxa; });
+    document.querySelectorAll('.bf-q-fitxa').forEach((f) => { f.hidden = !B.fitxa; });
+  }));
+
+  // A failed Alpha Vantage source: say plainly when it is the free daily quota.
+  B.qfail = (el, id) => {
+    const d = dash.data(id);
+    if (d.status === 'ok') { el.classList.remove('dash-skeleton'); return false; }
+    el.replaceChildren();
+    if (d.status === 'loading') { el.classList.add('dash-skeleton'); return true; }
+    el.classList.remove('dash-skeleton');
+    const f = document.createElement('div'); f.className = 'bf-fail';
+    const msg = String(d.message || '');
+    let text = "No s'han pogut carregar les dades d'Alpha Vantage.";
+    if (/25 requests per day|daily rate limit|per day/i.test(msg)) text = "S'han acabat les 25 consultes gratuïtes d'avui a Alpha Vantage. Torna-ho a provar demà.";
+    else if (/premium endpoint|not yet entitled|premium/i.test(msg)) text = 'Aquest valor o aquesta dada només està disponible amb un pla de pagament d\'Alpha Vantage.';
+    else if (/Invalid API call|not return a price series/i.test(msg)) text = "Alpha Vantage no té dades d'aquest codi. Prova de cercar l'empresa pel nom.";
+    else if (d.status === 'connect' || d.status === 'declined') text = "Posa la teva clau gratuïta d'Alpha Vantage a dalt per veure les dades.";
+    f.append(document.createElement('i'), text);
+    el.append(f);
+    return true;
+  };
+})();
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('qsym', (el) => { el.textContent = String(dash.params().simbol || '—'); });
+dash.draw('qnom', (el) => {
+  const s = dash.params().simbol, info = window.bf.noms[s];
+  el.textContent = info ? [info.name, info.region, info.currency].filter(Boolean).join(', ') : '';
+});
+
+const bfUltim = (field, fmt) => (el) => {
+  const u = dash.data('ultim');
+  const row = u.status === 'ok' && u.data.length ? u.data[0] : null;
+  el.textContent = row && row[field] != null ? fmt(row[field], row) : '—';
+};
+dash.draw('qpreu', bfUltim('close', (v) => window.bf.num(v)));
+dash.draw('qdata', bfUltim('timestamp', (v) => window.bf.dayLong(v)));
+dash.draw('qobre', bfUltim('open', (v) => window.bf.num(v)));
+dash.draw('qmax', bfUltim('high', (v) => window.bf.num(v)));
+dash.draw('qmin', bfUltim('low', (v) => window.bf.num(v)));
+dash.draw('qpmax', bfUltim('maxim_periode', (v) => window.bf.num(v)));
+dash.draw('qpmin', bfUltim('minim_periode', (v) => window.bf.num(v)));
+dash.draw('qvol', bfUltim('volume', (v) => Intl.NumberFormat('ca', {notation: 'compact', maximumFractionDigits: 1}).format(v)));
+dash.draw('qcanvi', (el) => {
+  const B = window.bf, u = dash.data('ultim');
+  const row = u.status === 'ok' && u.data.length ? u.data[0] : null;
+  if (!row || row.canvi_pct == null) { el.textContent = '—'; el.style.color = ''; return; }
+  const t = B.theme(el);
+  el.style.color = row.canvi_pct > 0 ? t.up : row.canvi_pct < 0 ? t.down : '';
+  el.textContent = (row.canvi > 0 ? '▲ +' : row.canvi < 0 ? '▼ −' : '') + B.num(Math.abs(row.canvi)) + ' (' + B.pct(row.canvi_pct) + ')';
+});
+
+dash.draw('resultats', (tbody) => {
+  const B = window.bf, c = dash.data('cerca');
+  tbody.replaceChildren();
+  if (c.status !== 'ok') return;
+  c.data.forEach((r) => {
+    const tr = document.createElement('tr'); tr.tabIndex = 0; tr.dataset.key = String(r.symbol);
+    [r.symbol, r.name, r.type, r.region, r.currency].forEach((v) => { const td = document.createElement('td'); td.textContent = String(v ?? ''); tr.append(td); });
+    const go = () => B.pick(String(r.symbol), {name: String(r.name || ''), region: String(r.region || ''), currency: String(r.currency || '')});
+    tr.addEventListener('click', go);
+    tr.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') go(); });
+    tbody.append(tr);
+  });
+});
+dash.draw('resultatsmsg', (el) => {
+  const c = dash.data('cerca');
+  if (c.status === 'ok') { el.replaceChildren(); el.textContent = c.data.length ? '' : "No s'ha trobat cap valor. Prova amb el nom en anglès o amb el codi."; return; }
+  if (window.bf.qfail(el, 'cerca')) return;
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('grafic', (el) => {
+  const B = window.bf;
+  if (B.qfail(el, 'serie')) return;
+  el.replaceChildren();
+  const all = dash.data('serie').data;
+  const ma = dash.data('mitjanes');
+  const maBy = new Map((ma.status === 'ok' ? ma.data : []).map((m) => [m.timestamp, m]));
+  if (!all.length) {
+    const f = document.createElement('div'); f.className = 'bf-fail'; f.append("Alpha Vantage no té dades d'aquest codi."); el.append(f); return;
+  }
+  const rows = B.rang ? all.slice(-B.rang) : all;
+  const t = B.theme(el), {ca, caTime, parseDay} = B;
+  const smaColor = {sma20: dash.colors[1], sma50: dash.colors[6]};
+  const smaName = {sma20: 'Mitjana 20', sma50: 'Mitjana 50'};
+
+  const W = Math.max(300, el.clientWidth), top = 28, priceH = 300, gap = 10, volH = 70, bottom = 24;
+  const H = top + priceH + gap + volH + bottom;
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img')
+    .attr('aria-label', 'Gràfic de cotització de ' + String(dash.params().simbol || ''));
+  const vals = rows.flatMap((r) => [r.high, r.low]);
+  Object.keys(B.sma).forEach((k) => { if (B.sma[k]) rows.forEach((r) => { const m = maBy.get(r.timestamp); if (m && m[k] != null) vals.push(m[k]); }); });
+  const lo = d3.min(vals), hi = d3.max(vals), pad = (hi - lo) * 0.06 || hi * 0.01 || 1;
+  const y = d3.scaleLinear([lo - pad, hi + pad], [top + priceH, top]).nice(6);
+  const dec = hi < 10 ? 3 : 2;
+  const fmtP = ca.format(`,.${dec}f`);
+  const probe = svg.append('text');
+  const right = d3.max(y.ticks(6).concat([rows[rows.length - 1].close]), (v) => probe.text(fmtP(v)).node().getComputedTextLength()) + 18;
+  probe.remove();
+  const left = 2;
+  const x = d3.scaleBand(rows.map((r) => r.timestamp), [left, W - right]).paddingInner(0.3).paddingOuter(0.2);
+  const bw = Math.max(1, Math.min(14, x.bandwidth()));
+  const cx = (r) => x(r.timestamp) + x.bandwidth() / 2;
+  const vy = d3.scaleLinear([0, d3.max(rows, (r) => r.volume) || 1], [top + priceH + gap + volH, top + priceH + gap]);
+
+  // Grid and price scale on the right, as on a trading screen.
+  y.ticks(6).forEach((v) => {
+    svg.append('line').attr('x1', left).attr('x2', W - right).attr('y1', y(v)).attr('y2', y(v)).attr('stroke', 'var(--cds-chart-grid)');
+    svg.append('text').attr('x', W - right + 8).attr('y', y(v)).attr('dy', '0.35em').text(fmtP(v));
+  });
+  svg.append('line').attr('x1', W - right).attr('x2', W - right).attr('y1', top).attr('y2', top + priceH + gap + volH).attr('stroke', 'var(--cds-chart-axis)');
+  svg.append('line').attr('x1', left).attr('x2', W - right).attr('y1', top + priceH + gap + volH).attr('y2', top + priceH + gap + volH).attr('stroke', 'var(--cds-chart-axis)');
+  const every = Math.max(1, Math.ceil(rows.length / Math.max(2, Math.floor((W - right) / 80))));
+  rows.forEach((r, i) => {
+    if (i % every) return;
+    svg.append('text').attr('x', cx(r)).attr('y', H - 6).attr('text-anchor', 'middle').text(caTime.utcFormat('%-d %b')(parseDay(r.timestamp)));
+  });
+
+  // Volume.
+  svg.append('g').selectAll('rect').data(rows).join('rect')
+    .attr('x', (r) => cx(r) - bw / 2).attr('width', bw).attr('y', (r) => vy(r.volume)).attr('height', (r) => vy(0) - vy(r.volume))
+    .attr('fill', (r) => (r.close >= r.open ? t.up : t.down)).attr('opacity', 0.35);
+
+  // Price: candles or a close line.
+  if (B.tipus === 'espelmes') {
+    const g = svg.append('g').selectAll('g').data(rows).join('g');
+    g.append('line').attr('x1', cx).attr('x2', cx).attr('y1', (r) => y(r.high)).attr('y2', (r) => y(r.low))
+      .attr('stroke', (r) => (r.close >= r.open ? t.up : t.down)).attr('stroke-width', 1);
+    g.append('rect').attr('x', (r) => cx(r) - bw / 2).attr('width', bw)
+      .attr('y', (r) => y(Math.max(r.open, r.close))).attr('height', (r) => Math.max(1, Math.abs(y(r.open) - y(r.close))))
+      .attr('fill', (r) => (r.close >= r.open ? t.up : t.down)).attr('rx', bw > 6 ? 1 : 0);
+  } else {
+    svg.append('path').attr('d', d3.line((r) => cx(r), (r) => y(r.close))(rows)).attr('fill', 'none')
+      .attr('stroke', 'var(--color-fg)').attr('stroke-width', 2).attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round');
+  }
+  Object.keys(B.sma).forEach((k) => {
+    if (!B.sma[k]) return;
+    const pts = rows.map((r) => ({r, v: (maBy.get(r.timestamp) || {})[k]})).filter((p) => p.v != null);
+    if (pts.length < 2) return;
+    svg.append('path').attr('d', d3.line((p) => cx(p.r), (p) => y(p.v))(pts)).attr('fill', 'none')
+      .attr('stroke', smaColor[k]).attr('stroke-width', 1.5).attr('stroke-linejoin', 'round');
+  });
+
+  // Last price tag on the scale.
+  const last = rows[rows.length - 1], lastUp = rows.length > 1 ? last.close >= rows[rows.length - 2].close : true;
+  const tagC = lastUp ? t.up : t.down;
+  svg.append('line').attr('x1', left).attr('x2', W - right).attr('y1', y(last.close)).attr('y2', y(last.close))
+    .attr('stroke', tagC).attr('stroke-width', 1).attr('stroke-dasharray', '2 3').attr('opacity', 0.8);
+  svg.append('rect').attr('x', W - right + 2).attr('y', y(last.close) - 10).attr('width', right - 2).attr('height', 20).attr('fill', tagC);
+  svg.append('text').attr('x', W - right + 8).attr('y', y(last.close)).attr('dy', '0.35em').style('fill', '#ffffff').style('font-weight', 600).text(fmtP(last.close));
+
+  // Legend line with the hovered (or last) session, like a trading terminal.
+  const legend = document.createElement('div'); legend.className = 'bf-q-legend'; el.append(legend);
+  const writeLegend = (r) => {
+    const prevI = all.findIndex((a) => a.timestamp === r.timestamp) - 1;
+    const pct = prevI >= 0 ? (r.close / all[prevI].close - 1) * 100 : null;
+    legend.replaceChildren();
+    const part = (label, value, color) => {
+      const s = document.createElement('span'); s.append(label + ' ');
+      const b = document.createElement('b'); b.textContent = value; if (color) b.style.color = color; s.append(b); legend.append(s);
+    };
+    const d = document.createElement('span'); d.textContent = B.dayLong(r.timestamp); legend.append(d);
+    part('O', fmtP(r.open)); part('M', fmtP(r.high)); part('m', fmtP(r.low));
+    part('T', fmtP(r.close), r.close >= r.open ? t.up : t.down);
+    if (pct != null) part('', B.pct(pct), pct >= 0 ? t.up : t.down);
+    part('Vol', Intl.NumberFormat('ca', {notation: 'compact', maximumFractionDigits: 1}).format(r.volume));
+    const m = maBy.get(r.timestamp) || {};
+    Object.keys(B.sma).forEach((k) => {
+      if (!B.sma[k] || m[k] == null) return;
+      const s = document.createElement('span'); const i = document.createElement('i'); i.style.background = smaColor[k];
+      const b = document.createElement('b'); b.textContent = fmtP(m[k]); s.append(i, smaName[k] + ' ', b); legend.append(s);
+    });
+  };
+  writeLegend(last);
+
+  // Crosshair.
+  const vline = svg.append('line').attr('y1', top).attr('y2', top + priceH + gap + volH).attr('stroke', 'var(--color-fg-muted)').attr('stroke-dasharray', '3 3').attr('visibility', 'hidden');
+  const hline = svg.append('line').attr('x1', left).attr('x2', W - right).attr('stroke', 'var(--color-fg-muted)').attr('stroke-dasharray', '3 3').attr('visibility', 'hidden');
+  const htag = svg.append('g').attr('visibility', 'hidden');
+  const htagR = htag.append('rect').attr('x', W - right + 2).attr('width', right - 2).attr('height', 20).attr('fill', 'var(--color-fg)');
+  const htagT = htag.append('text').attr('x', W - right + 8).attr('dy', '0.35em').style('fill', 'var(--color-bg)').style('font-weight', 600);
+  svg.append('rect').attr('x', left).attr('y', top).attr('width', W - right - left).attr('height', priceH + gap + volH).attr('fill', 'transparent')
+    .style('cursor', 'crosshair')
+    .on('pointermove', (ev) => {
+      const [px, py] = d3.pointer(ev);
+      const step = x.step(), i = Math.max(0, Math.min(rows.length - 1, Math.round((px - x(rows[0].timestamp) - x.bandwidth() / 2) / step)));
+      const r = rows[i];
+      vline.attr('x1', cx(r)).attr('x2', cx(r)).attr('visibility', 'visible');
+      if (py <= top + priceH) {
+        hline.attr('y1', py).attr('y2', py).attr('visibility', 'visible');
+        htag.attr('visibility', 'visible'); htagR.attr('y', py - 10); htagT.attr('y', py).text(fmtP(y.invert(py)));
+      } else { hline.attr('visibility', 'hidden'); htag.attr('visibility', 'hidden'); }
+      writeLegend(r);
+    })
+    .on('pointerleave', () => { vline.attr('visibility', 'hidden'); hline.attr('visibility', 'hidden'); htag.attr('visibility', 'hidden'); writeLegend(last); });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+dash.draw('fitxa', (el) => {
+  const B = window.bf;
+  if (B.qfail(el, 'perfil')) return;
+  el.replaceChildren();
+  const p = dash.data('perfil');
+  const r = p.data[0];
+  if (!r) {
+    const f = document.createElement('p'); f.className = 'bf-note';
+    f.textContent = "Alpha Vantage no té fitxa d'aquest valor (passa sovint amb fons cotitzats i valors de fora dels EUA).";
+    el.append(f); return;
+  }
+  const n = (v) => { const x = Number(v); return v == null || v === '' || v === 'None' || v === '-' || !isFinite(x) ? null : x; };
+  const cur = String(r.Currency || '');
+  const compact = (v) => (n(v) == null ? '—' : Intl.NumberFormat('ca', {notation: 'compact', maximumFractionDigits: 2}).format(n(v)) + (cur ? ' ' + cur : ''));
+  const num = (v, d = 2) => (n(v) == null ? '—' : B.ca.format(`,.${d}f`)(n(v)));
+  const pc = (v) => (n(v) == null ? '—' : B.ca.format('.2f')(n(v) * 100) + '%');
+  const txt = (v) => (v == null || v === '' || v === 'None' ? '—' : String(v));
+  const items = [
+    ['Capitalització', compact(r.MarketCapitalization)],
+    ['PER', num(r.PERatio)], ['PER previst', num(r.ForwardPE)], ['Benefici per acció', num(r.EPS)],
+    ['Rendibilitat per dividend', pc(r.DividendYield)], ['Beta', num(r.Beta)],
+    ['Màxim de 52 setmanes', num(r['52WeekHigh'])], ['Mínim de 52 setmanes', num(r['52WeekLow'])],
+    ['Preu objectiu dels analistes', num(r.AnalystTargetPrice)], ['Marge net', pc(r.ProfitMargin)],
+    ['Rendibilitat sobre fons propis', pc(r.ReturnOnEquityTTM)], ['Ingressos (12 mesos)', compact(r.RevenueTTM)],
+    ['Sector', txt(r.Sector)], ['Indústria', txt(r.Industry)], ['Borsa', txt(r.Exchange)], ['País', txt(r.Country)],
+  ];
+  const kv = document.createElement('div'); kv.className = 'bf-q-kv';
+  items.forEach(([k, v]) => { const d = document.createElement('div'); const s = document.createElement('span'); s.textContent = k; const b = document.createElement('b'); b.textContent = v; d.append(s, b); kv.append(d); });
+  el.append(kv);
+  if (r.Description && r.Description !== 'None') {
+    const note = document.createElement('p'); note.className = 'bf-q-desc-note'; note.textContent = 'Descripció de ' + txt(r.Name) + ', tal com la dona la font (en anglès):';
+    const d = document.createElement('p'); d.className = 'bf-q-desc'; d.textContent = String(r.Description);
+    el.append(note, d);
+  }
+});
+
+})();
+</script>
+
+<script>
+(() => {
+(() => {
+  const B = window.bf;
+  B.iacat = '';
+  document.querySelectorAll('.bf-iacat').forEach((b) => b.addEventListener('click', () => {
+    B.iacat = b.getAttribute('data-cat') || '';
+    document.querySelectorAll('.bf-iacat').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    dash.draw('ianoticies');
+  }));
+})();
+
+dash.draw('cursa', (el) => {
+  const B = window.bf, c = dash.data('ia_cursa');
+  if (B.state(el, [c.status])) return;
+  el.replaceChildren();
+  const rows = [['valoracio', 'Valoració'], ['borsa', 'Borsa'], ['ingressos', 'Ingressos'], ['darrer_model', 'Darrer model']];
+  c.data.forEach((d) => {
+    const col = document.createElement('article'); col.className = 'bf-race-col';
+    const n = document.createElement('p'); n.className = 'bf-race-name'; n.textContent = String(d.empresa ?? '');
+    const p = document.createElement('p'); p.className = 'bf-race-prod'; p.textContent = d.producte ? 'Creadora de ' + d.producte : '';
+    col.append(n, p);
+    rows.forEach(([k, label]) => {
+      if (d[k] == null || d[k] === '') return;
+      const r = document.createElement('div'); r.className = 'bf-race-row';
+      const s1 = document.createElement('span'); s1.textContent = label;
+      const b = document.createElement('b'); b.textContent = String(d[k]);
+      r.append(s1, b); col.append(r);
+    });
+    if (d.font) { const f = document.createElement('p'); f.className = 'bf-race-src'; f.textContent = 'Font: ' + d.font; col.append(f); }
+    el.append(col);
+  });
+});
+
+dash.draw('ianoticies', (el) => {
+  const B = window.bf, n = dash.data('ia_noticies');
+  if (B.state(el, [n.status])) return;
+  el.replaceChildren();
+  const rows = n.data.filter((d) => !B.iacat || d.categoria === B.iacat);
+  if (!rows.length) { const p = document.createElement('p'); p.className = 'bf-note'; p.textContent = 'Avui no hi ha notícies d\'aquest tema.'; el.append(p); return; }
+  rows.forEach((d, i) => {
+    const a = document.createElement('article'); a.className = 'bf-item' + (i === 0 ? ' bf-top' : '');
+    const tag = document.createElement('p'); tag.className = 'bf-tag'; tag.textContent = [d.empresa, d.categoria].filter(Boolean).join(', ');
+    const h = document.createElement('h3'); h.textContent = String(d.titular ?? '');
+    const p = document.createElement('p'); p.textContent = String(d.resum ?? '');
+    const src = document.createElement('p'); src.className = 'bf-src';
+    if (d.data) src.append(B.dayLong(d.data) + '. ');
+    if (typeof d.url === 'string' && /^https:\/\//.test(d.url)) {
+      const l = document.createElement('a'); l.href = d.url; l.target = '_blank'; l.rel = 'noopener noreferrer'; l.textContent = String(d.font || 'Font');
+      src.append(l);
+    } else if (d.font) { src.append(String(d.font)); }
+    if (i === 0) { a.append(h, tag, p, src); } else { a.append(tag, h, p, src); }
+    el.append(a);
+  });
+});
+
+dash.draw('iamodels', (tbody) => {
+  const B = window.bf, m = dash.data('ia_models');
+  tbody.replaceChildren();
+  if (m.status !== 'ok') return;
+  m.data.slice().sort((a, b) => (a.data < b.data ? 1 : a.data > b.data ? -1 : 0)).forEach((d) => {
+    const tr = document.createElement('tr');
+    const cells = [B.dayShort(d.data), d.model, d.empresa, d.que_es, d.acces];
+    cells.forEach((v, i) => { const td = document.createElement('td'); td.textContent = String(v ?? ''); if (i === 1) td.style.fontWeight = '600'; if (i === 0) td.className = 'bf-muted'; tr.append(td); });
+    tbody.append(tr);
+  });
+});
+
+})();
+</script>
+
+<script>
+(() => {
+(() => {
+  const sync = () => {
+    const has = !!window.ledgerKey.get();
+    document.querySelectorAll('.bf-apikey').forEach((el) => { el.hidden = has; });
+    document.querySelectorAll('.bf-apikey-set').forEach((el) => { el.hidden = !has; });
+  };
+  const save = () => {
+    document.querySelectorAll('.bf-apikey-input').forEach((inp) => {
+      const k = inp.value.replace(/[^A-Za-z0-9]/g, '').slice(0, 40);
+      if (k) { window.ledgerKey.set(k); inp.value = ''; }
+    });
+    sync();
+  };
+  document.querySelectorAll('.bf-apikey-save').forEach((b) => b.addEventListener('click', save));
+  document.querySelectorAll('.bf-apikey-input').forEach((inp) => inp.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') save(); }));
+  document.querySelectorAll('.bf-apikey-change').forEach((b) => b.addEventListener('click', () => {
+    window.ledgerKey.set('');
+    sync();
+    document.querySelectorAll('.bf-apikey-input').forEach((inp) => inp.focus());
+  }));
+  sync();
+})();
+
+})();
+</script>
+
+</div>
+</body>
+</html>
