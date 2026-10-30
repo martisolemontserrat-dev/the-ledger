@@ -1,0 +1,93 @@
+[
+ {
+  "data": "2026-10-28",
+  "model": "Gemini 4 Carbon",
+  "empresa": "Google",
+  "que_es": "Modelo de lenguaje, el más potente de Google",
+  "acces": "Limitat"
+ },
+ {
+  "data": "2026-10-27",
+  "model": "Genie 4",
+  "empresa": "Google",
+  "que_es": "Modelo de vídeo",
+  "acces": "Limitat"
+ },
+ {
+  "data": "2026-10-26",
+  "model": "GPT-6.1 Terra",
+  "empresa": "OpenAI",
+  "que_es": "Modelo de lenguaje rápido y económico",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-23",
+  "model": "Kimi K3.1 Pro",
+  "empresa": "Moonshot AI",
+  "que_es": "Modelo de lenguaje",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-23",
+  "model": "Nemotron 3.5 Bolt",
+  "empresa": "Nvidia",
+  "que_es": "Modelo de texto pequeño",
+  "acces": "Pesos oberts"
+ },
+ {
+  "data": "2026-10-20",
+  "model": "Voxtral 3",
+  "empresa": "Mistral AI",
+  "que_es": "Modelo de voz",
+  "acces": "Prova pública"
+ },
+ {
+  "data": "2026-10-17",
+  "model": "DeepSeek-V4.1-Flash",
+  "empresa": "DeepSeek",
+  "que_es": "Modelo multimodal",
+  "acces": "Pesos oberts"
+ },
+ {
+  "data": "2026-10-15",
+  "model": "Muse Spark Open",
+  "empresa": "Meta",
+  "que_es": "Modelo multimodal",
+  "acces": "Pesos oberts (amb restriccions)"
+ },
+ {
+  "data": "2026-10-14",
+  "model": "Grok Voice 3.0",
+  "empresa": "xAI",
+  "que_es": "Modelo de voz",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-13",
+  "model": "Gemini 4 Argon",
+  "empresa": "Google",
+  "que_es": "Modelo multimodal",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-12",
+  "model": "Muse Wonder",
+  "empresa": "Meta",
+  "que_es": "Modelo multimodal",
+  "acces": "Prova pública"
+ },
+ {
+  "data": "2026-10-07",
+  "model": "Claude Haiku 5.5",
+  "empresa": "Anthropic",
+  "que_es": "Modelo multimodal rápido",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-06",
+  "model": "Mistral Large 4",
+  "empresa": "Mistral AI",
+  "que_es": "Modelo de lenguaje grande",
+  "acces": "Pesos oberts (amb restriccions)"
+ }
+]

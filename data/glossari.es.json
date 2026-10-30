@@ -1,0 +1,236 @@
+[
+ {
+  "terme": "Acción",
+  "definicio": "Una pequeña parte de la propiedad de una empresa. Si tienes acciones, eres socio: ganas si la empresa pasa a valer más y puedes cobrar dividendos.",
+  "exemple": "Si una empresa tiene 1.000 acciones y tú tienes 10, eres propietario del 1%.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Dividendo",
+  "definicio": "La parte de los beneficios que una empresa reparte entre sus accionistas, normalmente en dinero.",
+  "exemple": "Una empresa que paga 0,50 € por acción te da 50 € si tienes 100.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Índice bursátil",
+  "definicio": "Un número que resume cómo van un grupo de empresas de la bolsa. Sirve para saber de un vistazo si el mercado sube o baja.",
+  "exemple": "El Ibex 35 agrupa las 35 empresas más negociadas de la bolsa española.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "ETF",
+  "definicio": "Un fondo que compra todas las empresas de un índice y cotiza en bolsa como una acción. Con una sola compra, inviertes en muchas empresas a la vez.",
+  "exemple": "El ETF EWP replica la bolsa española: es el que usa The Daily Spread para seguirla.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Fondo de inversión",
+  "definicio": "Una bolsa de dinero de muchos ahorradores que gestiona un profesional, que lo invierte en acciones, bonos u otros activos.",
+  "exemple": "Con 100 € puedes tener una parte de un fondo que tiene acciones de cientos de empresas.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Interés compuesto",
+  "definicio": "Ganar intereses también sobre los intereses que ya habías ganado. Con el tiempo, el efecto se multiplica.",
+  "exemple": "100 € al 5% anual son 105 € el primer año y 110,25 € el segundo: el segundo año ganas intereses también sobre los 5 € del primero.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Inflación",
+  "definicio": "La subida general de los precios. Si la inflación es del 5%, con el mismo dinero puedes comprar un 5% menos de cosas que hace un año.",
+  "exemple": "Una barra de pan de 1 € pasa a costar 1,05 €.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "IPC",
+  "definicio": "El Índice de Precios de Consumo: la medida oficial de la inflación en España. El INE lo calcula cada mes con una cesta de productos que compra una familia típica.",
+  "exemple": "Cuando se dice que el IPC es del 4,9%, significa que la cesta es un 4,9% más cara que hace un año.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Inflación subyacente",
+  "definicio": "La inflación sin contar la energía ni los alimentos frescos, que suben y bajan mucho. Muestra mejor la tendencia de fondo de los precios.",
+  "exemple": "Si la luz se dispara un mes, la inflación general salta, pero la subyacente apenas se mueve.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Tipo de interés",
+  "definicio": "El precio del dinero: lo que pagas por pedirlo prestado o lo que cobras por prestarlo.",
+  "exemple": "Un préstamo de 10.000 € al 6% anual te cuesta unos 600 € de intereses el primer año.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "BCE",
+  "definicio": "El Banco Central Europeo, que fija el tipo de interés oficial de la zona euro para mantener la inflación cerca del 2%.",
+  "exemple": "Si la inflación es demasiado alta, el BCE sube los tipos para frenar el consumo y el crédito.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Fed",
+  "definicio": "La Reserva Federal, el banco central de Estados Unidos. Sus decisiones sobre los tipos mueven las bolsas de todo el mundo.",
+  "exemple": "Cuando la Fed sube los tipos, a menudo el dólar se fortalece y la bolsa cae.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Euríbor",
+  "definicio": "El tipo de interés al que los bancos europeos se prestan dinero entre ellos. La mayoría de hipotecas variables en España están ligadas a él.",
+  "exemple": "Si el Euríbor sube un punto, la cuota de una hipoteca variable de 150.000 € a 25 años sube unos 80 € al mes.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Diferencial",
+  "definicio": "La parte fija que el banco suma al Euríbor en una hipoteca variable. No cambia nunca durante la vida de la hipoteca.",
+  "exemple": "Con Euríbor + 0,75% y un Euríbor del 3,29%, pagas un 4,04%.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Hipoteca variable",
+  "definicio": "Una hipoteca en la que el interés cambia cada 6 o 12 meses según el Euríbor. Si el Euríbor sube, pagas más; si baja, menos.",
+  "exemple": "En una hipoteca fija, en cambio, pagas siempre lo mismo, pase lo que pase.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Bono",
+  "definicio": "Un préstamo que haces a un gobierno o a una empresa. A cambio, te pagan un interés y, al final, te devuelven el dinero.",
+  "exemple": "Un bono del Estado a 10 años al 3% te paga 30 € al año por cada 1.000 € que pones.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Letra del Tesoro",
+  "definicio": "Un préstamo al Estado español a corto plazo (3, 6, 9 o 12 meses). Es de las inversiones más seguras que existen.",
+  "exemple": "Compras una letra por unos 970 € y al cabo de un año el Estado te devuelve 1.000.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Depósito bancario",
+  "definicio": "Dejar dinero en el banco durante un tiempo fijo a cambio de un interés pactado. Hasta 100.000 € están protegidos por un fondo de garantía.",
+  "exemple": "Un depósito de 5.000 € al 2,5% durante un año te da 125 € brutos.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "TAE",
+  "definicio": "La Tasa Anual Equivalente: el coste o el rendimiento real de un producto en un año, con comisiones incluidas. Sirve para comparar ofertas.",
+  "exemple": "Entre dos préstamos, el que tiene la TAE más baja es el más barato.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Rentabilidad",
+  "definicio": "Lo que ganas (o pierdes) con una inversión, en porcentaje de lo que pusiste.",
+  "exemple": "Si inviertes 1.000 € y al cabo de un año tienes 1.080, la rentabilidad es del 8%.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Rentabilidad real",
+  "definicio": "La rentabilidad descontando la inflación. Te dice si de verdad puedes comprar más cosas que antes.",
+  "exemple": "Ganar un 3% con una inflación del 4,9% significa perder casi un 2% de poder adquisitivo.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Volatilidad",
+  "definicio": "Cuánto y con qué frecuencia sube y baja el precio de una inversión. Cuanto más volátil, más riesgo a corto plazo.",
+  "exemple": "Una acción tecnológica puede moverse un 5% en un día; un bono del Estado, casi nada.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Diversificación",
+  "definicio": "Repartir el dinero entre muchas inversiones distintas para que, si una va mal, no lo pierdas todo.",
+  "exemple": "Mejor tener acciones de 50 empresas de sectores distintos que todas de una sola.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Capitalización bursátil",
+  "definicio": "Lo que vale una empresa en bolsa: el precio de la acción multiplicado por el número de acciones.",
+  "exemple": "100 millones de acciones a 50 € suponen una capitalización de 5.000 millones.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "PER",
+  "definicio": "Cuántas veces el beneficio anual vale una empresa en bolsa (precio de la acción dividido por el beneficio por acción). Ayuda a saber si está cara o barata.",
+  "exemple": "Un PER de 20 significa que pagas 20 € por cada euro de beneficio anual.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Beneficio por acción",
+  "definicio": "El beneficio de la empresa dividido por el número de acciones.",
+  "exemple": "Una empresa que gana 1.000 millones y tiene 500 millones de acciones tiene un beneficio por acción de 2 €.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Resultados trimestrales",
+  "definicio": "Las cuentas que las empresas cotizadas publican cada tres meses. Si quedan por debajo de lo esperado, la acción suele caer.",
+  "exemple": "Alphabet cayó más de un 12% en un día porque sus ventas quedaron por debajo de lo previsto.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Salida a bolsa",
+  "definicio": "Cuando una empresa privada empieza a vender sus acciones en bolsa, para que cualquiera pueda comprarlas. También se llama OPV o IPO.",
+  "exemple": "Anthropic ha presentado los papeles para salir a bolsa con el código ANT.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Ronda de financiación",
+  "definicio": "Cuando una empresa que aún no cotiza consigue dinero de inversores a cambio de una parte de la propiedad.",
+  "exemple": "Si alguien pone 30.000 millones en una empresa valorada en 1,25 billones, se queda con algo más del 2%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Mercado alcista y bajista",
+  "definicio": "Alcista significa una temporada larga de subidas en bolsa; bajista, una caída del 20% o más desde el máximo.",
+  "exemple": "En inglés se llaman bull market (el toro embiste hacia arriba) y bear market (el oso golpea hacia abajo).",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Tipo de cambio",
+  "definicio": "Cuántas unidades de una moneda vale otra.",
+  "exemple": "Con el euro a 1,117 dólares, por 100 € recibes 111,70 $.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "PIB",
+  "definicio": "El Producto Interior Bruto: el valor de todo lo que produce un país en un año. Si crece, la economía va bien.",
+  "exemple": "Que el PIB de EE. UU. crezca un 3,4% anualizado significa que la economía se expande con fuerza.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Recesión",
+  "definicio": "Cuando el PIB de un país cae durante dos trimestres seguidos. Suele venir con más paro y menos consumo.",
+  "exemple": "",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Liquidez",
+  "definicio": "Lo rápido que puedes convertir una inversión en dinero sin perder valor.",
+  "exemple": "La cuenta corriente es totalmente líquida; un piso, muy poco: venderlo lleva meses.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Media móvil",
+  "definicio": "La media de los precios de cierre de los últimos días (20, 50…), que se recalcula cada día. Ayuda a ver la tendencia sin el ruido diario.",
+  "exemple": "Si el precio está por encima de la media de 50 sesiones, la tendencia reciente es alcista.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Vela japonesa",
+  "definicio": "Una forma de dibujar el precio de cada día: el cuerpo muestra la apertura y el cierre, y las líneas, el máximo y el mínimo.",
+  "exemple": "Una vela azul (en nuestro buscador) significa que ese día cerró por encima de donde abrió.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Volumen",
+  "definicio": "Cuántas acciones se han comprado y vendido en una sesión. Un movimiento con mucho volumen es más significativo.",
+  "exemple": "",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Prima de riesgo",
+  "definicio": "Cuánto más paga un país que Alemania por endeudarse a 10 años. Mide la confianza de los inversores en ese país.",
+  "exemple": "Si el bono español paga un 3,2% y el alemán un 2,5%, la prima de riesgo es de 70 puntos básicos.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Punto básico",
+  "definicio": "Una centésima parte de un punto porcentual. 100 puntos básicos son un 1%.",
+  "exemple": "Si un tipo pasa del 2,85% al 3,03%, ha subido 18 puntos básicos.",
+  "categoria": "Economia"
+ }
+]

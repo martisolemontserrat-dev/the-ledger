@@ -1,0 +1,29 @@
+[
+ {
+  "empresa": "Anthropic",
+  "producte": "Claude",
+  "valoracio": "965.000 M$ (ronda de mayo); busca 1,5–2 billones al salir a bolsa",
+  "borsa": "Papeles presentados el 26 de octubre, código ANT",
+  "ingressos": "16.300 M$ en el primer semestre (dato oficial); unos 65.000 M$ anualizados en julio, según la prensa",
+  "darrer_model": "Claude Haiku 5.5 (7 de octubre)",
+  "font": "TechCrunch, Parameter"
+ },
+ {
+  "empresa": "OpenAI",
+  "producte": "ChatGPT",
+  "valoracio": "1,25 billones en una ronda que aún negocia (852.000 M$ en marzo)",
+  "borsa": "Papeles confidenciales en junio; se espera en 2027",
+  "ingressos": "Más de 40.000 M$ anualizados en julio, según la prensa",
+  "darrer_model": "GPT-6.1 Terra (26 de octubre)",
+  "font": "TechCrunch, Parameter"
+ },
+ {
+  "empresa": "Google",
+  "producte": "Gemini",
+  "valoracio": "Dentro de Alphabet, que ya cotiza",
+  "borsa": "Alphabet (GOOGL) cayó más de un 7% tras sus resultados",
+  "ingressos": "Google Cloud: 30.700 M$ en el tercer trimestre",
+  "darrer_model": "Gemini 4 Carbon (28 de octubre)",
+  "font": "Kill The AI"
+ }
+]

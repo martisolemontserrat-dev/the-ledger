@@ -1,0 +1,74 @@
+[
+ {
+  "id": "c1",
+  "categoria": "Seguretat",
+  "titular": "Robo récord en Binance: se llevan unos 6.300 millones en criptomonedas",
+  "resum": "Según la investigación inicial, los atacantes entraron a través del ordenador comprometido de un ingeniero y vaciaron monederos de la mayor plataforma del mundo. Las empresas de análisis lo atribuyen al grupo norcoreano que en 2025 ya robó 1.500 millones a Bybit. Binance dice que cubrirá las pérdidas con un fondo propio y tiene las retiradas paradas hasta 48 horas.",
+  "per_que_importa": "Muestra el gran riesgo de dejar las criptomonedas en una plataforma: no hay ningún fondo de garantía público como el de los depósitos bancarios, y si la plataforma no pudiera pagar, los usuarios lo perderían.",
+  "font": "Help Net Security",
+  "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
+  "data": "2026-10-30",
+  "xifra": "6.300 M$",
+  "xifra_text": "robados a Binance, el mayor robo de criptomonedas de la historia"
+ },
+ {
+  "id": "c2",
+  "categoria": "Seguretat",
+  "titular": "Congelados cerca de 3.000 millones del botín de Binance",
+  "resum": "Emisores de monedas estables como Tether y Circle han bloqueado parte de los fondos robados. Los atacantes aún controlan más de 420.000 ether y 18.270 bitcoins, unos 2.400 millones de dólares.",
+  "per_que_importa": "Las monedas estables tienen una empresa detrás que puede congelar dinero: ayuda contra los robos, pero significa que no están tan libres de control como a menudo se dice.",
+  "font": "Help Net Security",
+  "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
+  "data": "2026-10-30",
+  "xifra": "3.000 M$",
+  "xifra_text": "del botín ya congelados"
+ },
+ {
+  "id": "c3",
+  "categoria": "Mercat",
+  "titular": "El bitcoin cae por debajo de los 77.000 dólares y se liquidan 1.500 millones en apuestas",
+  "resum": "El robo provocó una caída rápida: el bitcoin tocó los 76.460 dólares y el ether bajó de los 2.200. En 24 horas se cerraron a la fuerza posiciones apalancadas por 1.530 millones, y el 84% de ese importe eran apuestas al alza.",
+  "per_que_importa": "Invertir con dinero prestado (apalancamiento) multiplica las pérdidas: con suficiente apalancamiento, basta una caída del 3% para que la plataforma te cierre la posición y pierdas todo lo que habías puesto.",
+  "font": "CoinDesk",
+  "url": "https://www.coindesk.com/markets/2026/10/30/bitcoin-ether-and-xrp-selloff-wipes-out-usd1-5-billion-in-leveraged-crypto-bets",
+  "data": "2026-10-30",
+  "xifra": "1.530 M$",
+  "xifra_text": "en apuestas apalancadas cerradas a la fuerza en 24 horas"
+ },
+ {
+  "id": "c4",
+  "categoria": "Seguretat",
+  "titular": "Polymarket también sufre un ataque el mismo día",
+  "resum": "La plataforma de apuestas sobre acontecimientos ha perdido entre 2,7 y 3,5 millones de dólares por culpa de un proveedor externo comprometido, y dice que compensará a todos los usuarios.",
+  "per_que_importa": "Los ataques a través de proveedores externos son una de las puertas de entrada más habituales: cuantos más intermediarios hay, más puntos débiles.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30",
+  "xifra": "2,7–3,5 M$",
+  "xifra_text": "perdidos por Polymarket"
+ },
+ {
+  "id": "c5",
+  "categoria": "Regulació",
+  "titular": "Corea del Sur estudia aplazar el impuesto sobre las criptomonedas",
+  "resum": "El partido del Gobierno se reúne con las cinco grandes plataformas del país para hablar de retrasar la entrada en vigor de la nueva fiscalidad.",
+  "per_que_importa": "Los gobiernos todavía deciden cómo tratar las criptomonedas. En España, en cambio, las ganancias ya tributan en la base del ahorro del IRPF, como las de otras inversiones.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30",
+  "xifra": "5",
+  "xifra_text": "grandes plataformas reunidas con el partido del Gobierno"
+ },
+ {
+  "id": "c6",
+  "categoria": "Empreses",
+  "titular": "La propietaria de la Bolsa de Nueva York lleva derivados de cripto a un mercado regulado",
+  "resum": "ICE se ha aliado con Trade.xyz y OKX para ofrecer en EE. UU. futuros basados en la plataforma Hyperliquid; su token, HYPE, llegó a subir casi un 12% durante el día.",
+  "per_que_importa": "Las criptomonedas se mezclan cada vez más con las finanzas tradicionales: eso las hace más accesibles, pero también las conecta más con el resto de mercados cuando hay caídas.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30",
+  "xifra": "+12%",
+  "xifra_text": "llegó a subir el token HYPE durante el día"
+ }
+]

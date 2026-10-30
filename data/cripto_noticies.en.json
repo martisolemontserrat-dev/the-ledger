@@ -1,0 +1,74 @@
+[
+ {
+  "id": "c1",
+  "categoria": "Seguretat",
+  "titular": "Record heist at Binance: around $6.3bn in crypto stolen",
+  "resum": "According to the initial investigation, the attackers got in through an engineer's compromised computer and drained wallets at the world's largest exchange. Analytics firms attribute it to the North Korean group that stole $1.5bn from Bybit in 2025. Binance says it will cover the losses from its own fund and has paused withdrawals for up to 48 hours.",
+  "per_que_importa": "It shows the big risk of leaving crypto on an exchange: there's no public guarantee scheme like the one for bank deposits, and if the exchange couldn't pay, users would lose their money.",
+  "font": "Help Net Security",
+  "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
+  "data": "2026-10-30",
+  "xifra": "$6.3bn",
+  "xifra_text": "stolen from Binance, the biggest crypto theft in history"
+ },
+ {
+  "id": "c2",
+  "categoria": "Seguretat",
+  "titular": "Nearly $3bn of the Binance haul frozen",
+  "resum": "Stablecoin issuers such as Tether and Circle have blocked part of the stolen funds. The attackers still control more than 420,000 ether and 18,270 bitcoins, worth about $2.4bn.",
+  "per_que_importa": "Stablecoins have a company behind them that can freeze money: that helps against theft, but it means they're not as free from control as is often claimed.",
+  "font": "Help Net Security",
+  "url": "https://www.helpnetsecurity.com/2026/10/30/binance-crypto-hack/",
+  "data": "2026-10-30",
+  "xifra": "$3bn",
+  "xifra_text": "of the haul already frozen"
+ },
+ {
+  "id": "c3",
+  "categoria": "Mercat",
+  "titular": "Bitcoin drops below $77,000 and $1.5bn in bets are liquidated",
+  "resum": "The heist triggered a sharp fall: bitcoin touched $76,460 and ether dropped below $2,200. Within 24 hours, $1.53bn of leveraged positions were forcibly closed, and 84% of that amount were bets on prices rising.",
+  "per_que_importa": "Investing with borrowed money (leverage) multiplies losses: with enough leverage, a 3% drop is all it takes for the exchange to close your position and for you to lose everything you put in.",
+  "font": "CoinDesk",
+  "url": "https://www.coindesk.com/markets/2026/10/30/bitcoin-ether-and-xrp-selloff-wipes-out-usd1-5-billion-in-leveraged-crypto-bets",
+  "data": "2026-10-30",
+  "xifra": "$1.53bn",
+  "xifra_text": "in leveraged bets forcibly closed in 24 hours"
+ },
+ {
+  "id": "c4",
+  "categoria": "Seguretat",
+  "titular": "Polymarket is also hacked on the same day",
+  "resum": "The event-betting platform lost between $2.7m and $3.5m through a compromised third-party supplier, and says it will compensate all users.",
+  "per_que_importa": "Attacks through outside suppliers are one of the most common ways in: the more intermediaries there are, the more weak spots.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30",
+  "xifra": "$2.7–3.5m",
+  "xifra_text": "lost by Polymarket"
+ },
+ {
+  "id": "c5",
+  "categoria": "Regulació",
+  "titular": "South Korea considers postponing its crypto tax",
+  "resum": "The ruling party is meeting the country's five big exchanges to discuss delaying the new tax rules.",
+  "per_que_importa": "Governments are still working out how to treat crypto. In Spain, by contrast, gains are already taxed as savings income under Spain's personal income tax (IRPF), like other investments.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30",
+  "xifra": "5",
+  "xifra_text": "big exchanges meeting the ruling party"
+ },
+ {
+  "id": "c6",
+  "categoria": "Empreses",
+  "titular": "The New York Stock Exchange's owner brings crypto derivatives to a regulated market",
+  "resum": "ICE has teamed up with Trade.xyz and OKX to offer US futures based on the Hyperliquid platform; its token, HYPE, rose almost 12% at one point during the day.",
+  "per_que_importa": "Crypto is increasingly intertwined with traditional finance: that makes it more accessible, but also ties it more closely to other markets when things fall.",
+  "font": "KuCoin News",
+  "url": "https://www.kucoin.com/news/articles/crypto-daily-market-report-october-30-2026",
+  "data": "2026-10-30",
+  "xifra": "+12%",
+  "xifra_text": "the HYPE token's peak gain during the day"
+ }
+]

@@ -1,0 +1,29 @@
+[
+ {
+  "empresa": "Anthropic",
+  "producte": "Claude",
+  "valoracio": "$965bn (May round); aiming for $1.5–2tn when it goes public",
+  "borsa": "Filed on 26 October, ticker ANT",
+  "ingressos": "$16.3bn in the first half (official figure); about $65bn annualised in July, according to press reports",
+  "darrer_model": "Claude Haiku 5.5 (7 October)",
+  "font": "TechCrunch, Parameter"
+ },
+ {
+  "empresa": "OpenAI",
+  "producte": "ChatGPT",
+  "valoracio": "$1.25tn in a round still under negotiation ($852bn in March)",
+  "borsa": "Filed confidentially in June; listing expected in 2027",
+  "ingressos": "More than $40bn annualised in July, according to press reports",
+  "darrer_model": "GPT-6.1 Terra (26 October)",
+  "font": "TechCrunch, Parameter"
+ },
+ {
+  "empresa": "Google",
+  "producte": "Gemini",
+  "valoracio": "Part of Alphabet, which is already listed",
+  "borsa": "Alphabet (GOOGL) fell more than 7% after its results",
+  "ingressos": "Google Cloud: $30.7bn in the third quarter",
+  "darrer_model": "Gemini 4 Carbon (28 October)",
+  "font": "Kill The AI"
+ }
+]

@@ -1,0 +1,80 @@
+[
+ {
+  "id": "euribor",
+  "indicador": "12-month Euribor",
+  "valor": "3.290%",
+  "data_dada": "2026-10-28",
+  "comparacio": "A year ago it was 2.187% (October 2025 average). This October's average so far is 3.232%.",
+  "que_vol_dir": "It's the index most variable-rate mortgages are linked to. If yours is reviewed now, the payment goes up: on a €167,000 mortgage over 25 years at Euribor + 0.75%, by about €94 a month.",
+  "hi_guanya": "Savers: deposits and interest-paying accounts tend to pay more.",
+  "hi_perd": "People with a variable-rate mortgage that's due for review.",
+  "font": "Rankia",
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7529932-euribor-hoy-29-octubre-2026",
+  "per_a_leconomia": "It makes credit more expensive for households and businesses: fewer mortgages and fewer investment loans are taken out, which cools home buying and construction."
+ },
+ {
+  "id": "ipc",
+  "indicador": "Inflation in Spain (CPI)",
+  "valor": "4.9%",
+  "data_dada": "2026-10-30",
+  "comparacio": "Flash estimate for October, the same as in September. Core inflation, excluding energy and fresh food, is 3.1%.",
+  "que_vol_dir": "What cost €100 a year ago now costs €104.90 on average. Money sitting idle loses that much purchasing power every year.",
+  "hi_guanya": "People with fixed-rate debts: in real terms, what they owe is worth less.",
+  "hi_perd": "People with savings that earn nothing and people whose pay isn't adjusted for inflation.",
+  "font": "Raisin (dada avançada de l'INE)",
+  "url": "https://www.raisin.com/es-es/noticias/ipc-octubre-2026-adelanto/",
+  "per_a_leconomia": "With high inflation, wages and business costs tend to rise and the ECB comes under pressure to raise rates, which slows activity. Companies that can't pass costs on to their prices see their margins squeezed."
+ },
+ {
+  "id": "llum",
+  "indicador": "Wholesale electricity price",
+  "valor": "€244.69/MWh",
+  "data_dada": "2026-10-30",
+  "comparacio": "5.9% higher than yesterday. The cheapest hour is 13:00–14:00 (€173.41/MWh); the most expensive, 18:00–19:00 (€316.94/MWh).",
+  "que_vol_dir": "It's the price of energy before network charges and taxes. If you're on Spain's regulated tariff (PVPC), running the washing machine or oven in the cheap hour instead of the expensive one cuts the cost of the energy you use almost in half.",
+  "hi_guanya": "People who can shift their usage to the cheap hours.",
+  "hi_perd": "People on the regulated tariff who use most of their power in the evening.",
+  "font": "Tarifaluzhora",
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-10-30",
+  "per_a_leconomia": "Expensive electricity is a direct cost for industry (metals, chemicals, food): it makes factories less competitive and ends up pushing up the price of many products."
+ },
+ {
+  "id": "carburants",
+  "indicador": "Petrol (95) and diesel",
+  "valor": "€1.731 / €1.899 per litre",
+  "data_dada": "2026-10-30",
+  "comparacio": "Petrol has fallen 10% in October (it was €1.931/l on 30 September), mainly thanks to the 20-cent cut in fuel duty, which stays in place in November.",
+  "que_vol_dir": "Filling a 50-litre tank with petrol costs about €87, around €10 less than a month ago.",
+  "hi_guanya": "People who drive every day.",
+  "hi_perd": "The public purse, which collects less in tax.",
+  "font": "Demócrata (dades del MITECO)",
+  "url": "https://www.democrata.es/en/economy/gasoline-price-today-october-30-2026-how-much-do-gasoline-95-and-diesel-cost/",
+  "per_a_leconomia": "Freight transport runs on diesel: when it gets cheaper, so does moving everything that travels by lorry. The tax cut, however, means less public revenue."
+ },
+ {
+  "id": "bce",
+  "indicador": "ECB rate (deposit)",
+  "valor": "2.50%",
+  "data_dada": "2026-10-29",
+  "comparacio": "Held at this week's meeting. The market is already pricing in a hike in December.",
+  "que_vol_dir": "It's the official price of money in the euro area. When the ECB raises it, loans and mortgages get more expensive and savings pay more; it's how the ECB reins in inflation.",
+  "hi_guanya": "Savers, if the ECB does end up raising rates.",
+  "hi_perd": "Anyone who needs financing: households with loans and businesses.",
+  "font": "The Irish Times",
+  "url": "https://www.irishtimes.com/business/2026/10/29/ecb-holds-rates-steady-as-lagardes-departure-overshadows-decision/",
+  "per_a_leconomia": "Interest rates are the economy's brake and accelerator: keeping them high curbs inflation, but also business investment and job creation."
+ },
+ {
+  "id": "lletres",
+  "indicador": "12-month Spanish Treasury bills (Letras del Tesoro)",
+  "valor": "3.026%",
+  "data_dada": "2026-10-06",
+  "comparacio": "Marginal rate at the October auction, the highest since July 2024 (the previous auction was at 2.846%).",
+  "que_vol_dir": "Lending €1,000 to the Spanish state for a year earns you about €30 before tax. With inflation at 4.9%, though, you're still losing purchasing power: it's a way to lose less, not to gain.",
+  "hi_guanya": "Cautious savers who want a safe short-term return.",
+  "hi_perd": "The state, which pays more to borrow.",
+  "font": "Merca2",
+  "url": "https://www.merca2.es/2026/10/06/subasta-tesoro-letras-rentabilidad-12-meses-2468527/",
+  "per_a_leconomia": "If the state pays more to borrow, it has less left for other spending. And because government debt is the benchmark for many loans, borrowing also gets more expensive for businesses."
+ }
+]

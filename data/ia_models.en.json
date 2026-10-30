@@ -1,0 +1,93 @@
+[
+ {
+  "data": "2026-10-28",
+  "model": "Gemini 4 Carbon",
+  "empresa": "Google",
+  "que_es": "Language model, Google's most powerful",
+  "acces": "Limitat"
+ },
+ {
+  "data": "2026-10-27",
+  "model": "Genie 4",
+  "empresa": "Google",
+  "que_es": "Video model",
+  "acces": "Limitat"
+ },
+ {
+  "data": "2026-10-26",
+  "model": "GPT-6.1 Terra",
+  "empresa": "OpenAI",
+  "que_es": "Fast, low-cost language model",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-23",
+  "model": "Kimi K3.1 Pro",
+  "empresa": "Moonshot AI",
+  "que_es": "Language model",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-23",
+  "model": "Nemotron 3.5 Bolt",
+  "empresa": "Nvidia",
+  "que_es": "Small text model",
+  "acces": "Pesos oberts"
+ },
+ {
+  "data": "2026-10-20",
+  "model": "Voxtral 3",
+  "empresa": "Mistral AI",
+  "que_es": "Voice model",
+  "acces": "Prova pública"
+ },
+ {
+  "data": "2026-10-17",
+  "model": "DeepSeek-V4.1-Flash",
+  "empresa": "DeepSeek",
+  "que_es": "Multimodal model",
+  "acces": "Pesos oberts"
+ },
+ {
+  "data": "2026-10-15",
+  "model": "Muse Spark Open",
+  "empresa": "Meta",
+  "que_es": "Multimodal model",
+  "acces": "Pesos oberts (amb restriccions)"
+ },
+ {
+  "data": "2026-10-14",
+  "model": "Grok Voice 3.0",
+  "empresa": "xAI",
+  "que_es": "Voice model",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-13",
+  "model": "Gemini 4 Argon",
+  "empresa": "Google",
+  "que_es": "Multimodal model",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-12",
+  "model": "Muse Wonder",
+  "empresa": "Meta",
+  "que_es": "Multimodal model",
+  "acces": "Prova pública"
+ },
+ {
+  "data": "2026-10-07",
+  "model": "Claude Haiku 5.5",
+  "empresa": "Anthropic",
+  "que_es": "Fast multimodal model",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-10-06",
+  "model": "Mistral Large 4",
+  "empresa": "Mistral AI",
+  "que_es": "Large language model",
+  "acces": "Pesos oberts (amb restriccions)"
+ }
+]

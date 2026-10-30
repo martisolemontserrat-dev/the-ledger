@@ -1,0 +1,80 @@
+[
+ {
+  "id": "euribor",
+  "indicador": "Euríbor a 12 meses",
+  "valor": "3,290%",
+  "data_dada": "2026-10-28",
+  "comparacio": "Hace un año estaba en el 2,187% (media de octubre de 2025). La media de este octubre va por el 3,232%.",
+  "que_vol_dir": "Es el índice al que está ligada la mayoría de hipotecas variables. Si la tuya se revisa ahora, la cuota sube: en una hipoteca de 167.000 € a 25 años con Euríbor + 0,75%, unos 94 € más al mes.",
+  "hi_guanya": "Quien ahorra: los depósitos y las cuentas remuneradas tienden a pagar más.",
+  "hi_perd": "Quien tiene una hipoteca variable y le toca revisión.",
+  "font": "Rankia",
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7529932-euribor-hoy-29-octubre-2026",
+  "per_a_leconomia": "Encarece el crédito a familias y empresas: se piden menos hipotecas y menos préstamos para invertir, y eso enfría la compra de vivienda y la construcción."
+ },
+ {
+  "id": "ipc",
+  "indicador": "Inflación en España (IPC)",
+  "valor": "4,9%",
+  "data_dada": "2026-10-30",
+  "comparacio": "Dato adelantado de octubre, igual que en septiembre. La subyacente, sin energía ni alimentos frescos, es del 3,1%.",
+  "que_vol_dir": "Lo que hace un año costaba 100 €, hoy cuesta de media 104,90 €. El dinero que tienes parado pierde ese poder adquisitivo cada año.",
+  "hi_guanya": "Quien tiene deudas a tipo fijo: en términos reales, lo que debe vale menos.",
+  "hi_perd": "Quien tiene ahorros sin remunerar y quien tiene un sueldo que no se actualiza.",
+  "font": "Raisin (dada avançada de l'INE)",
+  "url": "https://www.raisin.com/es-es/noticias/ipc-octubre-2026-adelanto/",
+  "per_a_leconomia": "Con la inflación alta, los sueldos y los costes de las empresas tienden a subir y el BCE se ve empujado a subir los tipos, lo que frena la actividad. Las empresas que no pueden trasladar los costes a los precios pierden margen."
+ },
+ {
+  "id": "llum",
+  "indicador": "Precio de la luz en el mercado mayorista",
+  "valor": "244,69 €/MWh",
+  "data_dada": "2026-10-30",
+  "comparacio": "Un 5,9% más que ayer. La hora más barata, de 13 a 14 h (173,41 €/MWh); la más cara, de 18 a 19 h (316,94 €/MWh).",
+  "que_vol_dir": "Es el precio de la energía antes de peajes e impuestos. Si tienes la tarifa regulada (PVPC), poner la lavadora o el horno en la hora barata en lugar de la cara reduce casi a la mitad el coste de la energía que gastas.",
+  "hi_guanya": "Quien puede mover el consumo a las horas baratas.",
+  "hi_perd": "Quien tiene la tarifa regulada y consume sobre todo por la tarde-noche.",
+  "font": "Tarifaluzhora",
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-10-30",
+  "per_a_leconomia": "La electricidad cara es un coste directo para la industria (metalurgia, química, alimentación): resta competitividad a las fábricas y acaba encareciendo muchos productos."
+ },
+ {
+  "id": "carburants",
+  "indicador": "Gasolina 95 y diésel",
+  "valor": "1,731 / 1,899 €/l",
+  "data_dada": "2026-10-30",
+  "comparacio": "La gasolina ha bajado un 10% en octubre (estaba a 1,931 €/l el 30 de septiembre), sobre todo por la rebaja de 20 céntimos del impuesto de hidrocarburos, que se mantiene en noviembre.",
+  "que_vol_dir": "Llenar un depósito de 50 litros de gasolina cuesta unos 87 €, unos 10 € menos que hace un mes.",
+  "hi_guanya": "Quien usa el coche a diario.",
+  "hi_perd": "Las arcas públicas, que ingresan menos por el impuesto.",
+  "font": "Demócrata (dades del MITECO)",
+  "url": "https://www.democrata.es/en/economy/gasoline-price-today-october-30-2026-how-much-do-gasoline-95-and-diesel-cost/",
+  "per_a_leconomia": "El transporte de mercancías funciona con gasóleo: cuando baja, se abarata la distribución de todo lo que viaja en camión. La rebaja de impuestos, eso sí, significa menos ingresos públicos."
+ },
+ {
+  "id": "bce",
+  "indicador": "Tipo del BCE (depósito)",
+  "valor": "2,50%",
+  "data_dada": "2026-10-29",
+  "comparacio": "Mantenido en la reunión de esta semana. El mercado ya descuenta una subida en diciembre.",
+  "que_vol_dir": "Es el precio oficial del dinero en la zona euro. Cuando el BCE lo sube, se encarecen los préstamos y las hipotecas, y los ahorros pagan más; sirve para frenar la inflación.",
+  "hi_guanya": "Quien ahorra, si el BCE acaba subiendo.",
+  "hi_perd": "Quien necesita financiación: familias con préstamos y empresas.",
+  "font": "The Irish Times",
+  "url": "https://www.irishtimes.com/business/2026/10/29/ecb-holds-rates-steady-as-lagardes-departure-overshadows-decision/",
+  "per_a_leconomia": "Los tipos son el freno y el acelerador de la economía: mantenerlos altos frena la inflación, pero también la inversión de las empresas y la creación de empleo."
+ },
+ {
+  "id": "lletres",
+  "indicador": "Letras del Tesoro a 12 meses",
+  "valor": "3,026%",
+  "data_dada": "2026-10-06",
+  "comparacio": "Interés marginal de la subasta de octubre, el más alto desde julio de 2024 (la subasta anterior fue al 2,846%).",
+  "que_vol_dir": "Prestando 1.000 € al Estado durante un año recibes unos 30 € antes de impuestos. Con una inflación del 4,9%, sin embargo, sigues perdiendo poder adquisitivo: es una forma de perder menos, no de ganar.",
+  "hi_guanya": "El ahorrador prudente que quiere un rendimiento seguro a corto plazo.",
+  "hi_perd": "El Estado, que paga más por financiarse.",
+  "font": "Merca2",
+  "url": "https://www.merca2.es/2026/10/06/subasta-tesoro-letras-rentabilidad-12-meses-2468527/",
+  "per_a_leconomia": "Si el Estado paga más por endeudarse, le queda menos dinero para otros gastos. Y como la deuda pública es la referencia de muchos préstamos, también se encarece la financiación de las empresas."
+ }
+]

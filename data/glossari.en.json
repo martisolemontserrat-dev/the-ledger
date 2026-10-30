@@ -1,0 +1,236 @@
+[
+ {
+  "terme": "Share",
+  "definicio": "A small piece of ownership in a company. If you own shares, you're a part-owner: you gain if the company becomes worth more, and you may receive dividends.",
+  "exemple": "If a company has 1,000 shares and you own 10, you own 1% of it.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Dividend",
+  "definicio": "The part of its profits that a company shares out among its shareholders, usually in cash.",
+  "exemple": "A company paying €0.50 per share gives you €50 if you own 100.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Stock market index",
+  "definicio": "A single number that sums up how a group of listed companies is doing. It tells you at a glance whether the market is going up or down.",
+  "exemple": "The Ibex 35 tracks the 35 most traded companies on the Spanish stock exchange.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "ETF",
+  "definicio": "A fund that buys all the companies in an index and trades on the stock market like a share. With a single purchase, you invest in many companies at once.",
+  "exemple": "The EWP ETF tracks the Spanish stock market: it's what The Daily Spread uses to follow it.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Investment fund",
+  "definicio": "A pot of money from many savers, managed by a professional who invests it in shares, bonds or other assets.",
+  "exemple": "With €100 you can own a slice of a fund that holds shares in hundreds of companies.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Compound interest",
+  "definicio": "Earning interest on the interest you've already earned. Over time, the effect snowballs.",
+  "exemple": "€100 at 5% a year becomes €105 after the first year and €110.25 after the second: in year two you also earn interest on the first year's €5.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Inflation",
+  "definicio": "The general rise in prices. If inflation is 5%, the same money buys 5% less than it did a year ago.",
+  "exemple": "A €1 loaf of bread now costs €1.05.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "CPI (IPC)",
+  "definicio": "The Consumer Price Index (IPC in Spanish): Spain's official measure of inflation. The national statistics office (INE) calculates it every month from a basket of goods a typical household buys.",
+  "exemple": "When CPI is said to be 4.9%, it means the basket costs 4.9% more than a year ago.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Core inflation",
+  "definicio": "Inflation excluding energy and fresh food, whose prices swing a lot. It gives a better picture of the underlying price trend.",
+  "exemple": "If electricity prices spike one month, headline inflation jumps, but core inflation barely moves.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Interest rate",
+  "definicio": "The price of money: what you pay to borrow it or what you earn for lending it.",
+  "exemple": "A €10,000 loan at 6% a year costs you about €600 in interest in the first year.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "ECB",
+  "definicio": "The European Central Bank, which sets the official interest rate for the euro area to keep inflation close to 2%.",
+  "exemple": "If inflation is too high, the ECB raises rates to cool spending and lending.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Fed",
+  "definicio": "The Federal Reserve, the central bank of the United States. Its interest rate decisions move stock markets around the world.",
+  "exemple": "When the Fed raises rates, the dollar often strengthens and stocks fall.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Euribor",
+  "definicio": "The interest rate at which European banks lend money to each other. Most variable-rate mortgages in Spain are linked to it.",
+  "exemple": "If the Euribor rises by one point, the monthly payment on a €150,000 variable-rate mortgage over 25 years goes up by about €80.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Spread",
+  "definicio": "The fixed margin the bank adds to the Euribor on a variable-rate mortgage. It never changes over the life of the mortgage.",
+  "exemple": "With Euribor + 0.75% and the Euribor at 3.29%, you pay 4.04%.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Variable-rate mortgage",
+  "definicio": "A mortgage whose interest rate is reset every 6 or 12 months in line with the Euribor. If the Euribor rises, you pay more; if it falls, you pay less.",
+  "exemple": "With a fixed-rate mortgage, by contrast, you always pay the same, whatever happens.",
+  "categoria": "Habitatge"
+ },
+ {
+  "terme": "Bond",
+  "definicio": "A loan you make to a government or a company. In return, they pay you interest and, at the end, give you your money back.",
+  "exemple": "A 10-year government bond at 3% pays you €30 a year for every €1,000 you put in.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Spanish Treasury bill (Letra del Tesoro)",
+  "definicio": "A short-term loan to the Spanish state (3, 6, 9 or 12 months). It's one of the safest investments there is.",
+  "exemple": "You buy a bill for about €970 and a year later the state pays you back €1,000.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Bank deposit",
+  "definicio": "Leaving money with a bank for a fixed period in exchange for an agreed interest rate. Up to €100,000 is protected by a deposit guarantee scheme.",
+  "exemple": "A €5,000 deposit at 2.5% for one year earns you €125 before tax.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "APR (TAE)",
+  "definicio": "The annual percentage rate (TAE in Spain): the true yearly cost or return of a product, fees included. It's how you compare offers.",
+  "exemple": "Between two loans, the one with the lower APR is the cheaper one.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Return",
+  "definicio": "What you gain (or lose) on an investment, as a percentage of what you put in.",
+  "exemple": "If you invest €1,000 and a year later you have €1,080, your return is 8%.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Real return",
+  "definicio": "Your return after subtracting inflation. It tells you whether you can really buy more than before.",
+  "exemple": "Earning 3% with inflation at 4.9% means losing almost 2% of purchasing power.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Volatility",
+  "definicio": "How sharply and how often an investment's price goes up and down. The more volatile it is, the higher the short-term risk.",
+  "exemple": "A tech stock can move 5% in a day; a government bond, hardly at all.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Diversification",
+  "definicio": "Spreading your money across many different investments so that if one goes badly, you don't lose everything.",
+  "exemple": "Better to own shares in 50 companies across different sectors than all in just one.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Market capitalisation",
+  "definicio": "What a company is worth on the stock market: the share price multiplied by the number of shares.",
+  "exemple": "100 million shares at €50 each make a market capitalisation of €5bn.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "P/E ratio",
+  "definicio": "How many times its annual profit a company is worth on the stock market (share price divided by earnings per share). It helps you tell whether it's expensive or cheap.",
+  "exemple": "A P/E of 20 means you pay €20 for every euro of annual profit.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Earnings per share",
+  "definicio": "The company's profit divided by the number of shares.",
+  "exemple": "A company that earns €1bn and has 500 million shares has earnings per share of €2.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Quarterly results",
+  "definicio": "The accounts listed companies publish every three months. If they fall short of expectations, the share price usually drops.",
+  "exemple": "Alphabet fell more than 12% in a day because its sales came in below forecasts.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Stock market listing",
+  "definicio": "When a private company starts selling its shares on the stock market so that anyone can buy them. Also known as an IPO.",
+  "exemple": "Anthropic has filed to go public under the ticker ANT.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Funding round",
+  "definicio": "When a company that isn't yet listed raises money from investors in exchange for a share of ownership.",
+  "exemple": "If someone puts $30bn into a company valued at $1.25tn, they get a little over 2% of it.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Bull and bear markets",
+  "definicio": "A bull market is a long stretch of rising prices; a bear market is a fall of 20% or more from the peak.",
+  "exemple": "The names come from how each animal attacks: the bull thrusts its horns upwards, the bear swipes downwards.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Exchange rate",
+  "definicio": "How many units of one currency another one is worth.",
+  "exemple": "With the euro at $1.117, €100 gets you $111.70.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "GDP",
+  "definicio": "Gross domestic product: the value of everything a country produces in a year. If it grows, the economy is doing well.",
+  "exemple": "US GDP growing at an annualised 3.4% means the economy is expanding strongly.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Recession",
+  "definicio": "When a country's GDP falls for two quarters in a row. It usually comes with higher unemployment and lower spending.",
+  "exemple": "",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Liquidity",
+  "definicio": "How quickly you can turn an investment into cash without losing value.",
+  "exemple": "A current account is fully liquid; a flat, hardly at all: selling it takes months.",
+  "categoria": "Estalvi"
+ },
+ {
+  "terme": "Moving average",
+  "definicio": "The average closing price over the last few days (20, 50…), recalculated every day. It helps you see the trend without the daily noise.",
+  "exemple": "If the price is above its 50-day average, the recent trend is upwards.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Candlestick",
+  "definicio": "A way of drawing each day's price: the body shows the opening and closing prices, and the thin lines show the high and the low.",
+  "exemple": "A blue candle (in our search tool) means the price closed that day above where it opened.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Volume",
+  "definicio": "How many shares were bought and sold in a session. A move on high volume carries more weight.",
+  "exemple": "",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Risk premium",
+  "definicio": "How much more a country pays than Germany to borrow for 10 years. It measures how much investors trust that country.",
+  "exemple": "If the Spanish bond pays 3.2% and the German one 2.5%, the risk premium is 70 basis points.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Basis point",
+  "definicio": "One hundredth of a percentage point. 100 basis points make 1%.",
+  "exemple": "If a rate goes from 2.85% to 3.03%, it has risen by 18 basis points.",
+  "categoria": "Economia"
+ }
+]
