@@ -1,5 +1,31 @@
 [
  {
+  "data": "2026-11-11",
+  "concepte": "Las expectativas del mercado",
+  "titol": "¿Por qué una sola décima de inflación puede hacer caer la bolsa?",
+  "explicacio": "Los mercados no reaccionan a los datos, sino a la diferencia entre el dato y lo que se esperaba. Antes de cada publicación, los analistas hacen una previsión, y los precios de las acciones y de los bonos ya la llevan incorporada. Si el dato sale igual, casi no pasa nada; si sorprende, los inversores tienen que rehacer sus cálculos de golpe. El martes se esperaba que los precios en EE. UU. subieran un 0,3% en un mes y subieron un 0,4%: parecía poco, pero hizo que el mercado diera por segura una subida de tipos de la Fed.",
+  "exemple": "Una décima al mes no es poco: si los precios suben un 0,3% cada mes, en un año suben un 3,7%; si suben un 0,4% cada mes, un 4,9%. Es la diferencia entre una inflación incómoda y una preocupante.",
+  "economia": "Las expectativas marcan el precio del dinero antes de que actúen los bancos centrales: si el mercado cree que subirán los tipos, el interés de los bonos y de los préstamos ya sube por adelantado. Para las empresas, eso significa que financiar una fábrica o una contratación se encarece desde el primer día, no cuando llega la decisión oficial.",
+  "en_una_frase": "En los mercados no cuenta si un dato es bueno o malo, sino si es mejor o peor de lo que se esperaba.",
+  "termes": "Expectativas del mercado; Inflación; Fed; Rentabilidad de un bono; Punto básico",
+  "noticia": "La inflación de EE. UU. vuelve a sorprender al alza en octubre",
+  "font": "TheStreet",
+  "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
+ },
+ {
+  "data": "2026-11-10",
+  "concepte": "El precio de una salida a bolsa",
+  "titol": "¿Por qué Anthropic ha tenido que volver a hacer números antes de salir a bolsa?",
+  "explicacio": "Cuando una empresa sale a bolsa, vende por primera vez acciones a inversores de fuera. Antes, unos bancos preguntan a los grandes inversores cuánto estarían dispuestos a pagar y proponen una horquilla de precios, por ejemplo entre 70 y 80 dólares por acción. Si la demanda es fuerte, el precio final queda en lo más alto o incluso lo supera; si los inversores dudan, la empresa tiene que bajar el precio o esperar. El precio por acción, multiplicado por todas las acciones de la empresa, da su valoración: lo que el mercado cree que vale.",
+  "exemple": "Si Anthropic vende 867 millones de acciones a 80 dólares, capta unos 69.300 millones. Si tiene que venderlas a 70 dólares, capta unos 60.700 millones: solo por 10 dólares de diferencia por acción, unos 8.700 millones menos.",
+  "economia": "Las salidas a bolsa son una de las formas que tienen las empresas de conseguir dinero para crecer: construir fábricas o centros de datos y contratar gente. Cuando el mercado está nervioso y los precios bajan, las empresas captan menos o aplazan sus planes, y eso puede frenar la inversión en sectores enteros.",
+  "en_una_frase": "En bolsa, una empresa no vale lo que ella dice, sino lo que los inversores están dispuestos a pagar por sus acciones.",
+  "termes": "Salida a bolsa; Horquilla de precios; Valoración; Acción; Capitalización bursátil",
+  "noticia": "Anthropic retira el precio de su salida a bolsa, con la que preveía captar hasta 69.300 M$",
+  "font": "Business Standard (Reuters)",
+  "url": "https://www.business-standard.com/amp/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html"
+ },
+ {
   "data": "2026-10-30",
   "concepte": "El Euríbor",
   "titol": "¿Por qué te puede subir la hipoteca si el BCE no ha subido los tipos?",

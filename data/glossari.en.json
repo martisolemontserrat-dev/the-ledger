@@ -232,5 +232,41 @@
   "definicio": "One hundredth of a percentage point. 100 basis points make 1%.",
   "exemple": "If a rate goes from 2.85% to 3.03%, it has risen by 18 basis points.",
   "categoria": "Economia"
+ },
+ {
+  "terme": "Price range",
+  "definicio": "The minimum and maximum price a company proposes for its shares when it goes public. The final price is set within (or close to) these limits, depending on how much demand there is.",
+  "exemple": "A price range of $70 to $80 a share means the company expects to sell them somewhere between those two prices.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Valuation",
+  "definicio": "What a whole company is estimated to be worth. For a listed company, it's the share price multiplied by the number of shares; for an unlisted one, it's the price investors pay in a funding round.",
+  "exemple": "If an investor pays 10 million for 10% of a start-up, they are valuing it at 100 million.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "10-year bond",
+  "definicio": "Debt a government issues to repay in 10 years' time. Its interest rate is the benchmark for fixed-rate mortgages and long-term loans.",
+  "exemple": "If Spain's 10-year bond pays 3.9%, lending €1,000 to the state earns you about €39 a year.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Inflation expectations",
+  "definicio": "What people, businesses and investors believe prices will rise by in the future. Central banks watch them because, if they climb, they end up pushing up wages and prices.",
+  "exemple": "If everyone expects prices to rise 4% next year, workers will ask for similar pay rises and shops will adjust prices in advance.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Market expectations",
+  "definicio": "What most investors and analysts believe will happen (a data release, company results, a rate decision). Prices already take it into account before it happens.",
+  "exemple": "If inflation is expected to rise 0.3% and it rises 0.4%, the surprise moves the stock market even though the difference looks small.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Bond yield",
+  "definicio": "The annual interest earned by someone who buys a bond and holds it until it matures. When the bond's price falls, the yield rises, and vice versa.",
+  "exemple": "If the US 10-year bond yield goes from 4.88% to 4.99%, the government and, by knock-on effect, businesses and families have to pay more to borrow.",
+  "categoria": "Economia"
  }
 ]

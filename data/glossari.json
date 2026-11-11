@@ -232,5 +232,41 @@
   "definicio": "Una centèsima part d'un punt percentual. 100 punts bàsics són un 1%.",
   "exemple": "Si un tipus passa del 2,85% al 3,03%, ha pujat 18 punts bàsics.",
   "categoria": "Economia"
+ },
+ {
+  "terme": "Forquilla de preus",
+  "definicio": "El preu mínim i màxim que una empresa proposa per a les seves accions quan surt a borsa. El preu final es fixa dins (o a prop) d'aquests límits segons quanta demanda hi hagi.",
+  "exemple": "Una forquilla de 70 a 80 dòlars per acció vol dir que l'empresa espera vendre-les en algun punt entre aquests dos preus.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Valoració",
+  "definicio": "El que es calcula que val una empresa sencera. En una empresa que cotitza, és el preu de l'acció multiplicat pel nombre d'accions; en una que no cotitza, és el preu que paguen els inversors en una ronda.",
+  "exemple": "Si un inversor paga 10 milions per quedar-se el 10% d'una start-up, l'està valorant en 100 milions.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Bo a 10 anys",
+  "definicio": "El deute que un govern emet per tornar d'aquí a 10 anys. El seu interès serveix de referència per a hipoteques a tipus fix i préstecs a llarg termini.",
+  "exemple": "Si el bo espanyol a 10 anys paga un 3,9%, prestar 1.000 € a l'Estat et dona uns 39 € l'any.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Expectatives d'inflació",
+  "definicio": "El que la gent, les empreses i els inversors creuen que pujaran els preus en el futur. Els bancs centrals les vigilen perquè, si creixen, acaben fent pujar sous i preus.",
+  "exemple": "Si tothom espera que els preus pugin un 4% l'any vinent, els treballadors demanaran apujades similars i les botigues ajustaran preus per avançat.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Expectatives del mercat",
+  "definicio": "El que la majoria d'inversors i analistes creuen que passarà (una dada, uns resultats, una decisió de tipus). Els preus ja ho tenen en compte abans que passi.",
+  "exemple": "Si s'espera que la inflació pugi un 0,3% i puja un 0,4%, la sorpresa mou la borsa encara que la diferència sembli petita.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Rendiment d'un bo",
+  "definicio": "L'interès anual que guanya qui compra un bo i el guarda fins al venciment. Quan el preu del bo baixa, el rendiment puja, i al revés.",
+  "exemple": "Si l'interès del bo a 10 anys dels EUA passa del 4,88% al 4,99%, l'Estat i, per contagi, empreses i famílies han de pagar més per endeutar-se.",
+  "categoria": "Economia"
  }
 ]

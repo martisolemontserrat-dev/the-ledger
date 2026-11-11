@@ -1,5 +1,31 @@
 [
  {
+  "data": "2026-11-11",
+  "concepte": "Les expectatives del mercat",
+  "titol": "Per què una sola dècima d'inflació pot fer caure la borsa?",
+  "explicacio": "Els mercats no reaccionen a les dades, sinó a la diferència entre la dada i el que s'esperava. Abans de cada publicació, els analistes fan una previsió, i els preus de les accions i dels bons ja la porten incorporada. Si la dada surt igual, gairebé no passa res; si sorprèn, els inversors han de refer els càlculs de cop. Dimarts s'esperava que els preus als EUA pugessin un 0,3% en un mes i van pujar un 0,4%: semblava poc, però va fer que el mercat donés per segura una pujada de tipus de la Fed.",
+  "exemple": "Una dècima al mes no és poc: si els preus pugen un 0,3% cada mes, en un any pugen un 3,7%; si pugen un 0,4% cada mes, un 4,9%. És la diferència entre una inflació incòmoda i una de preocupant.",
+  "economia": "Les expectatives marquen el preu del diner abans que actuïn els bancs centrals: si el mercat creu que pujaran els tipus, l'interès dels bons i dels préstecs ja puja per avançat. Per a les empreses, això vol dir que finançar una fàbrica o una contractació s'encareix des del primer dia, no quan arriba la decisió oficial.",
+  "en_una_frase": "Als mercats no compta si una dada és bona o dolenta, sinó si és millor o pitjor del que s'esperava.",
+  "termes": "Expectatives del mercat; Inflació; Fed; Rendiment d'un bo; Punt bàsic",
+  "noticia": "La inflació dels EUA torna a sorprendre a l'alça a l'octubre",
+  "font": "TheStreet",
+  "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
+ },
+ {
+  "data": "2026-11-10",
+  "concepte": "El preu d'una sortida a borsa",
+  "titol": "Per què Anthropic ha hagut de tornar a fer números abans de sortir a borsa?",
+  "explicacio": "Quan una empresa surt a borsa, ven per primera vegada accions a inversors de fora. Abans, uns bancs pregunten als grans inversors quant estarien disposats a pagar i proposen una forquilla de preus, per exemple entre 70 i 80 dòlars per acció. Si la demanda és forta, el preu final queda a dalt de tot o fins i tot el superen; si els inversors dubten, l'empresa ha d'abaixar el preu o esperar. El preu per acció, multiplicat per totes les accions de l'empresa, dona la seva valoració: el que el mercat creu que val.",
+  "exemple": "Si Anthropic ven 867 milions d'accions a 80 dòlars, capta uns 69.300 milions. Si les ha de vendre a 70 dòlars, en capta uns 60.700 milions: només per 10 dòlars de diferència per acció, uns 8.700 milions menys.",
+  "economia": "Les sortides a borsa són una de les maneres que tenen les empreses de trobar diners per créixer: construir fàbriques o centres de dades i contractar gent. Quan el mercat està nerviós i els preus baixen, les empreses capten menys o ajornen els plans, i això pot frenar la inversió en sectors sencers.",
+  "en_una_frase": "A borsa, una empresa no val el que ella diu, sinó el que els inversors estan disposats a pagar per les seves accions.",
+  "termes": "Sortida a borsa; Forquilla de preus; Valoració; Acció; Capitalització borsària",
+  "noticia": "Anthropic retira el preu de la seva sortida a borsa, que preveia captar fins a 69.300 M$",
+  "font": "Business Standard (Reuters)",
+  "url": "https://www.business-standard.com/amp/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html"
+ },
+ {
   "data": "2026-10-30",
   "concepte": "L'Euríbor",
   "titol": "Per què et pot pujar la hipoteca si el BCE no ha apujat els tipus?",

@@ -1,10 +1,52 @@
 [
  {
+  "data": "2026-11-10",
+  "model": "Gemini Robotics 2.5",
+  "empresa": "Google DeepMind",
+  "que_es": "Modelo para controlar robots",
+  "acces": "Limitat"
+ },
+ {
+  "data": "2026-11-09",
+  "model": "Claude Fable 5.2",
+  "empresa": "Anthropic",
+  "que_es": "Modelo de lenguaje, el más avanzado de Anthropic para todos",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-11-09",
+  "model": "Claude Mythos 5.2",
+  "empresa": "Anthropic",
+  "que_es": "Versión del mismo modelo para usos de ciberseguridad y ciencias de la vida",
+  "acces": "Limitat"
+ },
+ {
+  "data": "2026-11-09",
+  "model": "Muse Ember",
+  "empresa": "Meta",
+  "que_es": "Modelo de lenguaje pequeño y barato para agentes",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-11-09",
+  "model": "LongCat-2.5",
+  "empresa": "Meituan",
+  "que_es": "Modelo de lenguaje grande para agentes",
+  "acces": "Pesos oberts"
+ },
+ {
+  "data": "2026-11-05",
+  "model": "GPT-6 Cyber",
+  "empresa": "OpenAI",
+  "que_es": "Modelo especializado en ciberseguridad",
+  "acces": "Limitat"
+ },
+ {
   "data": "2026-10-28",
   "model": "Gemini 4 Carbon",
   "empresa": "Google",
-  "que_es": "Modelo de lenguaje, el más potente de Google",
-  "acces": "Limitat"
+  "que_es": "Modelo de lenguaje, el más potente de Google; abierto a los usuarios de pago desde el 10 de noviembre",
+  "acces": "Obert a tothom"
  },
  {
   "data": "2026-10-27",
@@ -61,33 +103,5 @@
   "empresa": "xAI",
   "que_es": "Modelo de voz",
   "acces": "Obert a tothom"
- },
- {
-  "data": "2026-10-13",
-  "model": "Gemini 4 Argon",
-  "empresa": "Google",
-  "que_es": "Modelo multimodal",
-  "acces": "Obert a tothom"
- },
- {
-  "data": "2026-10-12",
-  "model": "Muse Wonder",
-  "empresa": "Meta",
-  "que_es": "Modelo multimodal",
-  "acces": "Prova pública"
- },
- {
-  "data": "2026-10-07",
-  "model": "Claude Haiku 5.5",
-  "empresa": "Anthropic",
-  "que_es": "Modelo multimodal rápido",
-  "acces": "Obert a tothom"
- },
- {
-  "data": "2026-10-06",
-  "model": "Mistral Large 4",
-  "empresa": "Mistral AI",
-  "que_es": "Modelo de lenguaje grande",
-  "acces": "Pesos oberts (amb restriccions)"
  }
 ]

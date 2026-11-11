@@ -2,28 +2,28 @@
  {
   "empresa": "Anthropic",
   "producte": "Claude",
-  "valoracio": "965.000 M$ (ronda de mayo); busca 1,5–2 billones al salir a bolsa",
-  "borsa": "Papeles presentados el 26 de octubre, código ANT",
-  "ingressos": "16.300 M$ en el primer semestre (dato oficial); unos 65.000 M$ anualizados en julio, según la prensa",
-  "darrer_model": "Claude Haiku 5.5 (7 de octubre)",
-  "font": "TechCrunch, Parameter"
+  "valoracio": "Hasta 1,4 billones $ en la salida a bolsa (70–78 $ por acción)",
+  "borsa": "Presentación a los inversores desde el 10 de noviembre; código ANT en el Nasdaq; debut previsto hacia el 19–20 de noviembre, según la prensa",
+  "ingressos": "16.300 M$ en el primer semestre (dato oficial); unos 81.000 M$ anualizados a finales de octubre, según la prensa",
+  "darrer_model": "Claude Fable 5.2 (9 de noviembre)",
+  "font": "Fortune, TechCrunch"
  },
  {
   "empresa": "OpenAI",
   "producte": "ChatGPT",
-  "valoracio": "1,25 billones en una ronda que aún negocia (852.000 M$ en marzo)",
-  "borsa": "Papeles confidenciales en junio; se espera en 2027",
-  "ingressos": "Más de 40.000 M$ anualizados en julio, según la prensa",
-  "darrer_model": "GPT-6.1 Terra (26 de octubre)",
-  "font": "TechCrunch, Parameter"
+  "valoracio": "1,25 billones $ en una ronda recortada a unos 20.000 M$, según la prensa (852.000 M$ en marzo)",
+  "borsa": "Documentación confidencial; podría esperar a 2027, según la prensa",
+  "ingressos": "Unos 10.000 M$ en el tercer trimestre, con una pérdida operativa ajustada de 10.900 M$, según la prensa",
+  "darrer_model": "GPT-6 Cyber (5 de noviembre, acceso limitado)",
+  "font": "Digitimes (WSJ), Bloomberg"
  },
  {
   "empresa": "Google",
   "producte": "Gemini",
-  "valoracio": "Dentro de Alphabet, que ya cotiza",
-  "borsa": "Alphabet (GOOGL) cayó más de un 7% tras sus resultados",
-  "ingressos": "Google Cloud: 30.700 M$ en el tercer trimestre",
-  "darrer_model": "Gemini 4 Carbon (28 de octubre)",
-  "font": "Kill The AI"
+  "valoracio": "Alphabet vale unos 3,5 billones $ en bolsa",
+  "borsa": "Alphabet (GOOGL) cotiza en el Nasdaq; invertirá unos 10.000 M$ en la salida a bolsa de Anthropic, según la prensa",
+  "ingressos": "127.600 M$ en el tercer trimestre (+25%); Google Cloud, 30.700 M$ (datos oficiales)",
+  "darrer_model": "Gemini 4 Carbon (abierto a los usuarios de pago el 10 de noviembre)",
+  "font": "Alphabet, Fortune, Kill The AI"
  }
 ]

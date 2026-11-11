@@ -232,5 +232,41 @@
   "definicio": "Una centésima parte de un punto porcentual. 100 puntos básicos son un 1%.",
   "exemple": "Si un tipo pasa del 2,85% al 3,03%, ha subido 18 puntos básicos.",
   "categoria": "Economia"
+ },
+ {
+  "terme": "Horquilla de precios",
+  "definicio": "El precio mínimo y máximo que una empresa propone para sus acciones cuando sale a bolsa. El precio final se fija dentro (o cerca) de estos límites según cuánta demanda haya.",
+  "exemple": "Una horquilla de 70 a 80 dólares por acción significa que la empresa espera venderlas en algún punto entre esos dos precios.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Valoración",
+  "definicio": "Lo que se calcula que vale una empresa entera. En una empresa que cotiza, es el precio de la acción multiplicado por el número de acciones; en una que no cotiza, es el precio que pagan los inversores en una ronda.",
+  "exemple": "Si un inversor paga 10 millones por quedarse el 10% de una start-up, la está valorando en 100 millones.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Bono a 10 años",
+  "definicio": "La deuda que un gobierno emite para devolver dentro de 10 años. Su interés sirve de referencia para hipotecas a tipo fijo y préstamos a largo plazo.",
+  "exemple": "Si el bono español a 10 años paga un 3,9%, prestar 1.000 € al Estado te da unos 39 € al año.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Expectativas de inflación",
+  "definicio": "Lo que la gente, las empresas y los inversores creen que subirán los precios en el futuro. Los bancos centrales las vigilan porque, si crecen, acaban haciendo subir sueldos y precios.",
+  "exemple": "Si todo el mundo espera que los precios suban un 4% el año que viene, los trabajadores pedirán subidas similares y las tiendas ajustarán precios por adelantado.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Expectativas del mercado",
+  "definicio": "Lo que la mayoría de inversores y analistas creen que pasará (un dato, unos resultados, una decisión de tipos). Los precios ya lo tienen en cuenta antes de que ocurra.",
+  "exemple": "Si se espera que la inflación suba un 0,3% y sube un 0,4%, la sorpresa mueve la bolsa aunque la diferencia parezca pequeña.",
+  "categoria": "Borsa"
+ },
+ {
+  "terme": "Rentabilidad de un bono",
+  "definicio": "El interés anual que gana quien compra un bono y lo mantiene hasta el vencimiento. Cuando el precio del bono baja, la rentabilidad sube, y al revés.",
+  "exemple": "Si el interés del bono a 10 años de EE. UU. pasa del 4,88% al 4,99%, el Estado y, por contagio, empresas y familias tienen que pagar más para endeudarse.",
+  "categoria": "Economia"
  }
 ]

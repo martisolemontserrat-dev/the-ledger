@@ -1,1 +1,14 @@
-[{"actiu": "EUR/USD", "valor": 1.11713583, "unitat": "dòlars per euro", "actualitzat": "2026-10-29 16:15 UTC"}, {"actiu": "Bitcoin", "valor": 81701.92, "unitat": "dòlars", "actualitzat": "2026-10-29 16:16 UTC"}]
+[
+ {
+  "actiu": "EUR/USD",
+  "valor": 1.11426442,
+  "unitat": "dòlars per euro",
+  "actualitzat": "2026-11-11 10:25 UTC"
+ },
+ {
+  "actiu": "Bitcoin",
+  "valor": 73732.15,
+  "unitat": "dòlars",
+  "actualitzat": "2026-11-11 10:25 UTC"
+ }
+]

@@ -1,5 +1,31 @@
 [
  {
+  "data": "2026-11-11",
+  "concepte": "Market expectations",
+  "titol": "Why can a single tenth of a point of inflation knock the stock market?",
+  "explicacio": "Markets don't react to data, but to the gap between the data and what was expected. Before each release, analysts make a forecast, and share and bond prices already reflect it. If the figure matches, almost nothing happens; if it surprises, investors have to redo their sums all at once. On Tuesday, US prices were expected to rise 0.3% in a month and they rose 0.4%: it looked small, but it made markets treat a Fed rate hike as a certainty.",
+  "exemple": "A tenth of a point a month is not small: if prices rise 0.3% every month, they rise 3.7% in a year; at 0.4% a month, 4.9%. That's the difference between uncomfortable inflation and worrying inflation.",
+  "economia": "Expectations set the price of money before central banks act: if markets think rates will rise, bond yields and loan rates rise in advance. For businesses, that means financing a factory or a new hire gets more expensive from day one, not when the official decision arrives.",
+  "en_una_frase": "In markets, what counts is not whether data are good or bad, but whether they are better or worse than expected.",
+  "termes": "Market expectations; Inflation; Fed; Bond yield; Basis point",
+  "noticia": "US inflation surprises on the upside again in October",
+  "font": "TheStreet",
+  "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
+ },
+ {
+  "data": "2026-11-10",
+  "concepte": "The price of a stock market listing",
+  "titol": "Why has Anthropic had to redo its numbers before going public?",
+  "explicacio": "When a company goes public, it sells shares to outside investors for the first time. Beforehand, a group of banks asks big investors how much they would be willing to pay and proposes a price range, for example between $70 and $80 a share. If demand is strong, the final price ends up at the top of the range or even above it; if investors are hesitant, the company has to lower the price or wait. The price per share, multiplied by all the company's shares, gives its valuation: what the market thinks it is worth.",
+  "exemple": "If Anthropic sells 867 million shares at $80, it raises about $69.3 billion. If it has to sell them at $70, it raises about $60.7 billion: a difference of just $10 a share means about $8.7 billion less.",
+  "economia": "Going public is one of the ways companies find money to grow: building factories or data centres and hiring people. When the market is nervous and prices fall, companies raise less or postpone their plans, and that can slow investment across entire sectors.",
+  "en_una_frase": "On the stock market, a company isn't worth what it says it is, but what investors are willing to pay for its shares.",
+  "termes": "Stock market listing; Price range; Valuation; Share; Market capitalisation",
+  "noticia": "Anthropic withdraws the price of its stock market listing, which aimed to raise up to $69.3bn",
+  "font": "Business Standard (Reuters)",
+  "url": "https://www.business-standard.com/amp/world-news/anthropic-retracts-69-3-bn-ipo-figures-says-revised-details-to-follow-126111000143_1.html"
+ },
+ {
   "data": "2026-10-30",
   "concepte": "The Euribor",
   "titol": "Why can your mortgage go up if the ECB hasn't raised rates?",
