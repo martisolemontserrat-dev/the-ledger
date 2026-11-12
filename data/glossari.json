@@ -268,5 +268,23 @@
   "definicio": "L'interès anual que guanya qui compra un bo i el guarda fins al venciment. Quan el preu del bo baixa, el rendiment puja, i al revés.",
   "exemple": "Si l'interès del bo a 10 anys dels EUA passa del 4,88% al 4,99%, l'Estat i, per contagi, empreses i famílies han de pagar més per endeutar-se.",
   "categoria": "Economia"
+ },
+ {
+  "terme": "Risc de persona clau",
+  "definicio": "El perill que corre una empresa quan depèn massa d'una sola persona, sovint el fundador o el conseller delegat, i aquesta falta o perd credibilitat.",
+  "exemple": "Si el fundador d'una empresa tecnològica ha de plegar de cop, l'acció pot caure encara que el negoci vagi bé.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Consell d'administració",
+  "definicio": "El grup de persones que, en nom dels accionistes, vigila els directius d'una empresa, aprova les grans decisions i pot nomenar o destituir el conseller delegat.",
+  "exemple": "El consell de Nvidia es prepararia per apartar el seu conseller delegat, segons la premsa.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Governança corporativa",
+  "definicio": "El conjunt de normes i controls que diuen com es dirigeix una empresa: qui mana, qui el vigila i com es protegeixen els accionistes.",
+  "exemple": "Tenir consellers independents i un pla de relleu del conseller delegat són senyals de bona governança.",
+  "categoria": "Empreses"
  }
 ]

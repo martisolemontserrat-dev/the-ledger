@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-12",
+  "concepte": "Key-person risk",
+  "titol": "Why can a trillion-dollar company wobble because of its boss?",
+  "explicacio": "Some companies depend so heavily on one person, often the founder, that their future is tied to that person's. This is called key-person risk. If that person leaves, falls ill or is caught up in a scandal, investors start asking who will make the decisions and whether the strategy will survive, and the share price suffers. That's why large companies have a board of directors that oversees management and should have a successor lined up.",
+  "exemple": "Nvidia fell 8% after hours on Wednesday, to about $160. Someone holding 50 shares, previously worth about $174 each ($8,700 in total), saw them drop to about $8,000 within hours: roughly $700 less, without the company selling a single chip fewer.",
+  "economia": "When a big company wobbles over a leadership problem, investment decisions, hiring and supplier deals can stall. That's why investors value good corporate governance: clear rules, independent directors and a succession plan.",
+  "en_una_frase": "The more a company depends on a single person, the riskier it is for those who have put their money into it.",
+  "termes": "Key-person risk; Board of directors; Corporate governance; Market capitalisation; Share",
+  "noticia": "Nvidia plunges after hours as board reportedly prepares to oust Jensen Huang",
+  "font": "Axios",
+  "url": "https://www.axios.com/2026/11/11/nvidia-jensen-huang-affair-shares"
+ },
+ {
   "data": "2026-11-11",
   "concepte": "Market expectations",
   "titol": "Why can a single tenth of a point of inflation knock the stock market?",

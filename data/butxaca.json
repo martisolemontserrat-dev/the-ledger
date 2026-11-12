@@ -2,14 +2,14 @@
  {
   "id": "euribor",
   "indicador": "Euríbor a 12 mesos",
-  "valor": "3,217%",
-  "data_dada": "2026-11-10",
-  "comparacio": "Baixa des del 3,317% del 3 de novembre. La mitjana de novembre va pel 3,268%; la d'octubre va tancar al 3,239%, i fa un any (novembre del 2025) era del 2,217%.",
-  "que_vol_dir": "És l'índex de la majoria d'hipoteques variables. Si la teva es revisa aquest mes amb la mitjana d'octubre, en una hipoteca de 167.000 € a 25 anys amb Euríbor + 0,75%, la quota passa d'uns 786 € a uns 880 € al mes: uns 94 € més.",
+  "valor": "3,222%",
+  "data_dada": "2026-11-11",
+  "comparacio": "Puja lleugerament des del 3,217% de dimarts. La mitjana provisional de novembre va pel 3,262%; la d'octubre va tancar al 3,239%, i fa un any (novembre del 2025) era del 2,217%.",
+  "que_vol_dir": "És l'índex de la majoria d'hipoteques variables. Si la teva es revisa aquest mes amb la mitjana d'octubre, en una hipoteca de 167.000 € a 25 anys amb Euríbor + 0,75%, la quota passa d'uns 789 € a uns 880 € al mes: uns 91 € més.",
   "hi_guanya": "Qui estalvia: dipòsits i comptes remunerats tendeixen a pagar més.",
   "hi_perd": "Qui té hipoteca variable i li toca revisió.",
-  "font": "HelpMyCash",
-  "url": "https://www.helpmycash.com/blog/el-euribor-cierra-julio-con-un-nuevo-record-negativo-0283",
+  "font": "Rankia",
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7548253-euribor-hoy-12-noviembre-2026",
   "per_a_leconomia": "Encareix el crèdit a famílies i empreses: es demanen menys hipoteques i menys préstecs per invertir, i això refreda la compra d'habitatge i la construcció."
  },
  {
@@ -28,14 +28,14 @@
  {
   "id": "llum",
   "indicador": "Preu de la llum al mercat majorista",
-  "valor": "210,94 €/MWh",
-  "data_dada": "2026-11-11",
-  "comparacio": "Un 23% més que ahir (171,38 €/MWh). L'hora més barata, de 23 a 24 h (168,16 €/MWh); la més cara, de 8 a 9 h (254,30 €/MWh).",
-  "que_vol_dir": "És el preu de l'energia abans de peatges i impostos. Amb la tarifa regulada (PVPC), posar la rentadora a última hora del vespre en lloc de primera hora del matí estalvia prop d'un terç del cost de l'energia d'aquell rentat.",
-  "hi_guanya": "Qui pot moure el consum a les hores barates.",
-  "hi_perd": "Qui té la tarifa regulada i consumeix sobretot al vespre.",
+  "valor": "116,16 €/MWh",
+  "data_dada": "2026-11-12",
+  "comparacio": "Un 45% menys que ahir (210,94 €/MWh), l'endemà de la vaga general. L'hora més barata, de 13 a 14 h (1,09 €/MWh); la més cara, de 20 a 21 h (196,29 €/MWh).",
+  "que_vol_dir": "És el preu de l'energia abans de peatges i impostos. Amb la tarifa regulada (PVPC), el kWh surt avui a 0,041 € de 14 a 15 h i a 0,350 € de 20 a 21 h: un rentat de 2 kWh costa uns 8 cèntims al migdia i uns 70 al vespre.",
+  "hi_guanya": "Qui pot posar la rentadora o el forn al migdia, quan hi ha més energia solar.",
+  "hi_perd": "Qui consumeix sobretot entre les 20 i les 21 h amb la tarifa regulada.",
   "font": "Tarifaluzhora",
-  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-11",
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-12",
   "per_a_leconomia": "L'electricitat cara és un cost directe per a la indústria (metal·lúrgia, química, alimentació): resta competitivitat a les fàbriques i acaba encarint molts productes."
  },
  {

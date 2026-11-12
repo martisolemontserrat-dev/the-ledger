@@ -2,14 +2,14 @@
  {
   "id": "euribor",
   "indicador": "Euríbor a 12 meses",
-  "valor": "3,217%",
-  "data_dada": "2026-11-10",
-  "comparacio": "Baja desde el 3,317% del 3 de noviembre. La media de noviembre va por el 3,268%; la de octubre cerró en el 3,239%, y hace un año (noviembre de 2025) era del 2,217%.",
-  "que_vol_dir": "Es el índice de la mayoría de hipotecas variables. Si la tuya se revisa este mes con la media de octubre, en una hipoteca de 167.000 € a 25 años con euríbor + 0,75%, la cuota pasa de unos 786 € a unos 880 € al mes: unos 94 € más.",
+  "valor": "3,222%",
+  "data_dada": "2026-11-11",
+  "comparacio": "Sube ligeramente desde el 3,217% del martes. La media provisional de noviembre va por el 3,262%; la de octubre cerró en el 3,239%, y hace un año (noviembre de 2025) era del 2,217%.",
+  "que_vol_dir": "Es el índice de la mayoría de hipotecas variables. Si la tuya se revisa este mes con la media de octubre, en una hipoteca de 167.000 € a 25 años con euríbor + 0,75%, la cuota pasa de unos 789 € a unos 880 € al mes: unos 91 € más.",
   "hi_guanya": "Quien ahorra: los depósitos y las cuentas remuneradas tienden a pagar más.",
   "hi_perd": "Quien tiene una hipoteca variable y le toca revisión.",
-  "font": "HelpMyCash",
-  "url": "https://www.helpmycash.com/blog/el-euribor-cierra-julio-con-un-nuevo-record-negativo-0283",
+  "font": "Rankia",
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7548253-euribor-hoy-12-noviembre-2026",
   "per_a_leconomia": "Encarece el crédito a familias y empresas: se piden menos hipotecas y menos préstamos para invertir, y eso enfría la compra de vivienda y la construcción."
  },
  {
@@ -28,14 +28,14 @@
  {
   "id": "llum",
   "indicador": "Precio de la luz en el mercado mayorista",
-  "valor": "210,94 €/MWh",
-  "data_dada": "2026-11-11",
-  "comparacio": "Un 23% más que ayer (171,38 €/MWh). La hora más barata, de 23 a 24 h (168,16 €/MWh); la más cara, de 8 a 9 h (254,30 €/MWh).",
-  "que_vol_dir": "Es el precio de la energía antes de peajes e impuestos. Con la tarifa regulada (PVPC), poner la lavadora a última hora de la noche en lugar de a primera hora de la mañana ahorra cerca de un tercio del coste de la energía de ese lavado.",
-  "hi_guanya": "Quien puede mover el consumo a las horas baratas.",
-  "hi_perd": "Quien tiene la tarifa regulada y consume sobre todo por la tarde-noche.",
+  "valor": "116,16 €/MWh",
+  "data_dada": "2026-11-12",
+  "comparacio": "Un 45% menos que ayer (210,94 €/MWh), al día siguiente de la huelga general. La hora más barata, de 13 a 14 h (1,09 €/MWh); la más cara, de 20 a 21 h (196,29 €/MWh).",
+  "que_vol_dir": "Es el precio de la energía antes de peajes e impuestos. Con la tarifa regulada (PVPC), el kWh sale hoy a 0,041 € de 14 a 15 h y a 0,350 € de 20 a 21 h: un lavado de 2 kWh cuesta unos 8 céntimos al mediodía y unos 70 por la noche.",
+  "hi_guanya": "Quien puede poner la lavadora o el horno al mediodía, cuando hay más energía solar.",
+  "hi_perd": "Quien consume sobre todo entre las 20 y las 21 h con la tarifa regulada.",
   "font": "Tarifaluzhora",
-  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-11",
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-12",
   "per_a_leconomia": "La electricidad cara es un coste directo para la industria (metalurgia, química, alimentación): resta competitividad a las fábricas y acaba encareciendo muchos productos."
  },
  {

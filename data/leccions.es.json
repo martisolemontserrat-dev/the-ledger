@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-12",
+  "concepte": "El riesgo de persona clave",
+  "titol": "¿Por qué una empresa de billones puede tambalearse por su jefe?",
+  "explicacio": "Algunas empresas dependen tanto de una sola persona, a menudo el fundador, que su futuro va ligado al de ella. Es lo que se llama riesgo de persona clave. Si esa persona se va, enferma o protagoniza un escándalo, los inversores se preguntan quién tomará las decisiones y si la estrategia continuará, y la acción lo sufre. Por eso las grandes empresas tienen un consejo de administración que vigila a los directivos y debería tener preparado un relevo.",
+  "exemple": "Nvidia cayó un 8% fuera de hora el miércoles, hasta unos 160 dólares. Quien tuviera 50 acciones, que antes valían unos 174 dólares cada una (8.700 $ en total), vio cómo en pocas horas pasaban a valer unos 8.000 $: unos 700 dólares menos sin que la empresa hubiera vendido ni un chip menos.",
+  "economia": "Cuando una gran empresa se tambalea por un problema de liderazgo, pueden frenarse decisiones de inversión, contrataciones y acuerdos con proveedores. Por eso los inversores valoran que haya un buen gobierno corporativo: normas claras, consejeros independientes y un plan de sucesión.",
+  "en_una_frase": "Cuanto más depende una empresa de una sola persona, más riesgo tiene para quien ha puesto su dinero en ella.",
+  "termes": "Riesgo de persona clave; Consejo de administración; Gobierno corporativo; Capitalización bursátil; Acción",
+  "noticia": "Nvidia se hunde fuera de hora: el consejo se prepararía para destituir a Jensen Huang",
+  "font": "Axios",
+  "url": "https://www.axios.com/2026/11/11/nvidia-jensen-huang-affair-shares"
+ },
+ {
   "data": "2026-11-11",
   "concepte": "Las expectativas del mercado",
   "titol": "¿Por qué una sola décima de inflación puede hacer caer la bolsa?",

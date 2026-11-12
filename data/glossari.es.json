@@ -268,5 +268,23 @@
   "definicio": "El interés anual que gana quien compra un bono y lo mantiene hasta el vencimiento. Cuando el precio del bono baja, la rentabilidad sube, y al revés.",
   "exemple": "Si el interés del bono a 10 años de EE. UU. pasa del 4,88% al 4,99%, el Estado y, por contagio, empresas y familias tienen que pagar más para endeudarse.",
   "categoria": "Economia"
+ },
+ {
+  "terme": "Riesgo de persona clave",
+  "definicio": "El peligro que corre una empresa cuando depende demasiado de una sola persona, a menudo el fundador o el consejero delegado, y esta falta o pierde credibilidad.",
+  "exemple": "Si el fundador de una empresa tecnológica tiene que irse de golpe, la acción puede caer aunque el negocio vaya bien.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Consejo de administración",
+  "definicio": "El grupo de personas que, en nombre de los accionistas, vigila a los directivos de una empresa, aprueba las grandes decisiones y puede nombrar o destituir al consejero delegado.",
+  "exemple": "El consejo de Nvidia se prepararía para apartar a su consejero delegado, según la prensa.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Gobierno corporativo",
+  "definicio": "El conjunto de normas y controles que dicen cómo se dirige una empresa: quién manda, quién lo vigila y cómo se protege a los accionistas.",
+  "exemple": "Tener consejeros independientes y un plan de relevo del consejero delegado son señales de buen gobierno.",
+  "categoria": "Empreses"
  }
 ]

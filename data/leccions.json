@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-12",
+  "concepte": "El risc de persona clau",
+  "titol": "Per què una empresa de bilions pot trontollar pel seu cap?",
+  "explicacio": "Algunes empreses depenen tant d'una sola persona, sovint el fundador, que el seu futur va lligat al d'ella. És el que s'anomena risc de persona clau. Si aquesta persona marxa, emmalalteix o protagonitza un escàndol, els inversors es pregunten qui prendrà les decisions i si l'estratègia continuarà, i l'acció en pateix. Per això les grans empreses tenen un consell d'administració que vigila els directius i hauria de tenir preparat un relleu.",
+  "exemple": "Nvidia va caure un 8% fora d'hores dimecres, fins a uns 160 dòlars. Qui tingués 50 accions, que abans valien uns 174 dòlars cadascuna (8.700 $ en total), va veure com en poques hores passaven a valer uns 8.000 $: uns 700 dòlars menys sense que l'empresa hagués venut ni un xip menys.",
+  "economia": "Quan una gran empresa trontolla per un problema de lideratge, s'hi poden frenar decisions d'inversió, contractacions i acords amb proveïdors. Per això els inversors valoren que hi hagi un bon govern corporatiu: normes clares, consellers independents i un pla de successió.",
+  "en_una_frase": "Com més depèn una empresa d'una sola persona, més risc té per a qui hi ha posat els seus diners.",
+  "termes": "Risc de persona clau; Consell d'administració; Governança corporativa; Capitalització borsària; Acció",
+  "noticia": "Nvidia s'enfonsa fora d'hores: el consell es prepararia per destituir Jensen Huang",
+  "font": "Axios",
+  "url": "https://www.axios.com/2026/11/11/nvidia-jensen-huang-affair-shares"
+ },
+ {
   "data": "2026-11-11",
   "concepte": "Les expectatives del mercat",
   "titol": "Per què una sola dècima d'inflació pot fer caure la borsa?",

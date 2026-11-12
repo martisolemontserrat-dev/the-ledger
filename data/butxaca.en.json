@@ -2,14 +2,14 @@
  {
   "id": "euribor",
   "indicador": "12-month Euribor",
-  "valor": "3.217%",
-  "data_dada": "2026-11-10",
-  "comparacio": "Down from 3.317% on 3 November. November's average so far is 3.268%; October closed at 3.239%, and a year ago (November 2025) it was 2.217%.",
-  "que_vol_dir": "It's the index behind most variable-rate mortgages in Spain. If yours is reset this month using October's average, on a €167,000 mortgage over 25 years at Euribor + 0.75%, the monthly payment goes from about €786 to about €880: around €94 more.",
+  "valor": "3.222%",
+  "data_dada": "2026-11-11",
+  "comparacio": "Up slightly from 3.217% on Tuesday. November's provisional average is 3.262%; October closed at 3.239%, and a year ago (November 2025) it was 2.217%.",
+  "que_vol_dir": "It's the index behind most variable-rate mortgages in Spain. If yours is reset this month using October's average, on a €167,000 mortgage over 25 years at Euribor + 0.75%, the monthly payment goes from about €789 to about €880: around €91 more.",
   "hi_guanya": "Savers: deposits and interest-paying accounts tend to pay more.",
   "hi_perd": "People with a variable-rate mortgage that's due for review.",
-  "font": "HelpMyCash",
-  "url": "https://www.helpmycash.com/blog/el-euribor-cierra-julio-con-un-nuevo-record-negativo-0283",
+  "font": "Rankia",
+  "url": "https://www.rankia.com/blog/mejores-hipotecas/7548253-euribor-hoy-12-noviembre-2026",
   "per_a_leconomia": "It makes credit more expensive for households and businesses: fewer mortgages and fewer investment loans are taken out, which cools home buying and construction."
  },
  {
@@ -28,14 +28,14 @@
  {
   "id": "llum",
   "indicador": "Wholesale electricity price",
-  "valor": "€210.94/MWh",
-  "data_dada": "2026-11-11",
-  "comparacio": "23% more than yesterday (€171.38/MWh). The cheapest hour is 11pm–midnight (€168.16/MWh); the most expensive, 8–9am (€254.30/MWh).",
-  "que_vol_dir": "This is the price of energy before network charges and taxes. On Spain's regulated tariff (PVPC), running the washing machine late at night instead of first thing in the morning saves nearly a third of the energy cost of that wash.",
-  "hi_guanya": "People who can shift their usage to the cheap hours.",
-  "hi_perd": "People on the regulated tariff who use most of their power in the evening.",
+  "valor": "€116.16/MWh",
+  "data_dada": "2026-11-12",
+  "comparacio": "45% lower than yesterday (€210.94/MWh), the day after the general strike. Cheapest hour, 1–2 pm (€1.09/MWh); most expensive, 8–9 pm (€196.29/MWh).",
+  "que_vol_dir": "This is the energy price before network charges and taxes. On Spain's regulated tariff (PVPC), a kWh costs €0.041 today from 2 to 3 pm and €0.350 from 8 to 9 pm: a 2 kWh wash costs about 8 cents at midday and about 70 cents in the evening.",
+  "hi_guanya": "People who can run the washing machine or oven at midday, when there's more solar power.",
+  "hi_perd": "People on the regulated tariff who use most of their power between 8 and 9 pm.",
   "font": "Tarifaluzhora",
-  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-11",
+  "url": "https://tarifaluzhora.es/precio-luz-diario/2026-11-12",
   "per_a_leconomia": "Expensive electricity is a direct cost for industry (metals, chemicals, food): it makes factories less competitive and ends up pushing up the price of many products."
  },
  {

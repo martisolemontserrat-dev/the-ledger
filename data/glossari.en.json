@@ -268,5 +268,23 @@
   "definicio": "The annual interest earned by someone who buys a bond and holds it until it matures. When the bond's price falls, the yield rises, and vice versa.",
   "exemple": "If the US 10-year bond yield goes from 4.88% to 4.99%, the government and, by knock-on effect, businesses and families have to pay more to borrow.",
   "categoria": "Economia"
+ },
+ {
+  "terme": "Key-person risk",
+  "definicio": "The danger a company faces when it depends too much on one person, often the founder or chief executive, and that person leaves or loses credibility.",
+  "exemple": "If a tech company's founder suddenly has to step down, the shares can fall even if the business is doing well.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Board of directors",
+  "definicio": "The group of people who, on behalf of shareholders, oversee a company's managers, approve major decisions and can appoint or remove the chief executive.",
+  "exemple": "Nvidia's board was reportedly preparing to remove its chief executive.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Corporate governance",
+  "definicio": "The set of rules and checks that determine how a company is run: who is in charge, who oversees them and how shareholders are protected.",
+  "exemple": "Having independent directors and a CEO succession plan are signs of good governance.",
+  "categoria": "Empreses"
  }
 ]
