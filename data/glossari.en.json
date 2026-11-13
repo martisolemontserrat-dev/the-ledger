@@ -286,5 +286,23 @@
   "definicio": "The set of rules and checks that determine how a company is run: who is in charge, who oversees them and how shareholders are protected.",
   "exemple": "Having independent directors and a CEO succession plan are signs of good governance.",
   "categoria": "Empreses"
+ },
+ {
+  "terme": "Takeover bid",
+  "definicio": "A public offer to buy the shares of a listed company from all of its shareholders, at a fixed price and within a set period.",
+  "exemple": "JD.com made a takeover bid for Ceconomy, MediaMarkt's parent company, and ended up with 59.8% of it.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Takeover premium",
+  "definicio": "The extra money someone trying to buy a company offers above the share's stock market price, to persuade shareholders to sell.",
+  "exemple": "If a share is worth €4 and the offer is €4.60, the premium is 15%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Controlling stake",
+  "definicio": "A block of shares big enough to decide who runs a company and what strategy it follows; often more than half.",
+  "exemple": "With 59.8% of Ceconomy, JD.com controls MediaMarkt.",
+  "categoria": "Empreses"
  }
 ]

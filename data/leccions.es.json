@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-13",
+  "concepte": "La OPA",
+  "titol": "¿Cómo se compra una empresa que cotiza en bolsa? El caso de MediaMarkt",
+  "explicacio": "Una OPA (oferta pública de adquisición) es cuando alguien ofrece comprar las acciones de una empresa cotizada a todos sus accionistas a la vez, a un precio fijo y durante un plazo. Para convencerlos, el comprador suele ofrecer más de lo que vale la acción en bolsa: esa diferencia se llama prima. Cada accionista decide si vende o no. Si el comprador consigue suficientes acciones, pasa a controlar la empresa y puede cambiar su dirección y su estrategia.",
+  "exemple": "JD.com ha pagado 1.335 millones de euros por el 59,8% de Ceconomy, la matriz de MediaMarkt: es como si toda la empresa valiera unos 2.232 millones (1.335 ÷ 0,598). En un caso imaginario, si una acción cotiza a 4 € y el comprador ofrece 4,60 €, la prima es del 15%: quien tenga 1.000 acciones recibiría 4.600 € en lugar de los 4.000 € que valían en bolsa.",
+  "economia": "Las OPA cambian quién manda en las empresas: el nuevo dueño puede invertir más, cerrar tiendas o fábricas, cambiar de proveedores o llevarse las decisiones a otro país. Por eso los gobiernos vigilan las compras de empresas importantes por parte de grupos extranjeros, sobre todo en sectores estratégicos.",
+  "en_una_frase": "Una OPA es una oferta para comprar una empresa a todos sus accionistas a la vez, normalmente pagando algo más de lo que vale en bolsa.",
+  "termes": "OPA; Prima de adquisición; Participación de control; Acción",
+  "noticia": "El gigante chino JD.com se hace con el dueño de MediaMarkt",
+  "font": "GlobeNewswire",
+  "url": "https://www.globenewswire.com/news-release/2026/11/12/3401429/0/en/jd-com-completes-voluntary-public-takeover-offer-of-ceconomy.html"
+ },
+ {
   "data": "2026-11-12",
   "concepte": "El riesgo de persona clave",
   "titol": "¿Por qué una empresa de billones puede tambalearse por su jefe?",

@@ -286,5 +286,23 @@
   "definicio": "El conjunto de normas y controles que dicen cómo se dirige una empresa: quién manda, quién lo vigila y cómo se protege a los accionistas.",
   "exemple": "Tener consejeros independientes y un plan de relevo del consejero delegado son señales de buen gobierno.",
   "categoria": "Empreses"
+ },
+ {
+  "terme": "OPA",
+  "definicio": "Oferta pública de adquisición: una propuesta para comprar las acciones de una empresa cotizada a todos sus accionistas, a un precio fijo y durante un plazo.",
+  "exemple": "JD.com lanzó una OPA sobre Ceconomy, la matriz de MediaMarkt, y se quedó con el 59,8%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Prima de adquisición",
+  "definicio": "El dinero de más que ofrece quien quiere comprar una empresa por encima de lo que vale la acción en bolsa, para convencer a los accionistas de que vendan.",
+  "exemple": "Si la acción vale 4 € y se ofrecen 4,60 €, la prima es del 15%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Participación de control",
+  "definicio": "Un paquete de acciones lo bastante grande como para decidir quién dirige una empresa y qué estrategia sigue; a menudo, más de la mitad.",
+  "exemple": "Con el 59,8% de Ceconomy, JD.com tiene el control de MediaMarkt.",
+  "categoria": "Empreses"
  }
 ]

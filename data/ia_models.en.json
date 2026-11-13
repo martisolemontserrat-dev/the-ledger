@@ -1,10 +1,31 @@
 [
  {
+  "data": "2026-11-11",
+  "model": "Gemini Decision 1",
+  "empresa": "Google",
+  "que_es": "Model that answers closed questions (yes/no, options) without writing text, for developers",
+  "acces": "Obert a tothom"
+ },
+ {
+  "data": "2026-11-11",
+  "model": "Praxis-1",
+  "empresa": "Runway",
+  "que_es": "Robot-control model trained on videos",
+  "acces": "Pesos oberts"
+ },
+ {
   "data": "2026-11-10",
   "model": "Gemini Robotics 2.5",
   "empresa": "Google DeepMind",
   "que_es": "Model for controlling robots",
   "acces": "Limitat"
+ },
+ {
+  "data": "2026-11-10",
+  "model": "H3-Image",
+  "empresa": "MiniMax",
+  "que_es": "Model for creating high-resolution images",
+  "acces": "Pesos oberts (amb restriccions)"
  },
  {
   "data": "2026-11-09",
@@ -26,13 +47,6 @@
   "empresa": "Meta",
   "que_es": "Small, low-cost language model for agents",
   "acces": "Obert a tothom"
- },
- {
-  "data": "2026-11-09",
-  "model": "LongCat-2.5",
-  "empresa": "Meituan",
-  "que_es": "Large language model for agents",
-  "acces": "Pesos oberts"
  },
  {
   "data": "2026-11-05",
@@ -70,13 +84,6 @@
   "acces": "Obert a tothom"
  },
  {
-  "data": "2026-10-23",
-  "model": "Nemotron 3.5 Bolt",
-  "empresa": "Nvidia",
-  "que_es": "Small text model",
-  "acces": "Pesos oberts"
- },
- {
   "data": "2026-10-20",
   "model": "Voxtral 3",
   "empresa": "Mistral AI",
@@ -96,12 +103,5 @@
   "empresa": "Meta",
   "que_es": "Multimodal model",
   "acces": "Pesos oberts (amb restriccions)"
- },
- {
-  "data": "2026-10-14",
-  "model": "Grok Voice 3.0",
-  "empresa": "xAI",
-  "que_es": "Voice model",
-  "acces": "Obert a tothom"
  }
 ]

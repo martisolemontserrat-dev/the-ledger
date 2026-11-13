@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-13",
+  "concepte": "L'OPA",
+  "titol": "Com es compra una empresa que cotitza a borsa? El cas de MediaMarkt",
+  "explicacio": "Una OPA (oferta pública d'adquisició) és quan algú ofereix comprar les accions d'una empresa cotitzada a tots els seus accionistes alhora, a un preu fix i durant un termini. Per convèncer-los, el comprador sol oferir més del que val l'acció a la borsa: aquesta diferència s'anomena prima. Cada accionista decideix si ven o no. Si el comprador aconsegueix prou accions, passa a controlar l'empresa i en pot canviar la direcció i l'estratègia.",
+  "exemple": "JD.com ha pagat 1.335 milions d'euros pel 59,8% de Ceconomy, la matriu de MediaMarkt: és com si tota l'empresa valgués uns 2.232 milions (1.335 ÷ 0,598). En un cas imaginari, si una acció cotitza a 4 € i el comprador n'ofereix 4,60 €, la prima és del 15%: qui tingui 1.000 accions rebria 4.600 € en lloc dels 4.000 € que valien a la borsa.",
+  "economia": "Les OPA canvien qui mana a les empreses: el nou propietari pot invertir-hi més, tancar botigues o fàbriques, canviar proveïdors o portar les decisions a un altre país. Per això els governs vigilen les compres d'empreses importants per part de grups estrangers, sobretot en sectors estratègics.",
+  "en_una_frase": "Una OPA és una oferta per comprar una empresa a tots els seus accionistes alhora, normalment pagant una mica més del que val a la borsa.",
+  "termes": "OPA; Prima d'adquisició; Participació de control; Acció",
+  "noticia": "El gegant xinès JD.com es queda el propietari de MediaMarkt",
+  "font": "GlobeNewswire",
+  "url": "https://www.globenewswire.com/news-release/2026/11/12/3401429/0/en/jd-com-completes-voluntary-public-takeover-offer-of-ceconomy.html"
+ },
+ {
   "data": "2026-11-12",
   "concepte": "El risc de persona clau",
   "titol": "Per què una empresa de bilions pot trontollar pel seu cap?",

@@ -286,5 +286,23 @@
   "definicio": "El conjunt de normes i controls que diuen com es dirigeix una empresa: qui mana, qui el vigila i com es protegeixen els accionistes.",
   "exemple": "Tenir consellers independents i un pla de relleu del conseller delegat són senyals de bona governança.",
   "categoria": "Empreses"
+ },
+ {
+  "terme": "OPA",
+  "definicio": "Oferta pública d'adquisició: una proposta per comprar les accions d'una empresa cotitzada a tots els seus accionistes, a un preu fix i durant un termini.",
+  "exemple": "JD.com va fer una OPA sobre Ceconomy, la matriu de MediaMarkt, i se'n va quedar el 59,8%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Prima d'adquisició",
+  "definicio": "Els diners de més que ofereix qui vol comprar una empresa per sobre del que val l'acció a la borsa, per convèncer els accionistes de vendre.",
+  "exemple": "Si l'acció val 4 € i se n'ofereixen 4,60 €, la prima és del 15%.",
+  "categoria": "Empreses"
+ },
+ {
+  "terme": "Participació de control",
+  "definicio": "Un paquet d'accions prou gran per decidir qui dirigeix una empresa i quina estratègia segueix; sovint, més de la meitat.",
+  "exemple": "Amb el 59,8% de Ceconomy, JD.com té el control de MediaMarkt.",
+  "categoria": "Empreses"
  }
 ]

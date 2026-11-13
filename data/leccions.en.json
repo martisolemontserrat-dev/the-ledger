@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-13",
+  "concepte": "The takeover bid",
+  "titol": "How do you buy a company that's listed on the stock market? The MediaMarkt case",
+  "explicacio": "A takeover bid is when someone offers to buy the shares of a listed company from all of its shareholders at once, at a fixed price and within a set period. To win them over, the buyer usually offers more than the share is worth on the stock market: that difference is called the premium. Each shareholder decides whether or not to sell. If the buyer gets enough shares, it takes control of the company and can change its management and strategy.",
+  "exemple": "JD.com paid €1,335 million for 59.8% of Ceconomy, MediaMarkt's parent company: that's as if the whole company were worth about €2,232 million (1,335 ÷ 0.598). In a hypothetical case, if a share trades at €4 and the buyer offers €4.60, the premium is 15%: someone with 1,000 shares would get €4,600 instead of the €4,000 they were worth on the market.",
+  "economia": "Takeover bids change who's in charge of companies: the new owner may invest more, close shops or factories, switch suppliers or move decision-making to another country. That's why governments keep an eye on foreign groups buying important companies, especially in strategic sectors.",
+  "en_una_frase": "A takeover bid is an offer to buy a company from all its shareholders at once, usually paying a bit more than it's worth on the stock market.",
+  "termes": "Takeover bid; Takeover premium; Controlling stake; Share",
+  "noticia": "Chinese giant JD.com takes over MediaMarkt's owner",
+  "font": "GlobeNewswire",
+  "url": "https://www.globenewswire.com/news-release/2026/11/12/3401429/0/en/jd-com-completes-voluntary-public-takeover-offer-of-ceconomy.html"
+ },
+ {
   "data": "2026-11-12",
   "concepte": "Key-person risk",
   "titol": "Why can a trillion-dollar company wobble because of its boss?",
