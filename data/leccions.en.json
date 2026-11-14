@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-14",
+  "concepte": "Producer prices",
+  "titol": "Why might what factories pay today end up on your shop receipt a few months from now?",
+  "explicacio": "The producer price index measures how much businesses charge for the goods they make or the services they sell to other businesses, before anything reaches the shops. If energy, raw materials or components get more expensive, factories pay more to produce. They then have two options: raise prices for their customers or accept smaller profits. Since they often do a bit of both, this index gives a few months' warning of where the inflation families pay may be heading. In the US, these prices have risen 6.5% in a year.",
+  "exemple": "Imagine a bakery that sells a loaf for €1.20: the ingredients cost €0.50 and its other expenses €0.40, leaving a €0.30 margin. If ingredients rise 6.5%, they cost €0.5325 and the margin falls to €0.2675, almost 11% less. To keep its €0.30 margin, it would have to raise the price of the loaf to €1.2325, 2.7% more.",
+  "economia": "When production costs rise faster than selling prices, companies' margins get squeezed and they have less money to invest or hire. If instead they pass the whole increase on to customers, inflation is fuelled and central banks end up raising interest rates, which makes borrowing more expensive for everyone.",
+  "en_una_frase": "Producer prices are what businesses pay to produce, and they often signal the inflation that will reach the shops.",
+  "termes": "Producer price index; Inflation; Profit margin; Fed",
+  "noticia": "US factory-gate prices rise 6.5% in a year, the most since 2022",
+  "font": "Stock Titan",
+  "url": "https://www.stocktitan.net/articles/october-2026-ppi-report"
+ },
+ {
   "data": "2026-11-13",
   "concepte": "The takeover bid",
   "titol": "How do you buy a company that's listed on the stock market? The MediaMarkt case",

@@ -304,5 +304,17 @@
   "definicio": "Un paquete de acciones lo bastante grande como para decidir quién dirige una empresa y qué estrategia sigue; a menudo, más de la mitad.",
   "exemple": "Con el 59,8% de Ceconomy, JD.com tiene el control de MediaMarkt.",
   "categoria": "Empreses"
+ },
+ {
+  "terme": "Índice de precios industriales",
+  "definicio": "Indicador que mide cómo cambian los precios que cobran las empresas por lo que producen, antes de que llegue a las tiendas. Suele anticipar la inflación.",
+  "exemple": "En EE. UU., estos precios han subido un 6,5% en un año hasta octubre de 2026.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Margen empresarial",
+  "definicio": "La parte del precio de venta que le queda a una empresa después de pagar lo que le cuesta hacer el producto. Cuanto más pequeño es, menos gana por cada venta.",
+  "exemple": "Si una barra de pan se vende a 1,20 € y cuesta 0,90 € hacerla, el margen es de 0,30 €, un 25%.",
+  "categoria": "Empreses"
  }
 ]

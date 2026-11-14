@@ -304,5 +304,17 @@
   "definicio": "Un paquet d'accions prou gran per decidir qui dirigeix una empresa i quina estratègia segueix; sovint, més de la meitat.",
   "exemple": "Amb el 59,8% de Ceconomy, JD.com té el control de MediaMarkt.",
   "categoria": "Empreses"
+ },
+ {
+  "terme": "Índex de preus industrials",
+  "definicio": "Indicador que mesura com canvien els preus que cobren les empreses pel que produeixen, abans que arribi a les botigues. Sol anticipar la inflació.",
+  "exemple": "Als EUA, aquests preus han pujat un 6,5% en un any fins a l'octubre del 2026.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Marge empresarial",
+  "definicio": "La part del preu de venda que li queda a una empresa després de pagar el que li costa fer el producte. Com més petit és, menys guanya per cada venda.",
+  "exemple": "Si una barra de pa es ven a 1,20 € i costa 0,90 € de fer, el marge és de 0,30 €, un 25%.",
+  "categoria": "Empreses"
  }
 ]

@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-14",
+  "concepte": "Els preus industrials",
+  "titol": "Per què el que paguen les fàbriques avui ho pots pagar tu a la botiga d'aquí a uns mesos?",
+  "explicacio": "L'índex de preus industrials mesura quant cobren les empreses pels productes que fabriquen o pels serveis que venen a altres empreses, abans que arribin a la botiga. Si pugen els preus de l'energia, les matèries primeres o els components, les fàbriques paguen més per produir. Llavors tenen dues opcions: apujar els preus als clients o acceptar guanyar menys. Com que sovint fan una mica de cada cosa, aquest índex avisa amb uns mesos d'antelació de cap a on pot anar la inflació que paguen les famílies. Als EUA, aquests preus han pujat un 6,5% en un any.",
+  "exemple": "Imagina un forn que ven el pa a 1,20 €: els ingredients li costen 0,50 € i la resta de despeses, 0,40 €, i li queden 0,30 € de marge. Si els ingredients pugen un 6,5%, passen a costar 0,5325 € i el marge baixa a 0,2675 €, gairebé un 11% menys. Per mantenir els 0,30 € de marge, hauria d'apujar el pa fins a 1,2325 €, un 2,7% més.",
+  "economia": "Quan els costos de producció pugen més de pressa que els preus de venda, els marges de les empreses s'estrenyen i tenen menys diners per invertir o contractar. Si, en canvi, traslladen tota la pujada als clients, s'alimenta la inflació i els bancs centrals acaben apujant els tipus, cosa que encareix el crèdit per a tothom.",
+  "en_una_frase": "Els preus industrials són el que paguen les empreses per produir, i solen anunciar la inflació que arribarà a les botigues.",
+  "termes": "Índex de preus industrials; Inflació; Marge empresarial; Fed",
+  "noticia": "Els preus a la porta de fàbrica dels EUA pugen un 6,5% en un any, el màxim des del 2022",
+  "font": "Stock Titan",
+  "url": "https://www.stocktitan.net/articles/october-2026-ppi-report"
+ },
+ {
   "data": "2026-11-13",
   "concepte": "L'OPA",
   "titol": "Com es compra una empresa que cotitza a borsa? El cas de MediaMarkt",

@@ -1,5 +1,18 @@
 [
  {
+  "data": "2026-11-14",
+  "concepte": "Los precios industriales",
+  "titol": "¿Por qué lo que pagan hoy las fábricas puedes pagarlo tú en la tienda dentro de unos meses?",
+  "explicacio": "El índice de precios industriales mide cuánto cobran las empresas por los productos que fabrican o por los servicios que venden a otras empresas, antes de que lleguen a la tienda. Si suben los precios de la energía, las materias primas o los componentes, las fábricas pagan más por producir. Entonces tienen dos opciones: subir los precios a sus clientes o aceptar ganar menos. Como a menudo hacen un poco de cada cosa, este índice avisa con unos meses de antelación de hacia dónde puede ir la inflación que pagan las familias. En EE. UU., estos precios han subido un 6,5% en un año.",
+  "exemple": "Imagina una panadería que vende el pan a 1,20 €: los ingredientes le cuestan 0,50 € y el resto de gastos, 0,40 €, y le quedan 0,30 € de margen. Si los ingredientes suben un 6,5%, pasan a costar 0,5325 € y el margen baja a 0,2675 €, casi un 11% menos. Para mantener los 0,30 € de margen, tendría que subir el pan hasta 1,2325 €, un 2,7% más.",
+  "economia": "Cuando los costes de producción suben más deprisa que los precios de venta, los márgenes de las empresas se estrechan y tienen menos dinero para invertir o contratar. Si, en cambio, trasladan toda la subida a sus clientes, se alimenta la inflación y los bancos centrales acaban subiendo los tipos, lo que encarece el crédito para todos.",
+  "en_una_frase": "Los precios industriales son lo que pagan las empresas por producir, y suelen anunciar la inflación que llegará a las tiendas.",
+  "termes": "Índice de precios industriales; Inflación; Margen empresarial; Fed",
+  "noticia": "Los precios a la salida de fábrica en EE. UU. suben un 6,5% en un año, el máximo desde 2022",
+  "font": "Stock Titan",
+  "url": "https://www.stocktitan.net/articles/october-2026-ppi-report"
+ },
+ {
   "data": "2026-11-13",
   "concepte": "La OPA",
   "titol": "¿Cómo se compra una empresa que cotiza en bolsa? El caso de MediaMarkt",

@@ -1,5 +1,12 @@
 [
  {
+  "data": "2026-11-12",
+  "model": "Gemini 4 Hydrogen",
+  "empresa": "Google",
+  "que_es": "Fast, low-cost language model replacing Gemini 3.8 Flash",
+  "acces": "Obert a tothom"
+ },
+ {
   "data": "2026-11-11",
   "model": "Gemini Decision 1",
   "empresa": "Google",
@@ -96,12 +103,5 @@
   "empresa": "DeepSeek",
   "que_es": "Multimodal model",
   "acces": "Pesos oberts"
- },
- {
-  "data": "2026-10-15",
-  "model": "Muse Spark Open",
-  "empresa": "Meta",
-  "que_es": "Multimodal model",
-  "acces": "Pesos oberts (amb restriccions)"
  }
 ]

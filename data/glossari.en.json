@@ -304,5 +304,17 @@
   "definicio": "A block of shares big enough to decide who runs a company and what strategy it follows; often more than half.",
   "exemple": "With 59.8% of Ceconomy, JD.com controls MediaMarkt.",
   "categoria": "Empreses"
+ },
+ {
+  "terme": "Producer price index",
+  "definicio": "An indicator that measures how the prices businesses charge for what they produce change, before goods reach the shops. It often anticipates inflation.",
+  "exemple": "In the US, these prices rose 6.5% in the year to October 2026.",
+  "categoria": "Economia"
+ },
+ {
+  "terme": "Profit margin",
+  "definicio": "The share of the selling price a company keeps after paying what it costs to make the product. The smaller it is, the less it earns on each sale.",
+  "exemple": "If a loaf sells for €1.20 and costs €0.90 to make, the margin is €0.30, or 25%.",
+  "categoria": "Empreses"
  }
 ]
